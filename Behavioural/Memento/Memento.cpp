@@ -78,9 +78,12 @@ public:
 int main()
 {
 	//Originator has to be pointer type or passed as  reference here, because caretacker works on orintor
+	// originator handles responsibility of transfering state between Caretaker and Program at any time Originator handles value of momento of requested state
 	Originator orig ;
 	Caretaker caretaker;
 
+	// Here "state0" is std::string but this is the object whose state hase to be preserved/retrieve by caretaker using Originator
+	// so imagin "state0" as templet<T> object trough out the program
 	orig.SetState("state0");
 	caretaker.SaveState(&orig); //save state of the originator
 	orig.ShowState();
