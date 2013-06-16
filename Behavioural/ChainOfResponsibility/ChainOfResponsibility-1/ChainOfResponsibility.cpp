@@ -13,35 +13,20 @@ private:
 
 public:
   Purchase(int number, double amount, string purpose)
-    : number_(number)
-    , amount_(amount)
-    , purpose_(purpose)
-  {
-  }
+    : number_(number) , amount_(amount) , purpose_(purpose)
+  { }
 
-  int Number() {
-    return number_;
-  }
+  int Number() { return number_; }
 
-  void Number(int number) {
-    number_ = number;
-  }
+  void Number(int number) { number_ = number; }
 
-  double Amount() {
-    return amount_;
-  }
+  double Amount() { return amount_; }
   
-  void Amount(double amount) {
-    amount_ = amount;
-  }
+  void Amount(double amount) { amount_ = amount; }
 
-  string Purpose() {
-    return purpose_;
-  }
+  string Purpose() { return purpose_; }
 
-  void Purpose(string purpose) {
-    purpose_ = purpose;
-  }
+  void Purpose(string purpose) { purpose_ = purpose; }
 };
 
 class Approver {
