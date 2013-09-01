@@ -8,7 +8,7 @@ margin-left:18.0pt;margin-bottom:.0001pt;line-height:18.7pt'><span
 style='font-size:14.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
 "Times New Roman";color:#003300;mso-fareast-language:EN-IN'>Composition and
 Aggregation are modeled with filled diamond and hollow diamond, respectively,
-on the �Whole� part.<u9:p></u9:p></span><o:p></o:p></p>
+on the “Whole” part.<u9:p></u9:p></span><o:p></o:p></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
 18.7pt'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
@@ -59,7 +59,7 @@ EN-IN'><u9:p>&nbsp;</u9:p></span><o:p></o:p></p>
        .0001pt;line-height:18.7pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><span
        style='font-size:14.0pt;font-family:"Times New Roman","serif";
        mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>In
-       cases where there’s a part-of relationship between ClassA (whole or
+       cases where there's a part-of relationship between ClassA (whole or
        Collection) and ClassB (part or element).<u9:p></u9:p></span><o:p></o:p></li>
    <li class=MsoNormal style='color:#003300;margin-bottom:0cm;margin-bottom:
        .0001pt;line-height:18.7pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><span
@@ -97,7 +97,7 @@ EN-IN'><u9:p>&nbsp;</u9:p></span><o:p></o:p></p>
    <li class=MsoNormal style='color:#003300;margin-bottom:0cm;margin-bottom:
        .0001pt;line-height:18.7pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><span
        style='font-size:14.0pt;font-family:"Times New Roman","serif";
-       mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>There’s
+       mso-fareast-font-family:"Times New Roman";mso-fareast-language:EN-IN'>There's
        a strong life cycle dependency between ClassA and ClassB, when ClassA is
        deleted then ClassB is also deleted as a result</span>.<u9:p></u9:p><o:p></o:p></li>
    <li class=MsoNormal style='color:#003300;margin-bottom:0cm;margin-bottom:
