@@ -5,40 +5,40 @@
 #include <iostream>
 using namespace std;
 
-class Handler {
+class IHandler {
 public:
-	Handler( Handler* successor = NULL )
-		:_successor( successor ) {
+	IHandler( IHandler* successor = NULL )
+		:m_successor( successor ) {
 	}
 
 	virtual void handleRequest() = 0;
 protected:
-	Handler* _successor;
+	IHandler* m_successor;
 };
 
-class ConcreteHandler1 : public Handler {
+class ConcreteHandler1 : public IHandler {
 public:
-	ConcreteHandler1( Handler* successor = NULL )	
-		:Handler( successor ) {
+	ConcreteHandler1( IHandler* successor = NULL )	
+		:IHandler( successor ) {
 	}
 
 	virtual void handleRequest() {
-		if ( NULL != _successor ) {
-			_successor->handleRequest();
+		if ( NULL != m_successor ) {
+			m_successor->handleRequest();
 		} else {
 			cout << "handleRequest by ConcreteHandler1" << endl;
 		}
 	}
 };
 
-class ConcreteHandler2 : public Handler {
+class ConcreteHandler2 : public IHandler {
 public:
-	ConcreteHandler2( Handler* successor = NULL )
-		:Handler( successor ) {
+	ConcreteHandler2( IHandler* successor = NULL )
+		:IHandler( successor ) {
 		}
 	virtual void handleRequest() {
-		if ( NULL != _successor ) {
-			_successor->handleRequest();
+		if ( NULL != m_successor ) {
+			m_successor->handleRequest();
 		} else {
 			cout << "handleRequest by ConcreteHandler2" << endl;
 		}
@@ -47,8 +47,8 @@ public:
 
 int main() {
 
-	Handler* handler1 = new ConcreteHandler1();
-	Handler* handler2 = new ConcreteHandler2( handler1 );
+	IHandler* handler1 = new ConcreteHandler1();
+	IHandler* handler2 = new ConcreteHandler2( handler1 );
 
 	handler2->handleRequest();
 
