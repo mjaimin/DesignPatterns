@@ -4,8 +4,12 @@ Avoid coupling sender of request to its receiver by giving more than one object 
 + Decouple senders and receivers by giving multiple objects (in a set order) a chance to handle a request. Request passed until an object handles it. 
 +	1st object in chain receives request - either handles it or forwards to next object in chain. 
 + Object that makes request has no explicit knowledge of who will handle it - request has an implicit receiver.  
-##Participants
 
+##
+![alt text](./Images/ChainOfResponsibility.md.png "Chain Of Responsibility")
+##
+
+##Participants
 
 **Handler** – defines interface for handling requests. Can also implement successor link
 
