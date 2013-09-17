@@ -30,3 +30,19 @@ The classes and/or objects participating in this pattern are:
 +	Client  (CompositeApp)
 
 		-	Mzanipulates objects in the composition through the Component interface.
+
+##Use Composite when
+
++	Hierarchical representations of objects are needed.
++	Objects and compositions of objects should be treated uniformly.
+
+##CONSEQUENCES
+
+**Benefits**
+
++	It makes it easy to add new kinds of components
++	It makes clients simpler, since they do not have to know if they are dealing with a leaf or a composite component
+
+**Potential Drawbacks**
+
++	It makes it harder to restrict the type of components of a composite
