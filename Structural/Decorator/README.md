@@ -34,10 +34,10 @@ Allows for the dynamic wrapping of objects in order to modify their existing res
 
 +	Decorator design pattern provide more flexibility than the standard inheritance.(Inheritance also extends the parent class responsibility but in a static manner. However decorator allows doing this in dynamic fashion.)
 +	The decorator pattern can be used to make it possible to add and remove (decorate) the functionality of a certain object without affecting other object at runtime.
-+	Space saving by using shared objects.
++	Avoids feature laden classes high in hierarchy
 
 **Potential Drawbacks**
 
-+	Adding processing time of computing extrinsic state
-+	Time can be reduced
++	Lots of little objects
++	Interface conformance
 
