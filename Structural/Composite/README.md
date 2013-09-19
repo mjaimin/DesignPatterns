@@ -1,3 +1,6 @@
+##Definition
+Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly. 
+
 ##Purpose
 Facilitates the creation of object hierarchies where each object can be treated independently or as a set of nested objects through the same interface.
 
