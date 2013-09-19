@@ -1,3 +1,98 @@
+##Definition
+	Use sharing to support large numbers of fine-grained objects efficiently. 
+
+##Purpose
+	Facilitates the reuse of many fine grained objects, making the utilization of large numbers of objects more efficient. 
+
+##Intent
+	Use sharing to support large numbers of fine-grained objects efficiently.
+
+##
+![alt text](./Images/FlyWeight.md.png "FlyWeight")
+##
+
+##Participants
++	Flyweight
+		Declares an interface through which ﬂyweights can receive and act on extrinsic state
++	ConcreteFlyweight
+		Implements Flyweight interface and adds storage for intrinsic state
++	UnsharedConcreteFlyweight
+		Not all ﬂyweights need to be shared, unshared ﬂyweights typically have children which are ﬂyweights
++	FlyweightFactory
+		Generates and manages ﬂyweight objects
++	Client
+		Maintains extrinsic state and stores references to ﬂyweights
+
+##Use Composite when
+Apply flyweight when ALL of the following are true:
++	An application uses a large number of objects
++	Storage cost is high because of the quantity of objects
++	Most objects can be made extrinsic
++	Many groups of objects can be replaced by relatively few shared 
++	objects once extrinsic state is removed
++	The application does not depend on object identity
+
+##CONSEQUENCES
+
+
+**Potential Drawbacks**
++	Flyweights may introduce run-time costs associated with transferring, finding, and/or computing extrinsic state
+
+**Benefits**
++ The increase in run-time cost are offset by storage savings which increase
+	-	as more flyweights are shared
+	–	as the amount of intrinsic state is considerable
+	–	as the amount of extrinsic state is considerable but can be computed
+
+
+
+##Collaborations
+
++	Data that a ﬂyweight needs to process must be classiﬁed as intrinsic or extrinsic
+		Intrinsic is stored with ﬂyweight; Extrinsic is stored with client
++	Clients should not instantiate ConcreteFlyweights directly
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Positives
+	Space saving by using shared objects
+	Adds functionality to the application
+Negatives
+	Adding processing time of computing extrinsic state
+		Time can be reduced
+
+
+
+
+
+
+
+
+Purpose
+
+Use When
+n	 Many like objects are used and storage cost is high.
+n	 The majority of each object’s state can be made extrinsic. 
+n	 A few shared objects can replace many unshared ones.
+n	 The identity of each object does not matter.
+
+
+
+
+
+
 It can be confusing at first to understand how the flyweight pattern works. Let’s first takea high-level look at the structure. We will then explain each individual part in more detail. **The flyweight pattern is used to reduce the number of objects you need in your application. This is accomplished by dividing an object’s internal state into two categories, intrinsic data and extrinsic data. Intrinsic data is the information that is required by the internal methods of a class; the class cannot function properly without this data. Extrinsic data is information that can be removed from a class and stored externally.** **We can take all of the objects that have the same intrinsic state and replace them with a single shared object, thus reducing the number of objects down to the number of unique intrinsic states you have.** **Instead of using a normal constructor, a factory is used to create these shared objects. That way, you can track the objects that have already been instantiated and only create a new copy if the needed intrinsic state is different from an object you already have.** **A manager object is used to store the object’s extrinsic state. When invoking any of the objects’ methods, the manager will pass in these extrinsic states as argument**
 
 
