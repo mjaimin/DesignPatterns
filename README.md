@@ -24,7 +24,7 @@
 
   + **Facade:** A single class that represents an entire subsystem
 
-  + **Flyweight:** A fine-grained instance used for efficient sharing
+  + **Flyweight:** Provides a way to share data among many small classes in an efficient manner. 
 
   + **Proxy:** An object representing another object
 
