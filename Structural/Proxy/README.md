@@ -6,3 +6,9 @@ There are several cases where a Proxy can be useful.
 +	The object is on a remote machine, and loading it over the network may be slow, especially during peak network load periods.
 +	The object has limited access rights, and the proxy can validate the access permissions for that user.
 
+
+Proxy
+Type: Structural
+What it is:
+Provide a surrogate or placeholder for
+another object to control access to it.
