@@ -10,7 +10,7 @@ public:
 
 class RealSubject: public Subject
 {
-public:    
+public:
 
     RealSubject()
     {
