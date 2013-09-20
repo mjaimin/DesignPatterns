@@ -26,7 +26,7 @@
 
   + **Flyweight:** Provides a way to share data among many small classes in an efficient manner. 
 
-  + **Proxy:** An object representing another object
+  + **Proxy:** An object representing another object or Provides a placeholder to a more complex class that is costly to instantiate.
 
 
 ##Behavioral Patterns
