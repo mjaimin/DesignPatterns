@@ -95,18 +95,11 @@ private:
 	
 public:
     ~GunCheck(){}
+    GunCheck(int n, const char *name) : no(n),gName(name){}
 
-    GunCheck(int n, const char *name) :
-    no(n),
-        gName(name){}
+    int GetNum(){return no;}
 
-    int GetNum(){
-        return no;
-    }
-
-    void AddNum(int n){
-        no += n;
-    }
+    void AddNum(int n){ no += n; }
 
     bool operator ==(const char *rhs){
         if(strcmp ( gName,  rhs) == 0)

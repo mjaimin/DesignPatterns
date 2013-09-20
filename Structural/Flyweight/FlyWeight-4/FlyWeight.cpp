@@ -14,7 +14,7 @@ public:
     virtual void Operator(const std::string& extrinsicState){}
 };
 
-class ConcreteFlyWeight : public FlyWeight
+class ConcreteFlyWeight : public FlyWeight// multiple ConcreteFlyWeight can have different operations
 {
 public:
     ConcreteFlyWeight( std::string intrinsicState ):FlyWeight(intrinsicState){}
