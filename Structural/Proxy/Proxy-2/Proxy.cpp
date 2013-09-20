@@ -2,35 +2,56 @@
 #include "Proxy.h" 
 #include <iostream> 
 using namespace std; 
-Subject::Subject() 
+class Subject 
 { 
+protected: 
+    Subject(){}; 
+public: 
+    virtual ~Subject( ){}; 
+    virtual void Request() = 0; 
+}; 
+
+class ConcreteSubject:public Subject 
+{ 
+public: 
+    ConcreteSubject(){}; 
+    ~ConcreteSubject(){}; 
+
+    void Request() 
+    { 
+        cout<< "Concrete Subject......request .." <<	endl; 
+    } 
+}; 
+
+class Proxy 
+{ 
+private: 
+    Subject* m_subject; 
+public: 
+    Proxy (){}; 
+    Proxy (Subject* sub) 
+    { 
+        m_subject = sub; 
+    } 
+
+    ~Proxy ( ) 
+    { 
+        delete m_subject; 
+    } 
+
+    void Proxy ::Request() 
+    { 
+        cout<<"Proxy request...."<<endl; 
+        m_subject->Request(); 
+    }
+}; 
+
+
+int main(int argc,char* argv[] )  
+{ 
+    Subject* sub = new ConcreteSubject(); 
+    Proxy *p = new Proxy (sub); 
+    p->Request(); 
+    system("pause");
+    return 0;  
 } 
-Subject::~Subject() 
-{ 
-} 
-ConcreteSubject::ConcreteSubject() 
-{ 
-} 
-ConcreteSubject::~ConcreteSubject() 
-{ 
-} 
-void ConcreteSubject::Request() 
-{ 
-	cout<< "Concrete Subject......request .." <<	endl; 
-} 
-Proxy::Proxy()  
-{ 
-} 
-Proxy::Proxy (Subject* sub) 
-{ 
-	_sub = sub; 
-} 
-Proxy::~Proxy ( ) 
-{ 
-	delete _sub; 
-} 
-void Proxy ::Request() 
-{ 
-	cout<<"Proxy request...."<<endl; 
-	_sub->Request(); 
-}
