@@ -1,44 +1,59 @@
-/********************************************************************
-	created:	2006/07/26
-	filename: 	Proxy.cpp
-	author:		李创
-                http://www.cppblog.com/converse/
-
-	purpose:	Proxy模式的演示代码
-*********************************************************************/
-
-#include "Proxy.h"
 #include <iostream>
 
-RealSubject::RealSubject()
+class Subject// Interface
 {
-	std::cout << "Constructing a RealSubject\n";
-}
+public:
+    Subject(){}
+    virtual ~Subject(){}
+    virtual void Request() = 0;
+};
 
-void RealSubject::Request()
+class RealSubject: public Subject
 {
-	std::cout << "Request By RealSubject\n";
-}
+public:    
 
-Proxy::Proxy()
-	: m_pRealSubject(NULL)
-{
-	std::cout << "Constructing a Proxy\n";
-}
+    RealSubject()
+    {
+        std::cout << "Constructing a RealSubject\n";
+    }
+    virtual ~RealSubject(){}
+    virtual void Request()
+    {
+        std::cout << "Request By RealSubject\n";
+    }
+};
 
-Proxy::~Proxy()
-{
-	delete m_pRealSubject;
-	m_pRealSubject = NULL;
-}
 
-void Proxy::Request()
+class Proxy	: public Subject
 {
-	// 需要使用RealSubject的时候才去初始化
-	if (NULL == m_pRealSubject)
-	{
-		std::cout << "Request By Proxy\n";
-		m_pRealSubject = new RealSubject();
-	}
-	m_pRealSubject->Request();
+private:
+    RealSubject* m_pRealSubject;
+
+public:
+    Proxy(): m_pRealSubject(NULL)
+    {
+        std::cout << "Constructing a Proxy\n";
+    }
+
+    virtual ~Proxy()
+    {
+        delete m_pRealSubject;
+        m_pRealSubject = NULL;
+    }
+    virtual void Request()
+    {
+        if (NULL == m_pRealSubject)
+        {
+            std::cout << "Request By Proxy\n";
+            m_pRealSubject = new RealSubject();
+        }
+        m_pRealSubject->Request();
+    }
+};
+int main()
+{
+	Subject* pProxy = new Proxy();
+	pProxy->Request();
+	delete pProxy;
+	return 0;
 }
