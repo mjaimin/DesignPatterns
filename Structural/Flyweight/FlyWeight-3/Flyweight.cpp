@@ -116,7 +116,7 @@ public:
     }
 };
 
-// Class WeaponStore (Client)
+// Class WeaponStore (Client or Manager)
 class WeaponStore{
 private:
     list<GunCheck> gunList; 
