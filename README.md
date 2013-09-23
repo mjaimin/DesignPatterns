@@ -1,4 +1,4 @@
-##Way to remember design patterns
+##GOF Design Patterns
 
 ##Creational Patterns
 Creational patterns provide ways to instantiate single objects or groups of related objects. 
