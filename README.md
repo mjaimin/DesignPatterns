@@ -1,6 +1,7 @@
 ##Way to remember design patterns
 
 ##Creational Patterns
+Creational patterns provide ways to instantiate single objects or groups of related objects. 
 
   + **Abstract Factory:** Creates an instance of several families of classes
 
@@ -13,6 +14,7 @@
   + **Singleton:** A class in which only a single instance can exist
 
 ##Structural Patterns
+Structural patterns provide a manner to define relationships between classes or objects.
 
   + **Adapter:** Match interfaces of different classes
 
@@ -30,6 +32,7 @@
 
 
 ##Behavioral Patterns
+Behavioural patterns define manners of communication between classes and objects.
 
   + **Mediator:** Defines simplified communication between classes
 
