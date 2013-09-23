@@ -1,104 +1,150 @@
-#include "Facade.h"
+#include <iostream>
+using namespace std;
 
+// Parts of the car
 // Class Door
-Door::Door(){}
+class Door{
+public:
+	Door(){}
 
-Door::~Door(){}
+	~Door(){}
 
-void Door::Open(){
-	cout<<"The Door is open!"<<endl;
-}
+	virtual void Door::Open(){
+		cout<<"The Door is open!"<<endl;
+	}
 
-void Door::Close(){
-	cout<<"The Door is locked!"<<endl;
-}
+	virtual void Door::Close(){
+		cout<<"The Door is locked!"<<endl;
+	}
+};
 
 // Class Engine
-Engine::Engine(){}
+class Engine{
+public:
 
-Engine::~Engine(){}
+	Engine(){}
 
-void Engine::Start(){
-	cout<<"The Engine is started!"<<endl;
-}
+	virtual ~Engine(){}
 
-void Engine::Stop(){
-	cout<<"The Engine is stopped!"<<endl;
-}
+	virtual void Start(){
+		cout<<"The Engine is started!"<<endl;
+	}
 
-// Class Brake
-Brake::Brake(){}
+	virtual void Stop(){
+		cout<<"The Engine is stopped!"<<endl;
+	}
+};
 
-Brake::~Brake(){}
+// Class Break
+class Brake{
+public:
 
-void Brake::Skid(){
-	cout<<"The car is skidded!"<<endl;
-}
+	// Class Brake
+	Brake(){}
+
+	virtual ~Brake(){}
+
+	virtual void Skid(){
+		cout<<"The car is skidded!"<<endl;
+	}
+};
 
 // Class GPS
-GPS::GPS() : longitude(0),
-				  latitude(0){
-}
+class GPS{
+private:
+	double longitude;
+	double latitude;
+public:
 
-GPS::~GPS(){}
+	// Class GPS
+	GPS() : longitude(0),
+		latitude(0){
+	}
 
-void GPS::Open(){
-	cout<<"GPS is open!"<<endl;
-}
+	virtual GPS::~GPS(){}
 
-void GPS::TurnOff(){
-	cout<<"GPS is turned off!"<<endl;
-}
+	virtual void Open(){
+		cout<<"GPS is open!"<<endl;
+	}
 
-void GPS::GetPosition(){
-	longitude = 100.55;
-	latitude = 1.14;
-}
+	virtual void TurnOff(){
+		cout<<"GPS is turned off!"<<endl;
+	}
 
-void GPS::DisplayPosition(){
-	cout<<"Position:"<<endl;
-	cout<<"  Longitude:"<<longitude<<endl;
-	cout<<"  Latitude :"<<latitude<<endl;
-}
+	virtual void GetPosition(){
+		longitude = 100.55;
+		latitude = 1.14;
+	}
+
+	virtual void DisplayPosition(){
+		cout<<"Position:"<<endl;
+		cout<<"  Longitude:"<<longitude<<endl;
+		cout<<"  Latitude :"<<latitude<<endl;
+	}
+};
+
+// Facade class
+class Car{
+private:
+	Door* myDoor;
+	Engine* myEngine;
+	GPS* myGPS;
+	Brake* myBrake;
+
+public:
+	Car(){
+		myDoor = new Door();
+		myEngine = new Engine();
+		myGPS = new GPS();
+		myBrake = new Brake();
+	}
+
+	virtual void OpenDoor(){
+		myDoor->Open();
+	}
+
+	virtual void LockDoor(){
+		myDoor->Close();
+	}
+
+	virtual void Start(){
+		myEngine->Start();
+		myGPS->Open();
+	}
+
+	virtual void Skid(){
+		myBrake->Skid();
+	}
+
+	virtual void Stop(){
+		myEngine->Stop();
+		myGPS->TurnOff();
+	}
+
+	virtual void DisplayPosition()
+	{
+		myGPS->GetPosition();
+		myGPS->DisplayPosition();
+	}
+
+	virtual ~Car(){
+		delete myDoor;
+		delete myEngine;
+		delete myGPS;
+		delete myBrake;
+	}
+};
 
 // Class Car
-Car::Car(){
-	myDoor = new Door();
-	myEngine = new Engine();
-	myGPS = new GPS();
-	myBrake = new Brake();
-}
-
-void Car::OpenDoor(){
-	myDoor->Open();
-}
-
-void Car::LockDoor(){
-	myDoor->Close();
-}
-
-void Car::Start(){
-	myEngine->Start();
-	myGPS->Open();
-}
-
-void Car::Skid(){
-	myBrake->Skid();
-}
-
-void Car::Stop(){
-	myEngine->Stop();
-	myGPS->TurnOff();
-}
-
-void Car::DisplayPosition(){
-	myGPS->GetPosition();
-	myGPS->DisplayPosition();
-}
-
-Car::~Car(){
-	delete myDoor;
-	delete myEngine;
-	delete myGPS;
-	delete myBrake;
+void main(){
+	Car myCar = Car();
+	myCar.OpenDoor();
+	myCar.Start();
+	myCar.DisplayPosition();
+	myCar.Skid();
+	myCar.Stop();
+	myCar.LockDoor();
+	while(1){
+		;
+	}
 }
