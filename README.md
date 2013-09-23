@@ -54,3 +54,15 @@ subclass
 
   + **Visitor:** Defines a new operation to a class without change
 
+
+-----------------------------------------------------------------------------------------------
+|                              **Categorization of Patterns by Intent**                        |
+-----------------------------------------------------------------------------------------------
+|  **Intent**       | **Patterns**                                                             |
+-----------------------------------------------------------------------------------------------
+| **Interfaces**    | Adapter, Facade, Composite, Bridge                                       |
+| **Responsibility**| Singleton, Observer, Mediator, Proxy, Chain Of Responsibility, Flyweight |
+| **Construction**  | Builder, Factory Method, Abstract Factory, Prototype, Memento            |
+| **Operations**    | Template Method, State, Strategy, Command, Interpreter                   |
+| **Extensions**    | Decorator, Iterator, Visitor                                             |
+-----------------------------------------------------------------------------------------------
