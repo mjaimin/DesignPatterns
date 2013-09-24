@@ -1,10 +1,14 @@
 
 #include <iostream>
+using namespace std;
 
-COpenningState *CContext::openningState = NULL;
-CClosingState *CContext::closingState = NULL;
-CStoppingState *CContext::stoppingState = NULL;
-CRunningState *CContext::runningState = NULL;
+class CClosingState;
+class COpenningState;
+class CRunningState;
+class CStoppingState;
+class CLifeState;
+class CContext;
+
 
 class CContext
 {
@@ -16,21 +20,15 @@ class CContext
 	static CRunningState *runningState;
 	static CStoppingState *stoppingState;
 
-	CContext()
-	{
-	    lifeContext = NULL;
-	    openningState = new COpenningState();
-	    closingState = new CClosingState();
-	    stoppingState = new CStoppingState();
-	    runningState = new CRunningState();
-	}
+    CContext();
+    
 
 	CLifeState *GetLifeState() { return lifeContext; }
 	void SetLifeState(CLifeState *lifeState) { lifeContext = lifeState; }
-	void Open() { this->lifeContext->Open(); }
-	void Close() { this->lifeContext->Close(); }
-	void Stop() { this->lifeContext->Stop(); }
-	void Run() { this->lifeContext->Run(); }
+void Open() ;
+void Close();
+void Stop() ;
+void Run() ;
 
 	~CContext()
 	{
@@ -44,9 +42,6 @@ class CContext
 	    stoppingState = NULL;
 	}
 };
-
-
-CContext *CLifeState::context = NULL;
 
 class CLifeState
 {
@@ -68,48 +63,25 @@ class CClosingState : public CLifeState
 {
     public:
 	CClosingState() { }
-	~CClosingState() {} 
-	void Open()
-	{
-	    this->CLifeState::context->SetLifeState(CContext::openningState);
-	    this->CLifeState::context->GetLifeState()->Open();
-	}
-	void Close() { cout<<"电梯门关闭..."<<endl; }
+	~CClosingState() {}
+    void Open() ;
+void Close();
+void Stop() ;
+void Run() ;
 
-	void Run()
-	{
-	    this->CLifeState::context->SetLifeState(CContext::runningState);
-	    this->CLifeState::context->GetLifeState()->Run();
-	}
 
-	void Stop()
-	{
-	    this->CLifeState::context->SetLifeState(CContext::stoppingState);
-	    this->CLifeState::context->GetLifeState()->Stop();
-	}
 
 };
 class COpenningState : public CLifeState
 {
     public:
-	COpenningStateCOpenningState() { }
-	COpenningState~COpenningState() {} 
-	void Open() { cout<<"电梯门打开..."<<endl; }
-	void Close()
-	{
-	    this->CLifeState::context->SetLifeState(CContext::closingState);
-	    this->CLifeState::context->GetLifeState()->Close();
-	}
-	void Run()
-	{
-	    this->CLifeState::context->SetLifeState(CContext::runningState);
-	    this->CLifeState::context->GetLifeState()->Run();
-	}
-	void Stop()
-	{
-	    this->CLifeState::context->SetLifeState(CContext::stoppingState);
-	    this->CLifeState::context->GetLifeState()->Stop();
-	}
+	COpenningState() { }
+	~COpenningState() {}
+        void Open() ;
+void Close();
+void Stop() ;
+void Run() ;
+
 };
 
 class CRunningState : public CLifeState
@@ -117,7 +89,7 @@ class CRunningState : public CLifeState
     public:
 
 	CRunningState() { }
-	~CRunningState() {} 
+	~CRunningState() {}
 	void Open()
 	{
 	    this->CLifeState::context->SetLifeState(CContext::openningState);
@@ -132,18 +104,14 @@ class CRunningState : public CLifeState
 
 	void Run() { cout<<"电梯上下跑..."<<endl; }
 
-	void Stop()
-	{
-	    this->CLifeState::context->SetLifeState(CContext::stoppingState);
-	    this->CLifeState::context->GetLifeState()->Stop();
-	}
+	void Stop();
 };
 
 class CStoppingState : public CLifeState
 {
     public:
 	CStoppingState() { }
-	~CStoppingState() {} 
+	~CStoppingState() {}
 	void Open()
 	{
 	    this->CLifeState::context->SetLifeState(CContext::openningState);
@@ -167,12 +135,73 @@ class CStoppingState : public CLifeState
 	    cout<<"电梯停止了..."<<endl;
 	}
 };
+
+
+
+COpenningState *CContext::openningState = NULL;
+CClosingState *CContext::closingState = NULL;
+CStoppingState *CContext::stoppingState = NULL;
+CRunningState *CContext::runningState = NULL;
+CContext *CLifeState::context = NULL;
+
+
+    void CContext::Open() { this->lifeContext->Open(); }
+    void CContext::Close() { this->lifeContext->Close(); }
+    void CContext::Stop() { this->lifeContext->Stop(); }
+    void CContext::Run() { this->lifeContext->Run(); }
+CContext::CContext()
+	{
+	    lifeContext = NULL;
+	    openningState = new COpenningState();
+	    closingState = new CClosingState();
+	    stoppingState = new CStoppingState();
+	    runningState = new CRunningState();
+	}
+    void CClosingState::Open()
+	{
+	    this->CLifeState::context->SetLifeState(CContext::openningState);
+	    this->CLifeState::context->GetLifeState()->Open();
+	}
+    void CClosingState::Close() { cout<<"电梯门关闭..."<<endl; }
+
+    void CClosingState::Run()
+	{
+	    this->CLifeState::context->SetLifeState(CContext::runningState);
+	    this->CLifeState::context->GetLifeState()->Run();
+	}
+
+    void CClosingState::Stop()
+	{
+	    this->CLifeState::context->SetLifeState(CContext::stoppingState);
+	    this->CLifeState::context->GetLifeState()->Stop();
+	}
+        void COpenningState::Open() { cout<<"电梯门打开..."<<endl; }
+	void COpenningState::Close()
+	{
+	    this->CLifeState::context->SetLifeState(CContext::closingState);
+	    this->CLifeState::context->GetLifeState()->Close();
+	}
+	void COpenningState::Run()
+	{
+	    this->CLifeState::context->SetLifeState(CContext::runningState);
+	    this->CLifeState::context->GetLifeState()->Run();
+	}
+	void COpenningState::Stop()
+	{
+	    this->CLifeState::context->SetLifeState(CContext::stoppingState);
+	    this->CLifeState::context->GetLifeState()->Stop();
+	}
+    
+        void CRunningState::Stop()
+	{
+	    this->CLifeState::context->SetLifeState(CContext::stoppingState);
+	    this->CLifeState::context->GetLifeState()->Stop();
+	}
 int main()
 {
-    //LiftState.h, LiftState.cpp, OpenningState.h, CloseingState.h, RunningState.h, StoppingState.h
-    //Context.h, Context.cpp
     CContext context;
-    CLifeState::SetContext(&context);
+    CLifeState lifeState;
+    lifeState.SetContext(&context);
     context.SetLifeState(CContext::closingState);
     context.Close();
     context.Open();
