@@ -1,5 +1,5 @@
-##intent/Purpose
-Separates an abstraction( ro interface) from its implementation, allowing implementations and abstractions to vary independently of one another.
+##Intent/Purpose
+	Separates an abstraction( ro interface) from its implementation, allowing implementations and abstractions to vary independently of one another.
 
 ##
 ![alt text](./Images/Bridge-1.md.png "Bridge")
@@ -16,18 +16,24 @@ Use When
 ##Participant
 
 +	Abstraction
+
 		The interface that the client sees
 		maintains a reference to an object of type Implementor.
 +	Implementor/Bridge
+
 		An interface defining those parts of the Abstraction that might vary
 +	RefinedAbstractio/AbstractionImpl
+
 		extends the interface defined by Abstraction.
 		Implements the abstraction interface using a reference to an object of type Implementor.
 +	ImplementationA and ImplementationB
+
 		Implementations of the Bridge interface
 +	Operation
+
 		A method that is called by the client
 +	OperationImp
+
 		A method in the Bridge that is called from the Operation in the Abstraction
 
 ##Motivation
@@ -46,10 +52,15 @@ Use When
 ##Benefits in using Bridge Pattern
 
 **Decoupling abstraction from implementation** - Inheritance tightly couples an abstraction with an implementation at compile time. Bridge pattern can be used to avoid the binding between abstraction and implementation and to select the implementation at run time.
+
 **Reduction in the number of sub classes** - Sometimes, using pure inheritance will increase the number of sub classes. Let us assume that the full-blown version of our Image Viewer supports 6 image formats in 3 different operating systems. Pure inheritance would have resulted in 18 sub classes whereas applying Bridge Pattern reduces the sub class requirement only to 9.
+
 **Cleaner code and Reduction in executable size** - In the above example, operating system specific code is encapsulated in CImageImp sub classes. This results in a cleaner code without much preprocessor statements like #ifdefs, #ifndefs. Also, it is easy to conditionally compile CImageImp sub classes for a given operating system to reduce the size of the executable.
+
 **Interface and implementation can be varied independently** - Maintaining two different class hierarchies for interface and implementation entitles to vary one independent of the other.
+
 **Improved Extensibility** - Abstraction and implementation can be extended independently. As mentioned earlier, the above example can easily be extended to view other image formats on Windows or view BMP images on other operating systems.
+
 **Loosely coupled client code** - Abstraction separates the client code from the implementation. So, the implementation can be changed without affecting the client code and the client code need not be compiled when the implementation changes. (NOTE : In the above mentioned example, for the sake of simplicity, the application configures the CImage object with the right CImageImp object. However, alternate methods like Abstract Factory can be adopted to choose the CImageImp object.)
 
 ##Drawbacks in using Bridge Pattern
