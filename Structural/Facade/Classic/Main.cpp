@@ -1,28 +1,20 @@
-
 #include <iostream>
 using namespace std;
 
 class SubSystemA {
 public:
-	void MethodA() {
-		cout << "SubSystemA.MethodA" << endl;
-	}
+	void MethodA() { cout << "SubSystemA.MethodA" << endl; }
 };
 
 class SubSystemB {
 public:
-	void MethodB() {
-		cout << "SubSystemB MethodB" << endl;
-	}
+	void MethodB() { cout << "SubSystemB MethodB" << endl; }
 };
 
 class SubSystemC {
 public:
-	void MethodC() {
-		cout << "SubSystemC MethodC" << endl;
-	}
+	void MethodC() { cout << "SubSystemC MethodC" << endl; }
 };
-
 
 class Facade {
 private:
@@ -53,9 +45,7 @@ public:
 int main() {
 		
 	Facade* facade = new Facade();
-
 	facade->MethodOne();
 	facade->MethodTwo();
-
 	return 0;
 }
