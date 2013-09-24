@@ -2,81 +2,42 @@
 using namespace std;
 
 // Parts of the car
-// Class Door
 class Door{
 public:
 	Door(){}
-
 	~Door(){}
-
-	virtual void Door::Open(){
-		cout<<"The Door is open!"<<endl;
-	}
-
-	virtual void Door::Close(){
-		cout<<"The Door is locked!"<<endl;
-	}
+	virtual void Door::Open(){ cout<<"The Door is open!"<<endl; }
+	virtual void Door::Close(){	cout<<"The Door is locked!"<<endl; }
 };
 
-// Class Engine
 class Engine{
 public:
-
 	Engine(){}
-
 	virtual ~Engine(){}
-
-	virtual void Start(){
-		cout<<"The Engine is started!"<<endl;
-	}
-
-	virtual void Stop(){
-		cout<<"The Engine is stopped!"<<endl;
-	}
+	virtual void Start(){ cout<<"The Engine is started!"<<endl;	}
+	virtual void Stop(){ cout<<"The Engine is stopped!"<<endl; }
 };
 
-// Class Break
 class Brake{
 public:
-
-	// Class Brake
 	Brake(){}
-
 	virtual ~Brake(){}
-
-	virtual void Skid(){
-		cout<<"The car is skidded!"<<endl;
-	}
+	virtual void Skid(){ cout<<"The car is skidded!"<<endl;	}
 };
 
-// Class GPS
 class GPS{
 private:
 	double longitude;
 	double latitude;
 public:
 
-	// Class GPS
-	GPS() : longitude(0),
-		latitude(0){
-	}
-
+	GPS() : longitude(0),latitude(0){}
 	virtual GPS::~GPS(){}
-
-	virtual void Open(){
-		cout<<"GPS is open!"<<endl;
-	}
-
-	virtual void TurnOff(){
-		cout<<"GPS is turned off!"<<endl;
-	}
-
-	virtual void GetPosition(){
-		longitude = 100.55;
-		latitude = 1.14;
-	}
-
-	virtual void DisplayPosition(){
+	virtual void Open(){ cout<<"GPS is open!"<<endl; }
+	virtual void TurnOff(){	cout<<"GPS is turned off!"<<endl; }
+	virtual void GetPosition(){	longitude = 100.55;	latitude = 1.14; }
+	virtual void DisplayPosition()
+	{
 		cout<<"Position:"<<endl;
 		cout<<"  Longitude:"<<longitude<<endl;
 		cout<<"  Latitude :"<<latitude<<endl;
@@ -92,42 +53,33 @@ private:
 	Brake* myBrake;
 
 public:
-	Car(){
+	Car()
+	{
 		myDoor = new Door();
 		myEngine = new Engine();
 		myGPS = new GPS();
 		myBrake = new Brake();
 	}
-
-	virtual void OpenDoor(){
-		myDoor->Open();
-	}
-
-	virtual void LockDoor(){
-		myDoor->Close();
-	}
-
-	virtual void Start(){
+	virtual void OpenDoor()	{ myDoor->Open();}
+	virtual void LockDoor()	{ myDoor->Close();}
+	virtual void Start()
+	{
 		myEngine->Start();
 		myGPS->Open();
 	}
-
-	virtual void Skid(){
-		myBrake->Skid();
-	}
-
-	virtual void Stop(){
+	virtual void Skid(){myBrake->Skid();}
+	virtual void Stop()
+	{
 		myEngine->Stop();
 		myGPS->TurnOff();
 	}
-
 	virtual void DisplayPosition()
 	{
 		myGPS->GetPosition();
 		myGPS->DisplayPosition();
 	}
-
-	virtual ~Car(){
+	virtual ~Car()
+	{
 		delete myDoor;
 		delete myEngine;
 		delete myGPS;
@@ -144,7 +96,5 @@ void main(){
 	myCar.Skid();
 	myCar.Stop();
 	myCar.LockDoor();
-	while(1){
-		;
-	}
+	while(1){;}
 }
