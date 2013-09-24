@@ -1,6 +1,11 @@
 ##intent/Purpose
 Separates an abstraction( ro interface) from its implementation, allowing implementations and abstractions to vary independently of one another.
 
+##
+![alt text](./Images/Bridge-1.md.png "Bridge")
+![alt text](./Images/Bridge-2.md.png "Bridge")
+##
+
 Use When
 +	Abstractions and implementations should not be bound at compile time.
 +	Abstractions and implementations should be independently extensible.
