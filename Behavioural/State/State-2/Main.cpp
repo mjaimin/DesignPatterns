@@ -1,162 +1,71 @@
 #include <iostream>
-#include <string>
-#include <vector>
 using namespace std;
 
-class TCPconnection;
+class Sun;
 
-class State
-{
+class State {
 public:
-   virtual void Open() {}
-   virtual void Close() {}
-   virtual void Acknowledge() {}
+   virtual void nextState(Sun *sun) = 0;
+   virtual const char *toString()   = 0;
 };
 
-class TCPopen : public State
-{
+class Dawn : public State {
 public:
-   TCPconnection *tcp;
-   TCPopen(TCPconnection *tcp)
-   {
-      this->tcp = tcp;
-   }
-
-   void Open()
-   {
-      cout << "The Tcp is already opened." << endl;
-   }
-
-   void Acknowledge();
-   void Close();
-};
-class TCPclose : public State
-{
-public:
-   TCPconnection *tcp;
-   TCPclose(TCPconnection *tcp)
-   {
-      this->tcp = tcp;
-   }
-
-   void Acknowledge()
-   {
-      cout << "The Tcp is not opened yet." << endl;
-   }
-
-   void Close()
-   {
-      cout << "The Tcp is already close." << endl;
-   }
-
-   void Open();
+   virtual void nextState(Sun *sun);
+   virtual const char *toString() { return "Dawn"; }
 };
 
-class TCPacknowledge : public State
-{
+class Morning : public State {
 public:
-   TCPconnection *tcp;
-   TCPacknowledge(TCPconnection *tcp)
-   {
-      this->tcp = tcp;
-   }
-
-   void Open()
-   {
-      cout << "The Tcp is already open" << endl;
-   }
-
-   void Acknowledge()
-   {
-      cout << "The Tcp is already acknowleged." << endl;
-   }
-
-   void Close();
+   virtual void nextState(Sun *sun);
+   virtual const char *toString() { return "Morning"; }
 };
 
-class TCPconnection
-{
+class MidDay : public State {
 public:
-   State *state;
-   TCPconnection()
-   {
-      state = new TCPclose(this);
-   }
-
-   void Open()
-   {
-      state->Open();
-   }
-
-   void Close()
-   {
-      state->Close();
-   }
-
-   void Acknowledge()
-   {
-      state->Acknowledge();
-   }
-
-   void setState(State *state)
-   {
-      this->state = state;
-   }
-
-   State *getTCPclose()
-   {
-      return new TCPclose(this);
-   }
-
-   State *getTCPopen()
-   {
-      return new TCPopen(this);
-   }
-
-   State *getTCPacknowledge()
-   {
-      return new TCPacknowledge(this);
-   }
+   virtual void nextState(Sun *sun);
+   virtual const char *toString() { return "MidDay"; }
 };
-// because the classes have cross-reference
-// so the following methods MUST be defined after TCPconnection
-void TCPopen::Acknowledge()
-{
-   cout << "The Tcp is acknowleged." << endl;
-   tcp->setState(tcp->getTCPacknowledge());
-}
+
+class Evening : public State {
+public:
+   virtual void nextState(Sun *sun);
+   virtual const char *toString() { return "Evening"; }
+};
+
+class Night : public State {
+public:
+   virtual void nextState(Sun *sun);
+   virtual const char *toString() { return "Night"; }
+};
 
 
-void TCPopen::Close()
-{
-   cout << "Yeah. The Tcp is close." << endl;
-   tcp->setState(tcp->getTCPclose());
-}
+class Sun {
+private:
+   State *m_state;
+public:
+   Sun(State *state) : m_state(state) { }
+   void afterSixHours() { m_state->nextState(this); }
+   void changeState(State *state) { m_state = state; }
+   const char *getState() { return m_state->toString(); }
+};
 
-
-void TCPclose::Open()
-{
-   cout << "The Tcp is open" << endl;
-   tcp->setState(tcp->getTCPopen());
-}
-
-
-void TCPacknowledge::Close()
-{
-   cout << "The Tcp is closed." << endl;
-   tcp->setState(tcp->getTCPclose());
-}
+void Dawn::nextState(Sun *sun) { sun->changeState(new Morning()); }
+void Morning::nextState(Sun *sun) { sun->changeState(new MidDay()); }
+void MidDay::nextState(Sun *sun) { sun->changeState(new Evening()); }
+void Evening::nextState(Sun *sun) { sun->changeState(new Night()); }
+void Night::nextState(Sun *sun) { sun->changeState(new Dawn()); }
 
 
 int main()
 {
-   TCPconnection tcp;
+   Sun *sun = new Sun(new Dawn());
 
-   tcp.state->Open();
-   tcp.state->Open();
-   tcp.state->Acknowledge();
-   tcp.state->Close();
+   sun->afterSixHours(); std::cout << sun->getState() << std::endl;
+   sun->afterSixHours(); std::cout << sun->getState() << std::endl;
+   sun->afterSixHours(); std::cout << sun->getState() << std::endl;
+   sun->afterSixHours(); std::cout << sun->getState() << std::endl;
+   sun->afterSixHours(); std::cout << sun->getState() << std::endl;
 
-   tcp.state->Acknowledge(); // will not acknowleged, since the tcp is not open
    return 0;
 }
