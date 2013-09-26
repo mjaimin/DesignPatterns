@@ -79,12 +79,14 @@ public:
 
    void accept(CarElementVisitor *visitor)
    {
+      ///*******with some changes this section can be in Main also, but put here
       FLWheel->accept(visitor);
       FRWheel->accept(visitor);
       BLWheel->accept(visitor);
       BLWheel->accept(visitor);
       body->accept(visitor);
       engine->accept(visitor);
+      ///*******
 
       visitor->visit(this);
    }
