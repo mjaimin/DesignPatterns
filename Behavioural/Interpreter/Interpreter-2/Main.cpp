@@ -133,7 +133,5 @@ int main()
    {
       (*it)->interpret(context);
    }
-
- //  Console.WriteLine("{0} = {1}",
-                    std::cout <<  "roman " << roman << "= " <<  context->Output << std::endl;
+   std::cout <<  "roman " << roman << "= " <<  context->Output << std::endl;
 }
