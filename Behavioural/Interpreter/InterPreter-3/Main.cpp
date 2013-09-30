@@ -1,239 +1,230 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 #include <map>
 #include <stack>
 using namespace std;
 
-class ChineseExp{
+class ChineseExp {
 public:
-	ChineseExp();
-	virtual ~ChineseExp();
-	virtual double Interprete(map<string,int> myDict) = 0; // Here use map to implement the Context
+   ChineseExp() {}
+   virtual ~ChineseExp() {}
+   virtual double Interprete(map<string, int> myDict) = 0;     // Here use map to implement the Context
 };
 
-class ChineseNum : public ChineseExp{
-public:
-	virtual ~ChineseNum();
-	ChineseNum(string num);
-	virtual double Interprete(map<string,int> myDict);
+class ChineseNum : public ChineseExp {
 private:
-	string numString;
-};
-
-class ChineseAdd : public ChineseExp{
+   string numString;
 public:
-	virtual ~ChineseAdd();
-	ChineseAdd(ChineseExp* left, ChineseExp* right);
-	virtual double Interprete(map<string,int> myDict);
-private:
-	ChineseExp* leftOperator;
-	ChineseExp* rightOperator;
+   virtual ~ChineseNum() {}
+   ChineseNum(string num) : numString(num) {}
+   virtual double Interprete(map<string, int> myDict)
+   {
+      return (double)myDict[numString];
+   }
 };
 
-
-class ChineseSub : public ChineseExp{
+class ChineseAdd : public ChineseExp {
+private:
+   ChineseExp *leftOperator;
+   ChineseExp *rightOperator;
 public:
-	virtual ~ChineseSub();
-	ChineseSub(ChineseExp* left, ChineseExp* right);
-	virtual double Interprete(map<string,int> myDict);
-private:
-	ChineseExp* leftOperator;
-	ChineseExp* rightOperator;
+   virtual ~ChineseAdd()
+   {
+      delete leftOperator;
+      delete rightOperator;
+   }
+
+   ChineseAdd(ChineseExp *left, ChineseExp *right)
+   {
+      leftOperator  = left;
+      rightOperator = right;
+   }
+
+   virtual double Interprete(map<string, int> myDict)
+   {
+      return(leftOperator->Interprete(myDict) + rightOperator->Interprete(myDict));
+   }
 };
 
-class ChineseMul : public ChineseExp{
+class ChineseSub : public ChineseExp {
+private:
+   ChineseExp *leftOperator;
+   ChineseExp *rightOperator;
 public:
-	virtual ~ChineseMul();
-	ChineseMul(ChineseExp* left, ChineseExp* right);
-	virtual double Interprete(map<string,int> myDict);
-private:
-	ChineseExp* leftOperator;
-	ChineseExp* rightOperator;
+   virtual ~ChineseSub()
+   {
+      delete leftOperator;
+      delete rightOperator;
+   }
+
+   ChineseSub(ChineseExp *left, ChineseExp *right)
+   {
+      leftOperator  = left;
+      rightOperator = right;
+   }
+
+   virtual double Interprete(map<string, int> myDict)
+   {
+      return(leftOperator->Interprete(myDict) - rightOperator->Interprete(myDict));
+   }
 };
 
-class ChineseDiv : public ChineseExp{
+class ChineseMul : public ChineseExp {
+private:
+   ChineseExp *leftOperator;
+   ChineseExp *rightOperator;
 public:
-	virtual ~ChineseDiv();
-	ChineseDiv(ChineseExp* left, ChineseExp* right);
-	virtual double Interprete(map<string,int> myDict);
-private:
-	ChineseExp* leftOperator;
-	ChineseExp* rightOperator;
+   virtual ~ChineseMul()
+   {
+      delete leftOperator;
+      delete rightOperator;
+   }
+
+   ChineseMul(ChineseExp *left, ChineseExp *right)
+   {
+      leftOperator  = left;
+      rightOperator = right;
+   }
+
+   virtual double Interprete(map<string, int> myDict)
+   {
+      return(leftOperator->Interprete(myDict) * rightOperator->Interprete(myDict));
+   }
 };
 
+class ChineseDiv : public ChineseExp {
+private:
+   ChineseExp *leftOperator;
+   ChineseExp *rightOperator;
+public:
+   // Class ChineseDiv
+   virtual ~ChineseDiv()
+   {
+      delete leftOperator;
+      delete rightOperator;
+   }
+
+   ChineseDiv(ChineseExp *left, ChineseExp *right)
+   {
+      leftOperator  = left;
+      rightOperator = right;
+   }
+
+   virtual double Interprete(map<string, int> myDict)
+   {
+      return(leftOperator->Interprete(myDict) / rightOperator->Interprete(myDict));
+   }
+};
 
 //  Class Evaluator, construct the syntax tree This is not the part of Interpreter Pattern
-class Evaluator{
-public:
-	~Evaluator();
-	Evaluator();
-	void Construct(string expression);
-	double Interprete(map<string,int> myDict);
+class Evaluator {
 private:
-	ChineseExp* myExpression;
-	ChineseExp* ExpConstruct(stack<string>* numStack);
-	int IsNumber(string tString);
+   ChineseExp *myExpression;
+   ChineseExp *ExpConstruct(stack<string> *numStack)
+   {
+      ChineseExp *t;
+      string     tmp = (*numStack).top();
+
+      if (IsNumber(tmp) == 0)
+      {
+         t = new ChineseNum(tmp);
+         (*numStack).pop();
+      }
+      if (IsNumber(tmp) == 2)
+      {
+         string temp = tmp;
+         (*numStack).pop();
+         if (temp.compare("+") == 0)
+         {
+            t = new ChineseAdd(ExpConstruct(numStack), myExpression);
+         }
+         else if (temp.compare("-") == 0)
+         {
+            t = new ChineseSub(ExpConstruct(numStack), myExpression);
+         }
+         else if (temp.compare("*") == 0)
+         {
+            t = new ChineseMul(ExpConstruct(numStack), myExpression);
+         }
+         else if (temp.compare("/") == 0)
+         {
+            t = new ChineseDiv(ExpConstruct(numStack), myExpression);
+         }
+      }
+      return t;
+   }
+
+   int IsNumber(string tString)
+   {
+      int b4 = tString.compare("+");
+      int b5 = tString.compare("-");
+      int b6 = tString.compare("*");
+      int b7 = tString.compare("/");
+
+      if ((b4 == 0) || (b5 == 0) || (b6 == 0) || (b7 == 0))
+      {
+         return 2;
+      }
+      return 0;
+   }
+
+public:
+   Evaluator() {}
+
+   ~Evaluator()
+   {
+      delete myExpression;
+   }
+
+   void Construct(string expression)
+   {
+      int n = expression.length();
+
+      stack<string> number;
+      for (int i = 0; i < n; i += 1)
+      {
+         string temp = expression.substr(i, 1);
+         number.push(temp);
+      }
+      int stackSize = number.size();
+      while (stackSize != 0)
+      {
+         myExpression = ExpConstruct(&number);
+         stackSize    = number.size();
+      }
+   }
+
+   double Interprete(map<string, int> myDict)
+   {
+      return myExpression->Interprete(myDict);
+   }
 };
+int main()
+{
+   // Construct the Context first
+   map<string, int> Dict;
 
-// Abstract Expression
-ChineseExp::ChineseExp(){
-
-}
-
-ChineseExp::~ChineseExp(){
-
-}
-
-// Class ChineseNum
-ChineseNum::ChineseNum( string num ) : numString(num){
-
-}
-
-double ChineseNum::Interprete(map<string,int> myDict) {
-	return (double)myDict[numString];
-}
-
-ChineseNum::~ChineseNum() {
-
-}
-
-// Class ChineseAdd
-ChineseAdd::~ChineseAdd(){
-	delete leftOperator;
-	delete rightOperator;
-}
-
-ChineseAdd::ChineseAdd( ChineseExp* left, ChineseExp* right ) {
-	leftOperator = left;
-	rightOperator = right;
-}
-
-double ChineseAdd::Interprete(map<string,int> myDict) {
-	return (leftOperator->Interprete(myDict) + rightOperator->Interprete(myDict));
-}
-
-// Class ChineseSub
-ChineseSub::~ChineseSub(){
-	delete leftOperator;
-	delete rightOperator;
-}
-
-ChineseSub::ChineseSub( ChineseExp* left, ChineseExp* right ) {
-	leftOperator = left;
-	rightOperator = right;
-}
-
-double ChineseSub::Interprete(map<string,int> myDict) {
-	return (leftOperator->Interprete(myDict) - rightOperator->Interprete(myDict));
-}
-
-// Class ChineseMul
-ChineseMul::~ChineseMul(){
-	delete leftOperator;
-	delete rightOperator;
-}
-
-ChineseMul::ChineseMul( ChineseExp* left, ChineseExp* right ) {
-	leftOperator = left;
-	rightOperator = right;
-}
-
-double ChineseMul::Interprete(map<string,int> myDict) {
-	return (leftOperator->Interprete(myDict) * rightOperator->Interprete(myDict));
-}
-
-// Class ChineseDiv
-ChineseDiv::~ChineseDiv(){
-	delete leftOperator;
-	delete rightOperator;
-}
-
-ChineseDiv::ChineseDiv( ChineseExp* left, ChineseExp* right ) {
-	leftOperator = left;
-	rightOperator = right;
-}
-
-double ChineseDiv::Interprete(map<string,int> myDict) {
-	return (leftOperator->Interprete(myDict) / rightOperator->Interprete(myDict));
-}
-
-
-// Class Evaluator
-Evaluator::~Evaluator(){
-	delete myExpression;
-}
-
-Evaluator::Evaluator( ){
-	
-}
-
-void Evaluator::Construct(string expression){
-	int n = expression.length();
-	stack<string> number;
-	for (int i = 0; i < n; i += 2){
-		string temp = expression.substr(i, 2);
-		number.push(temp);
-	}
-	while (((int)number.size()) != 0){
-		myExpression = ExpConstruct(&number);
-	}
-
-}
-
-double Evaluator::Interprete( map<string,int> myDict ){
-	return myExpression->Interprete(myDict);
-}
-
-ChineseExp* Evaluator::ExpConstruct( stack<string>* numStack ){
-			ChineseExp* t;
-	if (IsNumber((*numStack).top()) == 0){
-		t = new ChineseNum((*numStack).top());
-		(*numStack).pop();
-	}
-	if (IsNumber((*numStack).top()) == 2){
-		string temp = (*numStack).top();
-		(*numStack).pop();
-		if (temp.compare("¼Ó") == 0){
-			t = new ChineseAdd(ExpConstruct(numStack),myExpression);
-		} else if (temp.compare("¼õ") == 0){
-			t = new ChineseSub(ExpConstruct(numStack),myExpression);
-		} else if (temp.compare("³Ë") == 0){
-			t = new ChineseMul(ExpConstruct(numStack),myExpression);
-		} else if (temp.compare("³ý") == 0){
-			t = new ChineseDiv(ExpConstruct(numStack),myExpression);
-		}
-	}
-	return t;
-}
-
-int Evaluator::IsNumber( string tString ){
-	int b4 = tString.compare("¼Ó");
-	int b5 = tString.compare("¼õ");
-	int b6 = tString.compare("³Ë");
-	int b7 = tString.compare("³ý");
-	if ((b4 == 0) || (b5 == 0) || (b6 == 0) || (b7 == 0)){
-		return 2;
-	}
-	return 0;
-}
-
-int main(){
-	// Construct the Context first
-	map<string,int> Dict;
-	Dict["一"] = 1;
-	Dict["二"] = 2;
-	Dict["三"] = 3;
-	Dict["四"] = 4;
-	Dict["五"] = 5;
-	Dict["六"] = 6;
-	Dict["七"] = 7;
-	Dict["八"] = 8;
-	Dict["九"] = 9;
-	Evaluator myEvaluator = Evaluator();
-	myEvaluator.Construct("五加二");
-	double result = myEvaluator.Interprete(Dict);
-	std::cout<<result<<std::endl;
-	while(1){
-
-	}
+   /*Dict["一"] = 1;
+    *  Dict["二"] = 2;
+    *  Dict["三"] = 3;
+    *  Dict["四"] = 4;
+    *  Dict["五"] = 5;
+    *  Dict["六"] = 6;
+    *  Dict["七"] = 7;
+    *  Dict["八"] = 8;
+    *  Dict["九"] = 9;*/
+   //for simplicity changed code from chinese to English strings
+   Dict["1"] = 1;
+   Dict["2"] = 2;
+   Dict["3"] = 3;
+   Dict["4"] = 4;
+   Dict["5"] = 5;
+   Dict["6"] = 6;
+   Dict["7"] = 7;
+   Dict["8"] = 8;
+   Dict["9"] = 9;
+   Evaluator myEvaluator = Evaluator();
+   myEvaluator.Construct("4+5-3");
+   double result = myEvaluator.Interprete(Dict);
+   std::cout << result << std::endl;
 }

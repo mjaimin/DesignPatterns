@@ -1,3 +1,6 @@
+//Not so good classic example compare to other classic examples
+#include <iostream>
+#include <string>
 class Context
 {
 public:
