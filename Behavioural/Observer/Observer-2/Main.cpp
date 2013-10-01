@@ -33,6 +33,7 @@ protected:
    {
       cout << "Created stock for " << m_stockSymbol << " with price: " << m_stockPrice << "\n";
    }
+
 public:
 
    void registerObserver(investorBase *investor)
@@ -75,8 +76,9 @@ public:
 
 void investor::update(stock *stock)
 {
-    cout << "Notified " << m_investorName << " about " << stock->getStockSymbol() << " stock price change to " << stock->getStockPrice() << ".\n";
+   cout << "Notified " << m_investorName << " about " << stock->getStockSymbol() << " stock price change to " << stock->getStockPrice() << ".\n";
 }
+
 
 int main()
 {
