@@ -28,7 +28,7 @@ ConcreteState
 
 
 ##Use When
-+	The behavior of an object should be influenced by its state. An object’s behavior depends on its state and changes its behavior at run-time.
++	The behavior of an object should be influenced by its state. An objectâ€™s behavior depends on its state and changes its behavior at run-time.
 +	Complex conditions tie object behavior to its state.
 +	Transitions between states need to be explicit.
 +	you want to have an object represent the state of your application and switch application states by switching objects.
@@ -41,13 +41,13 @@ ConcreteState
 #Collaborations
 +	Context delegates state-specific requests to the current ConcreteState object.
 +	A context may pass itself as an argument to the State object handling the request.  This lets the State object access the context if necessary.
-+	Context is the primary interface for clients.  Clients can configure a context with State objects.  Once a context is configured, its clients don’t have to deal with the State objects directly.
++	Context is the primary interface for clients.  Clients can configure a context with State objects.  Once a context is configured, its clients donâ€™t have to deal with the State objects directly.
 +	Either Context or the ConcreteState subclasses can decide which state succeeds another and under what circumstances.
 
 #Key Features
 The following key features characterize the State design pattern:
 +	States exist internally as part of an object.
-+	Objects change in certain ways when states change. Objects may appear to change classes, but they’re changing behavior that is part of the class.
-+	Each state’s behavior depends on the current state of other states in the object
++	Objects change in certain ways when states change. Objects may appear to change classes, but theyâ€™re changing behavior that is part of the class.
++	Each stateâ€™s behavior depends on the current state of other states in the object
 
 

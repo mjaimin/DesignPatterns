@@ -23,106 +23,77 @@ public:
 
 class MyIterator : public IIterator
 {
+private:
    IAggregate *m_aggregate;
    int        m_currentIndex;
 
 public:
-   MyIterator(IAggregate *aggregate);
-   std::string FirstItem();
-   std::string NextItem();
-   std::string CurrentItem();
-   bool IsDone();
+   MyIterator(IAggregate *aggregate) : m_currentIndex(0), m_aggregate(aggregate) { }
+
+   std::string FirstItem()
+   {
+      m_currentIndex = 0;
+      return (*m_aggregate)[m_currentIndex];
+   }
+
+   std::string NextItem()
+   {
+      m_currentIndex += 1;
+
+      if (IsDone() == false)
+      {
+         return (*m_aggregate)[m_currentIndex];
+      }
+      else
+      {
+         return "";
+      }
+   }
+
+   std::string CurrentItem()
+   { return (*m_aggregate)[m_currentIndex]; }
+
+   bool IsDone()
+   {
+      if (m_currentIndex < m_aggregate->Count())
+      {
+         return false;
+      }
+      return true;
+   }
 };
 
 class MyAggregate : public IAggregate
 {
+private:
    std::vector<std::string> m_Vect;
 
 public:
-   MyAggregate(void);
-   //Helper function to populate the collection
-   void AddValue(std::string value);
-   IIterator *GetIterator();
-   std::string& operator[](int itemIndex);
-   int Count();
-};
-
-MyIterator::MyIterator(IAggregate *aggregate)
-   : m_currentIndex(0)
-     , m_aggregate(aggregate)
-{
-}
-
-
-std::string MyIterator::FirstItem()
-{
-   m_currentIndex = 0;
-   return (*m_aggregate)[m_currentIndex];
-}
-
-
-std::string MyIterator::NextItem()
-{
-   m_currentIndex += 1;
-
-   if (IsDone() == false)
-   {
-      return (*m_aggregate)[m_currentIndex];
-   }
-   else
-   {
-      return "";
-   }
-}
-
-
-std::string MyIterator::CurrentItem()
-{
-   return (*m_aggregate)[m_currentIndex];
-}
-
-
-bool MyIterator::IsDone()
-{
-   if (m_currentIndex < m_aggregate->Count())
-   {
-      return false;
-   }
-   return true;
-}
-
-
-MyAggregate::MyAggregate(void)
-{
-}
-
+   MyAggregate(void) { }
 
 //Helper function to populate the collection
-void MyAggregate::AddValue(std::string value)
-{
-   m_Vect.push_back(value);
-}
+   void AddValue(std::string value)
+   {
+      m_Vect.push_back(value);
+   }
 
+   IIterator *GetIterator()
+   {
+      IIterator *iter = new MyIterator(this);
 
-IIterator *MyAggregate::GetIterator()
-{
-   IIterator *iter = new MyIterator(this);
+      return iter;
+   }
 
-   return iter;
-}
+   std::string& operator[](int itemIndex)
+   {
+      return m_Vect[itemIndex];
+   }
 
-
-std::string& MyAggregate::operator[](int itemIndex)
-{
-   return m_Vect[itemIndex];
-}
-
-
-int MyAggregate::Count()
-{
-   return m_Vect.size();
-}
-
+   int Count()
+   {
+      return m_Vect.size();
+   }
+};
 
 int main()
 {
