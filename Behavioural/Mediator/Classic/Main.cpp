@@ -26,10 +26,7 @@ class ConcreteColleague : public IColleague
 private:
    std::string name;
 public:
-   ConcreteColleague(std::string name)
-   {
-      this->name = name;
-   }
+   ConcreteColleague(std::string name) { this->name = name; }
 
    void SendMessage(IMediator *mediator, std::string message)
    {
@@ -76,10 +73,8 @@ int main()
    IColleague *colleagueC = new ConcreteColleague("ColleagueC");
    IColleague *colleagueD = new ConcreteColleague("ColleagueD");
 
-   ConcreateMediator ConcreateMediator1;
-   ConcreateMediator ConcreateMediator2;
-   IMediator         *mediator1 = &ConcreateMediator1;
-   IMediator         *mediator2 = &ConcreateMediator2;
+   IMediator         *mediator1 = new ConcreateMediator;
+   IMediator         *mediator2 = new ConcreateMediator;
 
    mediator1->Register(colleagueA);
    mediator1->Register(colleagueB);
