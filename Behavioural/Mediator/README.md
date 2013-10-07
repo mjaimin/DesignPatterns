@@ -24,6 +24,7 @@
 		❍ each Colleague class knows its Mediator object.
 		❍ each colleague communicates with its mediator whenever it would have otherwise communicated with another colleague.
  
+ 
 #Consequences
 	
 	*Advantages*
