@@ -22,7 +22,7 @@ a new instance, when creating new instances is more expensive.
 +	ConcretePrototype: Implements an operation for cloning itself
 +	Client: Creates a new object by asking a prototype to clone itself
 
-##Use Decorator when
+##Use Prototydpe when
 +	When the class to instantiate are specified at run-time, for example, by dynamic loading.
 +	To avoid building a class hierarchy of factories that parallels the class hierarchy of products.
 +	When instances of a class can have one of only a few different combinations of state
@@ -31,9 +31,7 @@ a new instance, when creating new instances is more expensive.
 
 **Benefits**
 
-+	Decorator design pattern provide more flexibility than the standard inheritance.(Inheritance also extends the parent class responsibility but in a static manner. However decorator allows doing this in dynamic fashion.)
-+	The decorator pattern can be used to make it possible to add and remove (decorate) the functionality of a certain object without affecting other object at runtime.
-+	Avoids feature laden classes high in hierarchy
+
 
 **Potential Drawbacks**
 
