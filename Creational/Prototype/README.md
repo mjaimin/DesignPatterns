@@ -26,6 +26,8 @@ a new instance, when creating new instances is more expensive.
 +	When the class to instantiate are specified at run-time, for example, by dynamic loading.
 +	To avoid building a class hierarchy of factories that parallels the class hierarchy of products.
 +	When instances of a class can have one of only a few different combinations of state
++	Need to be independent of how its products are created, composed, and
+represented.
 
 ##CONSEQUENCES
 

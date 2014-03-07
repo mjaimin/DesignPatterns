@@ -24,6 +24,9 @@ way the objects are assembled is achieved using a Factory.
 +	Product: The object under construction, by parts
 
 ##Use Builder when
++	Need to isolate knowledge of the creation of a complex object from its
+parts.
++	Need to allow different implementations/interfaces of an object's parts.
 
 +	The algorithm for creating parts is independent from the parts themselves.
 +	The construction process must allow different representations for the object that's constructed.
