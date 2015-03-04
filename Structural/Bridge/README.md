@@ -1,5 +1,5 @@
 ##Intent/Purpose
-	Separates an abstraction( ro interface) from its implementation, allowing implementations and abstractions to vary independently of one another.
+> Separates an abstraction( ro interface) from its implementation, allowing implementations and abstractions to vary independently of one another.
 
 ##
 ![alt text](./Images/Bridge-1.md.png "Bridge")
