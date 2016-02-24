@@ -65,4 +65,11 @@ Below is how the class formation will look like. You can also see that when I go
 
 This relationship is termed as the composition relationship. In this relationship, both objects are heavily dependent on each other. In other words, if one goes for garbage collection the other also has to be garbage collected, or putting from a different perspective, the lifetime of the objects are the same. That’s why I have put in the heading “Death” relationship.
 
+#Putting things together
+
+Below is a visual representation of how the relationships have emerged from the requirements.
+
+![alt text](./Images/relation4.png "Overview")
+
+
 [http://www.codeproject.com/Articles/330447/Understanding-Association-Aggregation-and-Composit](http://www.codeproject.com/Articles/330447/Understanding-Association-Aggregation-and-Composit "Original Reference URL")
