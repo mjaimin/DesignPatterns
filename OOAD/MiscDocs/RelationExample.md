@@ -69,7 +69,7 @@ This relationship is termed as the composition relationship. In this relationshi
 
 Below is a visual representation of how the relationships have emerged from the requirements.
 
-![alt text](./Images/relation4.png "Overview")
+![alt text](./Images/relation4.png "Overviews")
 
 
 [http://www.codeproject.com/Articles/330447/Understanding-Association-Aggregation-and-Composit](http://www.codeproject.com/Articles/330447/Understanding-Association-Aggregation-and-Composit "Original Reference URL")
