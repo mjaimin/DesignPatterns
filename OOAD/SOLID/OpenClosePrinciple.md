@@ -1,4 +1,7 @@
 ## Open Close Principle ##
+###Principle###
+
+A Module should be closed for modification and open for extension.
 
 ###Motivation###
 
@@ -8,75 +11,73 @@ __*Hence you should never need to change existing code or classes: All new funct
 
 The ***Open Close Principle*** states that the design and writing of the code should be done in a way that new functionality should be added with minimum changes in the existing code. The design should be done in a way to allow the adding of new functionality as new classes, keeping as much as possible existing code unchanged.
 
-###Intent###
-Software entities like classes, modules and functions should be open for extension but closed for modifications.
 
 ####**Procedural Solution to the Square/Circle Problem**
 ```CPP
-enum ShapeType {circle, square};
-struct Shape
-{
-    ShapeType itsType;
-};
-struct Circle
-{
-    ShapeType itsType;
-    double itsRadius;
-    Point itsCenter;
+class Rectangle{
+    public:
+	double Width;
+	double Height;
 };
 
-struct Square
-{
-    ShapeType itsType;
-    double itsSide;
-    Point itsTopLeft;
+class Circle{
+    public:
+	double Radius;
 };
 
-void DrawSquare(struct Square*);
-void DrawCircle(struct Circle*);
-typedef struct Shape *ShapePointer;
-
-void DrawAllShapes(ShapePointer list[], int n)
-{
-    int i;
-    for (i=0; i<n; i++)
-    {
-	struct Shape* s = list[i];
-	switch (s->itsType)
+class AreaCalculator{
+    public:
+	double AreaOfCircle( Circle shape)
 	{
-	    case square:
-		DrawSquare((struct Square*)s);
-		break;
-	    case circle:
-		DrawCircle((struct Circle*)s);
-		break;
+	    return 3.14*shape.Radius*shape.Radius;
 	}
-    }
-}
+	double AreaOfRectangle( Rectangle shape)
+	{
+	    return shape.Width*shape.Height;
+	}
+};
+int main()
+{}
+
 ```
 ####**OOD solution to Square/Circle problem.**
 
 ```CPP
-
+#define PI 3.14
 class Shape
 {
     public:
-	virtual void Draw() const = 0;
+	virtual double Area()=0;
 };
-class Square : public Shape
+class Rectangle : public Shape
 {
     public:
-	virtual void Draw() const;
+	double Width;
+	double Height;
+	double Area()
+	{
+	    return Width * Height;
+	}
 };
+
 class Circle : public Shape
 {
     public:
-	virtual void Draw() const;
+	double Radius;
+	double Area()
+	{
+	    return Radius * Radius * PI;
+	}
 };
-void DrawAllShapes(Set<Shape*>& list)
+
+class AreaCalculator
 {
-    for (Iterator<Shape*>i(list); i; i++)
-	(*i)->Draw();
-}
+    public:
+	double Area(Shape& shape)
+	{
+	    return shape.Area();
+	}
+};
+
 ```
 
