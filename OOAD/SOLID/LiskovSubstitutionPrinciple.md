@@ -8,9 +8,6 @@
 - 	LSP is closely related to Single responsibility principle and Interface Segregation Principle. If a class has more functionality than subclass might not support some of the functionality ,and does violated LSP. In order to follow LSP SOLID design principle, derived class or sub class must enhance functionality, but not reduce them. 
 
 
-###References###
-Single responsibility principle
-Interface Segregation Principle
 
 Following example is the violation of Liskov Substitution principle
 ```CPP
@@ -73,3 +70,7 @@ class Bicycle : public DevicesWithoutEngines {
    void startMoving() {};
 };
 ```
+
+###References###
+Single responsibility principle
+Interface Segregation Principle
