@@ -1,0 +1,75 @@
+##Liskov Substitution Principle##
+###Principle###
+
+- Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it.(or Derived types must be completely substitutable for their base types.)
+
+###Discussion###
+- At first it does not seem like very difficult to understand. We know that derived classes and base classes talk about inheritance. Yes, Liskov Substitution Principle is about inheritance, but about well designed inheritance. You should be able to substitute subclass object for base class without things going wrong.
+- 	LSP is closely related to Single responsibility principle and Interface Segregation Principle. If a class has more functionality than subclass might not support some of the functionality ,and does violated LSP. In order to follow LSP SOLID design principle, derived class or sub class must enhance functionality, but not reduce them. 
+
+
+###References###
+Single responsibility principle
+Interface Segregation Principle
+
+Following example is the violation of Liskov Substitution principle
+```CPP
+class Engine{};
+class TransportationDevice
+{
+    std::string name;
+    std::string getName() {}
+    void setName(std::string n) {}
+
+    double speed;
+    double getSpeed() {}
+    void setSpeed(double d) {}
+
+    Engine engine;
+    Engine getEngine() {}
+    void setEngine(Engine e) {}
+
+    void startEngine() {}
+};
+
+class Car : public TransportationDevice
+{
+    void startEngine() {}
+};
+
+class Bicycle : public TransportationDevice
+{
+    void startEngine(){ /*problem!*/}
+};
+```
+
+Solution
+
+```cpp
+class Engine{};
+class TransportationDevice {
+   std::string name;
+   std::string getName() {};
+   void setName(std::string n) {};
+
+   double speed;
+   double getSpeed() {};
+   void setSpeed(double d) {};
+};
+class DevicesWithoutEngines : public TransportationDevice {
+   void startMoving();
+};
+class DevicesWithEngines : public TransportationDevice {
+   Engine engine;
+   Engine getEngine() {};
+   void setEngine(Engine e) {};
+
+   void startEngine() {};
+};
+class Car : public DevicesWithEngines {
+   void startEngine() {};
+};
+class Bicycle : public DevicesWithoutEngines {
+   void startMoving() {};
+};
+```
