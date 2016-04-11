@@ -11,7 +11,7 @@ A Module should be closed for modification and open for extension.
 
 - Use Open Closed Principle in the areas of your application that changes frequently
 
-- Anywhere the risk of changing the existing behavior of the system is risky
+- Anywhere the risk of changing the existing behaviour of the system is risky
 
 ####**Procedural Solution to the Square/Circle Problem**
 ```CPP
