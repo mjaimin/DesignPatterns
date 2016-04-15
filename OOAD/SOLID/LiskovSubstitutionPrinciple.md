@@ -5,7 +5,7 @@
 
 ###Discussion###
 - At first it does not seem like very difficult to understand. We know that derived classes and base classes talk about inheritance. Yes, Liskov Substitution Principle is about inheritance, but about well designed inheritance. You should be able to substitute subclass object for base class without things going wrong.
-- 	LSP is closely related to Single responsibility principle and Interface Segregation Principle. If a class has more functionality than subclass might not support some of the functionality ,and does violated LSP. In order to follow LSP SOLID design principle, derived class or sub class must enhance functionality, but not reduce them. 
+- 	LSP is closely related to Single responsibility principle. If a class has more functionality than subclass might not support some of the functionality ,and does violated LSP. In order to follow LSP SOLID design principle, derived class or sub class must enhance functionality, but not reduce them. 
 
 
 

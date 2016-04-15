@@ -3,6 +3,11 @@
 Clients should not be forced to depend upon interfaces that they do not use.
 
 ###Discussion###
+-	This means that when we write our interfaces we should take care to add only methods that should be there.
+-	If we add methods that should not be there the classes implementing the interface will have to implement those methods as well.
+-	For example if we create an interface called Worker and add a method lunch break, all the workers will have to implement it. What if the worker is a robot?
+-	This is bad design, because the interface is doing too much, The solution is to separate the interfaces for work() and eat()
+
 
 ```CPP
 #include <list>
