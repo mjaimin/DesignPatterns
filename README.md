@@ -1,7 +1,7 @@
 ##GOF Design Patterns
 
 ##Creational Patterns
-Creational patterns provide ways to instantiate single objects or groups of related objects. 
+Deal with initializing and configuring classes and objects
 
   + **Abstract Factory:** Creates an instance of several families of classes
 
@@ -14,7 +14,7 @@ Creational patterns provide ways to instantiate single objects or groups of rela
   + **Singleton:** A class in which only a single instance can exist
 
 ##Structural Patterns
-Structural patterns provide a manner to define relationships between classes or objects.
+Deal with decoupling interface and implementation of classes and objects.
 
   + **Adapter:** Match interfaces of different classes
 
@@ -31,8 +31,8 @@ Structural patterns provide a manner to define relationships between classes or 
   + **Proxy:** An object representing another object or Provides a placeholder to a more complex class that is costly to instantiate.
 
 
-##Behavioral Patterns
-Behavioural patterns define manners of communication between classes and objects.
+##Behavioural Patterns
+Deal with dynamic interactions among societies of classes and objects.
 
   + **Mediator:** Defines simplified communication between classes
 
@@ -42,11 +42,11 @@ Behavioural patterns define manners of communication between classes and objects
 
   + **Iterator:** Sequentially access the elements of a collection
 
-  + **Chain of Resp:** Allows commands to be chained together dynamically to handle a request.
+  + **Chain of Responsibility:** Allows commands to be chained together dynamically to handle a request.
 
   + **Command:** Encapsulate a command request as an object
 
-  + **State:** Alter an object's behavior when its state changes
+  + **State:** Alter an object's behaviour when its state changes
 
   + **Strategy:** Encapsulates an algorithm inside a class
 
