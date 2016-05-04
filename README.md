@@ -3,7 +3,7 @@
 ##Creational Patterns
 Deal with initializing and configuring classes and objects
 
-  + **Abstract Factory:** Creates an instance of several families of classes
+  + **Abstract Factory:** Factory for building related objects
 
   + **Builder:** Separates object construction from its representation
 

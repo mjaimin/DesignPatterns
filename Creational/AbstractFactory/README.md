@@ -1,8 +1,15 @@
+#Abstract Factory#
+Instantiating related objects
+
+**What’s It For?**
+
++	Sometimes need to instantiate more than one object to get the task done.
++	But what if the thing you need to instantiate changes depending on some variable?
+
+
 ##Intent
 
-+	Provide an interface for creating families of related or dependent 
-objects without specifying their concrete classes
-+	This pattern supports the creation of products that exist in families and are designed to be produced together. The abstract factory can be refined to concrete factories, each of which can create different products of different types and in different combinations.
++	Provide an interface for creating families of related or dependent objects without specifying their concrete classes
 
 ##Purpose
 Enables a class to delegate the responsibility of creating a valid object.
@@ -19,7 +26,7 @@ Enables a class to delegate the responsibility of creating a valid object.
 +	ConcreteProduct: Defines a product object to be created by the corresponding +	Concrete factory: Implements the AbstractProduct interface
 +	Client: Uses only interfaces declared by AbstractFactory and AbstractProduct classes
 
-##Use Builder when
+##Use Abstract Factory when
 
 +	Need to abstract from details of implementation of products.
 +	Need to have multiple families of products.
@@ -36,10 +43,8 @@ returns an instance of the appropriate subclass
 
 **Benefits**
 
-+	Isolates Concrete Class Names from Usages (Clients)!
-+	Makes Exchanging Product Families Easy (Single Usage) 
-+	Promotes Consistency (Products from Same Factory)
-
++	Increases cohesion (by moving unrelated instantiation out of client)
++	Decreases coupling (decouples instantiations from the client)
 
 **Potential Drawbacks**
 
