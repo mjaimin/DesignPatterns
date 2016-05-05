@@ -43,7 +43,7 @@ Aggregation is usually a collection of things.
 +	ResidentList
 +	Forest (aggregates trees)
 
-![alt text](./Images/Aggregation.png "Aggregation")
+![alt text](./Images/Aggregation.PNG "Aggregation")
 
 
 ## Composition ##
@@ -57,3 +57,11 @@ Book contains Pages
 
 ![alt text](./Images/Composition.PNG "Composition")
 
+
+## Dependency ##
+
+A dependency is a relation between two classes in which a change in one may force a change in the other.
+
+You should always show your dependencies in UML diagrams
+
+![alt text](./Images/Dependencies.PNG "Dependencies")
