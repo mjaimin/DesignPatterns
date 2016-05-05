@@ -1,4 +1,4 @@
-##Encapsulation##
+# Encapsulation #
 
 **Data encapsulation** is a mechanism of bundling the data and the functions in program.
 When we fully encapsulate code, we actually build an impenetrable wall to protect the contained code from accidental corruption due to the silly little errors that we are all prone to make.
@@ -14,3 +14,11 @@ We also tend to isolate errors to small sections of code to make them easier to 
 **Why?**
 +	So no one can mess up the internal workings of your module.
 +	In “modular computer” example, imagine if the power supply’s output voltage wasn’t encapsulated. A new fan module could decide to change the voltage from 5 volts to 12 volts. But poof! Now your processor blows up.
+
+### Encapsulation ###
+
+**Problem**: Exposed fields can be directly manipulated from outside, leading to violations of the representation invariant or undesirable dependences that prevent changing the implementation.
+
+**Solution**: Hide some components, permitting only stylized access to the object.
+
+**Disadvantages**: The interface may not (efficiently) provide all desired operations. Indirection may reduce performance.

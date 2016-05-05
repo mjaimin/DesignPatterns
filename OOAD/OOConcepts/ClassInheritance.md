@@ -23,6 +23,7 @@
 	
 ## Stopping Inheritance Chains ##
 +	Ok, declare a class as final.
+	
 ```C++
 struct A
 {
@@ -36,3 +37,10 @@ struct C : B // Error: B is final
 {
 };
 ````
+
+## Inheritance ##
+**Problem**: Similar abstractions have similar members (fields and methods). Repeating these is tedious, error-prone, and a maintenance headache.
+
+**Solution**: Inherit default members from a superclass; select the correct implementation via run-time dispatching.
+
+**Disadvantages**: Code for a class is spread out, potentially reducing understandability. Run-time dispatching introduces overhead.
