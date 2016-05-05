@@ -64,4 +64,4 @@ A dependency is a relation between two classes in which a change in one may forc
 
 You should always show your dependencies in UML diagrams
 
-![alt text](./Images/Dependencies.PNG "Dependencies")
+![alt text](./Images/Dependencies.PNG "Example of Dependencies with aggregation")
