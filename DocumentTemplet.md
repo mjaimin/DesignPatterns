@@ -41,17 +41,27 @@ which specifies whether the pattern applies primarily to classes or to objects:
 
 # Creational Design Patterns #
 +	Creational design patterns abstract the instantiation process. They help make a system independent of how its objects are created, composed, and represented.
++	Replace explicit creation problems, prevent platform dependencies
++	Allow to abstract from complex instantiation processes
++	Make the system independent from the way its objects are created, composed and represented. 
+
 +	A **class creational** pattern uses inheritance to vary the class that’s instantiated 
 +	An **object creational** pattern will delegate instantiation to another object.
 
 # Structural Design Patterns #
 +	Structural patterns are concerned with how classes and objects are composed to form larger structures. 
++	Handle unchangeable classes, lower coupling and offer alternatives to inheritance
++	Reduce coupling between two or more classes
++	Introduce an abstract class to enable future extensions
++	Encapsulate complex structures 
 +	A **class Structural** patterns use inheritance to compose interfaces or implementations. For example, multiple inheritance can be seen as a kind of structural design patterns, since it uses inheritance to mix two or more classes into a new one. 
 +	Rather than composing interfaces or implementations, **object structural** patterns describe ways to compose objects to realize new functionality. The added flexibility of object composition comes from the ability to change the composition at run-time, which is impossible with static class composition. 
 
 # Behavioural Design Patterns #
 +	Behavioural patterns are concerned with algorithms and the assignment of responsibility between objects. Behavioural patterns describe not just patterns of objects or classes but also the patterns of communication between them. These patterns characterize complex control flow that is difficult to follow at run-time. They shift your focus away from flow of control to let you concentrate just on the way objects are interconnected. 
-
++	Hide implementation, hides algorithms, allows easy and dynamic configuration of objects
++	Allow a choice between algorithms and the assignment of responsibilities to objects ("Who does what?")
++	Characterize complex control flows that are difficult to follow at runtime 
 +	**class Behavioural** patterns use inheritance to distribute behaviour between classes. 
 +	**Object Behavioural** patterns use object composition rather than inheritance. 
 
