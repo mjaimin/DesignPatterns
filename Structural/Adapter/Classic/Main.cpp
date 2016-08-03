@@ -22,7 +22,7 @@ public:
 int main()
 {
    Adaptee *adaptee = new Adaptee();
-   Target  *target = new Adapter(adaptee);
+   Target  *target  = new Adapter(adaptee);
 
    target->newRequest();
 
