@@ -2,140 +2,100 @@
 #include <string>
 
 /* Car parts */
-class Wheel { public: int size; };
+class Wheel {
+private:
+   int size;
+public:
+   Wheel(int sz) : size(sz) {}
+};
 
-class Engine { public: int horsepower; };
+class Engine {
+   int horsepower;
+public:
+   Engine(int hp) : horsepower(hp) {}
+};
 
-class Body { public: std::string shape; };
+class Body {
+private:
+   std::string shape;
+public:
+   Body(std::string s) : shape(s) {}
+};
 
 /* Final product -- a car */
-class Car
-{
+class Car {
 public:
-	Wheel*   wheels[4];
-	Engine*  engine;
-	Body* body;
-
-	void getCarSpecs()
-	{
-		std::cout << "body:" << body->shape << std::endl;
-		std::cout << "engine horsepower:" << engine->horsepower << std::endl;
-		std::cout << "tire size:" << wheels[0]->size << "'" << std::endl;
-	}
+   Wheel  *wheels[4];
+   Engine *engine;
+   Body   *body;
 };
 
 /* Builder is responsible for constructing the smaller parts */
 class Builder
 {
 public:
-	virtual Wheel* buildWheel() = 0;
-	virtual Engine* buildEngine() = 0;
-	virtual Body* buildBody() = 0;
+   virtual Wheel *buildWheel()   = 0;
+   virtual Engine *buildEngine() = 0;
+   virtual Body *buildBody()     = 0;
 };
 
 /* Concrete Builder for Jeep SUV cars */
 class JeepBuilder : public Builder
 {
 public:
-	Wheel* buildWheel()
-	{
-		Wheel* wheel = new Wheel();
-		wheel->size = 22;// set wheel features
-		return wheel;
-	}
-
-	Engine* buildEngine()
-	{
-		Engine* engine = new Engine();
-		engine->horsepower = 400;// set engine features
-		return engine;
-	}
-
-	Body* buildBody()
-	{
-		Body* body = new Body();
-		body->shape = "SUV"; // set body feature
-	}
+   Wheel *buildWheel() { return new Wheel(22); }
+   Engine *buildEngine() { return new Engine(400); }
+   Body *buildBody() { return new Body("SUV"); }
 };
 
 /* Concrete builder for Nissan family cars */
 class NissanBuilder : public Builder
 {
 public:
-	Wheel* buildWheel()
-	{
-		Wheel* wheel = new Wheel();
-		wheel->size = 16;// set wheel features
-		return wheel;
-	}
-
-	Engine* buildEngine()
-	{
-		Engine* engine = new Engine();
-		engine->horsepower = 85;// set engine features
-		return engine;
-	}
-
-	Body* buildBody()
-	{
-		Body* body = new Body();
-		body->shape = "hatchback";// set body feature
-	}
+   Wheel *buildWheel() { return new Wheel(16); }
+   Engine *buildEngine() { return new Engine(85); }
+   Body *buildBody() { return new Body("Hatchback"); }
 };
 
 /* Director is responsible for the whole process */
 class Director
 {
-	Builder* builder;
+   Builder *builder;
 
 public:
-	void setBuilder(Builder* newBuilder)
-	{
-		builder = newBuilder;
-	}
+   void setBuilder(Builder *newBuilder)
+   {
+      builder = newBuilder;
+   }
 
-	Car* constructCar()
-	{
-		Car* car = new Car();
+   Car *constructCar()
+   {
+      Car *car = new Car();
 
-		car->body = builder->buildBody();
-
-		car->engine = builder->buildEngine();
-
-		car->wheels[0] = builder->buildWheel();
-		car->wheels[1] = builder->buildWheel();
-		car->wheels[2] = builder->buildWheel();
-		car->wheels[3] = builder->buildWheel();
-
-		return car;
-	}
+      car->body      = builder->buildBody();
+      car->engine    = builder->buildEngine();
+      car->wheels[0] = builder->buildWheel();
+      car->wheels[1] = builder->buildWheel();
+      car->wheels[2] = builder->buildWheel();
+      car->wheels[3] = builder->buildWheel();
+      return car;
+   }
 };
 
 
 int main()
 {
-	Car* car; // Final product
+   Car *car;      // Final product
 
-	/* A director who controls the process */
-	Director director;
+   /* A director who controls the process */
+   Director director;
 
-	/* Concrete builders */
-	JeepBuilder jeepBuilder;
-	NissanBuilder nissanBuilder;
+   /* Concrete builders */
+   NissanBuilder nissanBuilder;
 
-	/* Build a Jeep */
-	std::cout << "Jeep" << std::endl;
-	director.setBuilder(&jeepBuilder); // using JeepBuilder instance
-	car = director.constructCar();
-	car->getCarSpecs();
+   /* Build a Nissan */
+   director.setBuilder(&nissanBuilder);      // using NissanBuilder instance
+   car = director.constructCar();
 
-	std::cout << std::endl;
-
-	/* Build a Nissan */
-	std::cout << "Nissan" << std::endl;
-	director.setBuilder(&nissanBuilder); // using NissanBuilder instance
-	car = director.constructCar();
-	car->getCarSpecs();
-
-	return 0;
+   return 0;
 }
