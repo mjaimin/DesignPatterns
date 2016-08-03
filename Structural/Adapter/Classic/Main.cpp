@@ -16,7 +16,10 @@ class Adapter : public Target, private Adaptee {
 	Adaptee *adaptee;
     public:
 	Adapter(Adaptee *obj) : adaptee(obj) {}
-	void newRequest() { adaptee->SpecificRequest(); }
+	void newRequest() 
+	{
+	    adaptee->SpecificRequest(); 
+	}
 };
 
 int main()
@@ -24,6 +27,7 @@ int main()
     Adaptee *adaptee = new Adaptee();
     Target  *target  = new Adapter(adaptee);
 
+    // Aim is target newRequest should work exactly the same way as Adaptee
     target->newRequest();
 
     delete target;
