@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+// builder is responsible for creating small parts
 class IBuilder {
 public:
    virtual void buildPartA() = 0;
@@ -18,12 +18,12 @@ public:
    virtual void buildPartA() { cout << "buildPartA by ConcreteBuilder2" << endl; }
    virtual void buildPartB() { cout << "buildPartB by ConcreteBuilder2" << endl; }
 };
-
+//director is responsible for creating product
 class Director {
 private:
    IBuilder *builder;
 public:
-   Director(IBuilder *obj){ builder = obj;} 
+   Director(IBuilder *obj) { builder = obj; }
 
    void construct()
    {
@@ -34,7 +34,7 @@ public:
 
 int main()
 {
-   IBuilder  *builder  = new ConcreteBuilder1();
+   IBuilder *builder  = new ConcreteBuilder1();
    Director *director = new Director(builder);
 
    director->construct();
