@@ -10,23 +10,20 @@ public:
 class ConcreteBuilder1 : public Builder {
 public:
    virtual void buildPartA() { cout << "buildPartA by ConcreteBuilder1" << endl; }
-
    virtual void buildPartB() { cout << "buildPartB by ConcreteBuilder1" << endl; }
 };
 
-class ConcreteBuilder2 : public Builder 
-{
+class ConcreteBuilder2 : public Builder {
 public:
    virtual void buildPartA() { cout << "buildPartA by ConcreteBuilder2" << endl; }
-
    virtual void buildPartB() { cout << "buildPartB by ConcreteBuilder2" << endl; }
 };
 
 class Director {
 private:
-   Builder *m_builder;
+   Builder *builder;
 public:
-   Director(Builder *builder) : m_builder(builder) { }
+   Director(Builder *obj){ builder = obj;} 
 
    void construct()
    {
@@ -41,10 +38,5 @@ int main()
    Director *director1 = new Director(builder1);
 
    director1->construct();
-
-   Builder  *builder2  = new ConcreteBuilder2();
-   Director *director2 = new Director(builder2);
-   director2->construct();
-
    return 0;
 }
