@@ -39,7 +39,7 @@ public:
    virtual Body *buildBody()     = 0;
 };
 
-/* Concrete IBuilder for Jeep SUV cars */
+/* Concrete builder for Jeep SUV cars */
 class JeepBuilder : public IBuilder
 {
 public:
