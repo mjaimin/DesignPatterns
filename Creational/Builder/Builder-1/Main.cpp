@@ -30,8 +30,8 @@ public:
    Body   *body;
 };
 
-/* Builder is responsible for constructing the smaller parts */
-class Builder
+/* IBuilder is responsible for constructing the smaller parts */
+class IBuilder
 {
 public:
    virtual Wheel *buildWheel()   = 0;
@@ -39,8 +39,8 @@ public:
    virtual Body *buildBody()     = 0;
 };
 
-/* Concrete Builder for Jeep SUV cars */
-class JeepBuilder : public Builder
+/* Concrete IBuilder for Jeep SUV cars */
+class JeepBuilder : public IBuilder
 {
 public:
    Wheel *buildWheel() { return new Wheel(22); }
@@ -49,7 +49,7 @@ public:
 };
 
 /* Concrete builder for Nissan family cars */
-class NissanBuilder : public Builder
+class NissanBuilder : public IBuilder
 {
 public:
    Wheel *buildWheel() { return new Wheel(16); }
@@ -60,10 +60,10 @@ public:
 /* Director is responsible for the whole process */
 class Director
 {
-   Builder *builder;
+   IBuilder *builder;
 
 public:
-   void setBuilder(Builder *newBuilder)
+   void setBuilder(IBuilder *newBuilder)
    {
       builder = newBuilder;
    }
