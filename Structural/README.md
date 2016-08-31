@@ -6,7 +6,7 @@
 
   + **Composite:** Allows a group of objects representing hierarchies to be treated in the same way as a single instance of an object. 
 
-  + **Decorator:** Can dynamically surround a class and allows new behavior to be added to an existing object on the fly.
+  + **Decorator:** Provides an enhanced interface
 
   + **Facade:** A single class that represents an entire subsystem
 
