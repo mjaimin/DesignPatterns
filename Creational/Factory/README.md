@@ -1,34 +1,34 @@
 Also Known as **Virtual Constructor**
 
-##Intent
+## Intent
 
 +	Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Methode lets a class defer instantiation to subclasses.
 
-##Purpose
+## Purpose
 Enables a class to delegate the responsibility of creating a valid object.
 
 ##
 ![alt text](./Images/Factory-1.md.png "Factory")
 ##
 
-##Participants
+## Participants
 
 +	IProduct: The interface for products
 +	Concrete product: implements the object interface
 +	ICreator: Provides the FactoryMethod
 +	Concrete creator: Decides which class to instantiate
 
-##Use Factory when
+## Use Factory when
 
 +	A class can’t anticipate the class of objects it must create
 +	A class wants its subclasses to specify the objects it creates.
 +	A client delegates responsibilities to subclasses in parallel hierarchies.
 
 
-##Collaborations
+## Collaborations
 +	The creator relies on its subclasses to define the factory method so that it returns an instance of the appropriate subclass
 
-##CONSEQUENCES
+## CONSEQUENCES
 
 **Benefits**
 
