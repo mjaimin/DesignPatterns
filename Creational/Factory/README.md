@@ -1,4 +1,5 @@
 Also Known as **Virtual Constructor**
+Factory pattern allows user to create an object without exposing the creation logic to the client and refer to newly created object using a common interface.
 
 ## Intent
 
