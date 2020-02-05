@@ -4,6 +4,7 @@ Also Known as **Virtual Constructor**
 
 +	Define an interface for creating an object, but let subclasses decide which
 class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+
 ##Purpose
 Enables a class to delegate the responsibility of creating a valid object.
 
