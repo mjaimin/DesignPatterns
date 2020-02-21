@@ -2,6 +2,11 @@
 
 Behavioral patterns focus on the responsibilities that an object has. It deals with the interaction among objects to achieve larger functionality.
 
+**The following are the properties of Behavioral patterns:**
+
+They are concerned with the interaction among objects and responsibility of objects
+Objects should be able to interact and still be loosely coupled
+
   + **Mediator:**  Uses a class to simplify communication between other classes  
 
   + **Memento:** Capture and restore an object's internal state
