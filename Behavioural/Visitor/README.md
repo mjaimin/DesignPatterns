@@ -1,8 +1,8 @@
 ## Purpose
-	Allows for one or more operations to be applied to a set of objects at runtime, decoupling the operations from the object structure.
+Allows for one or more operations to be applied to a set of objects at runtime, decoupling the operations from the object structure.
 	
 ## Intent
-	Deﬁne an operation to be performed over a complex object structure without changing the elements on which it operates.	Enables new functionality to be performed on a class without affecting its structure.
+Deﬁne an operation to be performed over a complex object structure without changing the elements on which it operates.	Enables new functionality to be performed on a class without affecting its structure.
 	
 ##
 ![alt text](./Images/Visitor-1.md.png "Visitor")
