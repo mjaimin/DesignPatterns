@@ -1,5 +1,7 @@
 ##Behavioural Patterns
 
+Behavioral patterns focus on the responsibilities that an object has. It deals with the interaction among objects to achieve larger functionality.
+
   + **Mediator:**  Uses a class to simplify communication between other classes  
 
   + **Memento:** Capture and restore an object's internal state
