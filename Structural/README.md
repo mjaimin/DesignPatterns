@@ -1,4 +1,10 @@
-##Structural Patterns
+## Structural Patterns
+
+**The following are the properties of Structural patterns:**
++ They design the structure of objects and classes so that they can compose to achieve larger results
++ The focus is on simplifying the structure and identifying the relationship between classes and objects
++ They focus on class inheritance and composition
+
 
   + **Adapter:** Match interfaces of different classes
 
