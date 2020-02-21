@@ -1,3 +1,29 @@
+**Chain of Responsibility** is a behavioral design pattern that lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
+
+**Chain of responsibility Definition:**
+The Chain of responsibility design patter consists of a command(or request) and a series of processing objects that is handlers. A request is passed to the processing handler, upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
+
+The Chain of responsibility design patter consists of:
+
+>>1- Command or request
+
+>>2- A series of handlers.
+
+In the Chain of responsibility design pattern:
+
+>>A request is passed to the chain of processing handlers.
+
+>>Where, Each receiving handler decides either to process the request
+
+>>>>>>>>Or
+
+>>To pass it to the next handler in the chain.
+          
+
+
+
+
+
 ## Intent
 Avoid coupling sender of request to its receiver by giving more than one object chance to handle request.  Chain receiving objects and pass request along until an object handles it.
 ## Description
@@ -26,11 +52,11 @@ Avoid coupling sender of request to its receiver by giving more than one object 
 
 **Benefits**
 
-+ Decoupling of senders and receivers
-+ Added flexibility
-+ Sender doesn’t need to know specifically who the handlers are
++ Decoupling of senders and receivers, that is sender doesn’t need to know specifically who the handlers are
++ Added flexibility, while assigning the responsibility to the object
++ It allows to pass the request to another object, in case the current object cant handle the request
 
 **Potential Drawbacks**
 
 + Client can’t explicity specify who handles a request
-+ No guarantee of request being handled (request falls off end of chain)
++ Some requests may end up unhandled
