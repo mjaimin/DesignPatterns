@@ -3,13 +3,13 @@
 **Chain of responsibility Definition:**
 The Chain of responsibility design patter consists of a command(or request) and a series of processing objects that is handlers. A request is passed to the processing handler, upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
 
-The Chain of responsibility design patter consists of:
+**The Chain of responsibility design patter consists of:**
 
 >>1- Command or request
 
 >>2- A series of handlers.
 
-In the Chain of responsibility design pattern:
+**In the Chain of responsibility design pattern:**
 
 >>A request is passed to the chain of processing handlers.
 
