@@ -1,17 +1,6 @@
-
-##Purpose
-
-	Encapsulates a request allowing it to be treated as an object. This allows the request to be handled in traditionally object based relationships such as queuing and callbacks.
-
 ##Intent
 
-	Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
-	OR
-	The client instantiates the command object and provides it with a receiver object to handle a request.An invoker then obtains the command, referencing it via its interface, and invokes its execute method, which in turn calls into the receiver’s specific method to handle the request.
-	OR
-	The Command pattern is most useful when dealing with a request that you have no prior knowledge of what operation to perform in response to it. There are four parts to the Command pattern: the client, the invoker, the receiver, and of course the command.
-	OR
-	Encapsulates a method as an object and separates the execution of a command from its invoker.
+Command is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you parameterize methods with different requests, delay or queue a request’s execution, and support undoable operations.
 
 ##
 ![alt text](./Images/Command-1.md.png "Command")
