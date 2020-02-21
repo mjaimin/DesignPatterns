@@ -1,4 +1,4 @@
-##GOF Design Patterns
+## GOF Design Patterns
 
 + **Creational Patterns:** These design patterns provide ways to create objects while hiding the creation logic, instead of instantiating objects directly using the new operator. This gives the program more flexibility in deciding which objects need to be created for a given use case.
 
