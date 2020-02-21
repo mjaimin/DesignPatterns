@@ -18,11 +18,6 @@ In the Chain of responsibility design pattern:
 >>>>>>>>Or
 
 >>To pass it to the next handler in the chain.
-          
-
-
-
-
 
 ## Intent
 Avoid coupling sender of request to its receiver by giving more than one object chance to handle request.  Chain receiving objects and pass request along until an object handles it.
