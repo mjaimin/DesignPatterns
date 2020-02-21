@@ -1,5 +1,5 @@
 
-##Intent
+## Intent
 
 Command is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you parameterize methods with different requests, delay or queue a request’s execution, and support undoable operations.
 
@@ -7,7 +7,7 @@ Command is a behavioral design pattern that turns a request into a stand-alone o
 ![alt text](./Images/Command-1.md.png "Command")
 ##
 
-##Participant
+## Participant
 
 	Client(User of the editor, who selects a Cut command on a menu)
 		Creates and executes Commands
@@ -27,7 +27,7 @@ Command is a behavioral design pattern that turns a request into a stand-alone o
 	Action(Cut)
 		The operation that needs to be performed
 
-##Key Features of the Command Pattern
+## Key Features of the Command Pattern
 
 	The primary usefulness of the command pattern is the flexibility and extensibility it affords when defining behavior in applications.
 	• The command pattern encapsulates behavior in a portable command object.
@@ -35,7 +35,7 @@ Command is a behavioral design pattern that turns a request into a stand-alone o
 	• The command pattern allows a client to dynamically create new behavior by creating new command objects and assigning them to invokers at runtime.
 	• The command pattern allows for straightforward implementation of command chaining, undo, redo and logging features into an application.
 
-##Use the Command pattern when
+## Use the Command pattern when
 
 	You have:
 		• Commands that different receivers can handle in different ways
