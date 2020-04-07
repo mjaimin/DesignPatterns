@@ -7,18 +7,18 @@ using namespace std;
 
 class Purchase {
 private:
-  int number_;
+  int poNumber_;
   double amount_;
   string purpose_;
 
 public:
-  Purchase(int number, double amount, string purpose)
-    : number_(number) , amount_(amount) , purpose_(purpose)
+  Purchase(int poNumber, double amount, string purpose)
+    : poNumber_(poNumber) , amount_(amount) , purpose_(purpose)
   { }
 
-  int Number() { return number_; }
+  int getPONumber() { return poNumber_; }
 
-  void Number(int number) { number_ = number; }
+  void getPONumber(int poNumber) { poNumber_ = poNumber; }
 
   double Amount() { return amount_; }
   
@@ -45,7 +45,7 @@ class Director : public Approver {
 public:
   virtual void ProcessRequest(Purchase* purchase) {
     if(purchase->Amount() < 1000.0) {
-      cout << "Director approved request # " << purchase->Number() << endl;
+      cout << "Director approved request # " << purchase->getPONumber() << endl;
     } else if(successor_ != 0) {
       successor_->ProcessRequest(purchase);
     }
@@ -56,7 +56,7 @@ class VicePresident : public Approver {
 public:
   virtual void ProcessRequest(Purchase* purchase) {
     if(purchase->Amount() < 25000.0) {
-      cout << "VicePresident approved request # " << purchase->Number() << endl;
+      cout << "VicePresident approved request # " << purchase->getPONumber() << endl;
     } else if(successor_ != 0) {
       successor_->ProcessRequest(purchase);
     }
@@ -67,9 +67,9 @@ class President : public Approver {
 public:
   virtual void ProcessRequest(Purchase* purchase) {
     if(purchase->Amount() < 100000.0) {
-      cout << "President approved request # " << purchase->Number() << endl;
+      cout << "President approved request # " << purchase->getPONumber() << endl;
     } else {
-      cout << "Request # " << purchase->Number() << " requires an executive meeting!" << endl;
+      cout << "Request # " << purchase->getPONumber() << " requires an executive meeting!" << endl;
     }
   }
 };
@@ -79,6 +79,7 @@ int main() {
   Approver *sam = new VicePresident();
   Approver *tammy = new President();
 
+  //The following chain can be set differently for each users in an organization
   larry->SetSuccessor(sam);
   sam->SetSuccessor(tammy);
 
