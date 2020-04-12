@@ -19,19 +19,15 @@ public:
 class SantaClaus : public IVisitor
 {
 public:
-   void Visit(IElement *v)
-   {
-      std::cout << "Santa visited " << v->Name << std::endl;
-   }
+   void Visit(IElement *v) {
+      std::cout << "Santa visited " << v->Name << std::endl; }
 };
 
 class MailCarrier : public IVisitor
 {
 public:
-   void Visit(IElement *v)
-   {
-      std::cout << "MailCarrier visited " << v->Name << std::endl;
-   }
+   void Visit(IElement *v) {
+      std::cout << "MailCarrier visited " << v->Name << std::endl; }
 };
 
 
@@ -39,10 +35,9 @@ class Household : public IElement
 {
 private:
    Household() {}
-public: Household(std::string name)
-   {
-      Name = name;
-   }
+public: 
+   Household(std::string name) {
+      Name = name; }
 
    void Accept(IVisitor *v)
    {
@@ -55,10 +50,8 @@ class BusinessEntity : public IElement
 private:
    BusinessEntity() {}
 public:
-   BusinessEntity(std::string name)
-   {
-      Name = name;
-   }
+   BusinessEntity(std::string name) {
+      Name = name; }
 
    void Accept(IVisitor *v)
    {
@@ -76,7 +69,6 @@ int main()
 
    //use one visitor, or logic
    IVisitor *visitor = new SantaClaus();
-
    household1->Accept(visitor);
    household2->Accept(visitor);
    BusinessEntity1->Accept(visitor);
