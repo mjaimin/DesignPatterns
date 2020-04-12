@@ -20,19 +20,15 @@ public:
 class VisitorA : public IVisitor
 {
 public:
-   void Visit(IElement *elm)
-   {
-      std::cout << "VisitorA -> " << elm->getName() << std::endl;
-   }
+   void Visit(IElement *elm) {
+      std::cout << "VisitorA -> " << elm->getName() << std::endl; }
 };
 
 class VisitorB : public IVisitor
 {
 public:
-   void Visit(IElement *elm)
-   {
-      std::cout << "VisitorB -> " << elm->getName() << std::endl;
-   }
+   void Visit(IElement *elm) {
+      std::cout << "VisitorB -> " << elm->getName() << std::endl; }
 };
 
 class ElementA : public IElement
@@ -40,15 +36,11 @@ class ElementA : public IElement
 public:
    ElementA() {}
 
-   void Accept(IVisitor& v)
-   {
-      v.Visit(this);
-   }
+   void Accept(IVisitor& v) {
+      v.Visit(this); }
 
-   std::string getName()
-   {
-      return("ElementA");
-   }
+   std::string getName() {
+      return("ElementA"); }
 };
 
 class ElementB : public IElement
@@ -56,15 +48,11 @@ class ElementB : public IElement
 public:
    ElementB() {}
 
-   void Accept(IVisitor& v)
-   {
-      v.Visit(this);
-   }
+   void Accept(IVisitor& v) {
+      v.Visit(this); }
 
-   std::string getName()
-   {
-      return("ElementB");
-   }
+   std::string getName() {
+      return("ElementB"); }
 };
 
 int main()
