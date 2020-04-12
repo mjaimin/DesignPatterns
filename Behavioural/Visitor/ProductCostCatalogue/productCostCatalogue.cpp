@@ -13,19 +13,9 @@ protected:
 
 public:
    BaseSummingVisitor() : m_nNumProducts(0), m_ySum(0.0) {}
-
-   void Reset()
-   {
-      m_nNumProducts = 0;
-      m_ySum         = 0.0;
-   }
-
    virtual void VisitProduct(Product *p) { }
-
    virtual void Results() { }
 };
-
-
 
 class Product
 {
@@ -63,7 +53,7 @@ public:
 
    void Results()
    {
-      std::cout << "Total cost of " << m_nNumProducts << " onhand products is:" << m_ySum << std::endl;
+      std::cout << "Total cost of " << m_nNumProducts << " onhand products is: " << m_ySum << std::endl;
    }
 };
 
@@ -79,7 +69,7 @@ public:
 
    void Results()
    {
-      std::cout << "Total cost of " << m_nNumProducts << " sold products is:" << m_ySum << std::endl;
+      std::cout << "Total cost of " << m_nNumProducts << " sold products is: " << m_ySum << std::endl;
    }
 };
 
@@ -95,14 +85,14 @@ public:
 
    void Results()
    {
-      std::cout << "Total price of " << m_nNumProducts << " onhand products is:" << m_ySum << std::endl;
+      std::cout << "Total price of " << m_nNumProducts << " onhand products is: " << m_ySum << std::endl;
    }
 };
 
 int main()
 {
    std::list<Product *> l;
-
+// productName, onHandQuantity, soldToDate, costToCompany, sallingPrice
    l.push_front(new Product("chair", 5, 2, 10.00, 24.99));
    l.push_front(new Product("desk", 10, 5, 45.00, 150.00));
    l.push_front(new Product("filing cabinet", 20, 7, 15.00, 45.00));
