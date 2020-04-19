@@ -29,6 +29,7 @@ Deﬁne an operation to be performed over a complex object structure without cha
 		implements an accept operation that thakes a visitor as an argument
 		
 #Use Visitor When
+
 +	When you want to perform an operation on the data contained in a number of objects that have different interfaces. and if you have to perform a number of unrelated operations on these classes.
 +	Visitors are a useful way to add function to class libraries or frameworks for which you either do not have the source or cannot change the source for other technical (or political) reasons. In these latter cases, you simply subclass the classes of the framework and add the accept method to each subclass.
 +	You have a class hierarchy that is effectively sealed.
