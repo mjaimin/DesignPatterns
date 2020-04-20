@@ -4,6 +4,11 @@ Allows for one or more operations to be applied to a set of objects at runtime, 
 ## Intent
 Deﬁne an operation to be performed over a complex object structure without changing the elements on which it operates.	Enables new functionality to be performed on a class without affecting its structure.
 
+# Description
+The visitor pattern consists of two parts:
+a method called Visit() which is implemented by the visitor and is called for every element in the data structure
+visitable classes providing Accept() methods that accept a visitor
+
 # Motivation
 +	Desire to keep the logic together; as opposed to distributing the code over all classes that can be in the object structure
 +	Support frequent addition of new operations
@@ -17,19 +22,19 @@ Deﬁne an operation to be performed over a complex object structure without cha
 
 +	Client
 		A class that creates and maintains the object structure; instantiates and calls the Visitors
-+	ObjectStructure
-		A composite structure of several related element types
 +	IVisitor
-		An interface for all the Visitor classes
-+	Visitor1 and Visitor2
-		Classes that contain methods that iterate through the object structure and apply operations to its elements
-+	Element
-		deﬁnes an accept operation that takes a visitor as an argument
-+	ElementA and ElementB
-		implements an accept operation that thakes a visitor as an argument
+		This is an interface or an abstract class used to declare the visit operations for all the types of visitable classes.
++	Visitor
+                For each type of visitor, all the visit methods declared in abstract visitor must be implemented. Each Visitor will be responsible for different operations.
++	Visitable(Element)
+		This is an interface which declares the accept operation. This is the entry point which enables an object to be “visited” by the visitor object.
++	ConcreteVisitable (concreteElement)
+		These classes implement the Visitable interface or class and defines the accept operation. The visitor object is passed to this object using the accept operation.implements an accept operation that thakes a visitor as an argument
 		
 # Use Visitor When
 
++       when you need to perform an operation on a group of similar kind of Objects.
++       With the help of visitor pattern, we can move the operational logic from the objects to another class.
 +	When you want to perform an operation on the data contained in a number of objects that have different interfaces. and if you have to perform a number of unrelated operations on these classes.
 +	Visitors are a useful way to add function to class libraries or frameworks for which you either do not have the source or cannot change the source for other technical (or political) reasons. In these latter cases, you simply subclass the classes of the framework and add the accept method to each subclass.
 +	You have a class hierarchy that is effectively sealed.
