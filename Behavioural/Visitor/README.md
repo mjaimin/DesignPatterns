@@ -23,18 +23,19 @@ visitable classes providing Accept() methods that accept a visitor
 
 ## Participant
 
-+	Visitor
-+		This is an interface or an abstract class used to declare the visit operations for all the types of visitable classes.
-+	ConcreteVisitor
-+		Implements each operation declared by Visitor. Each operation implements a fragment of the algorithm defined for the corresponding class of object in the structure. ConcreteVisitor provides the context for the algorithm and stores its local state. This state often accumulates results during the traversal of the structure.
-+	Element(Visitable)
-+		This is an interface which declares the accept operation. This is the entry point which enables an object to be “visited” by the visitor object.
-+	ConcreteElement (ConcreteVisitable)
-+		Implements an Accept operation that thakes a visitor as an argument. These classes implement the Visitable interface or class and defines the accept operation. The visitor object is passed to this object using the accept operation. 
-+	ObjectStructure
-+ 		Can enumerate its elements.
-+ 		May provide a high-level interface to allow the visitor to visit its elements.
-+ 		May either be a composite or a collection such as a list or a set
++	**Visitor**
+		This is an interface or an abstract class used to declare the visit operations for all the types of visitable classes.
++	**ConcreteVisitor**
+		Implements each operation declared by Visitor. Each operation implements a fragment of the algorithm defined for the corresponding class of object in the structure. ConcreteVisitor provides the context for the algorithm and stores its local state. This state often accumulates results during the traversal of the structure.
++	**Element(Visitable)**
+		This is an interface which declares the accept operation. This is the entry point which enables an object to be “visited” by the visitor object.
++	**ConcreteElement (ConcreteVisitable)**
+		Implements an Accept operation that thakes a visitor as an argument. These classes implement the Visitable interface or class and defines the accept operation. The visitor object is passed to this object using the accept operation. 
++	**ObjectStructure**
+		Can enumerate its elements.
+		May provide a high-level interface to allow the visitor to visit its elements.
+		May either be a composite or a collection such as a list or a set
+		
 # Use Visitor When
 +	An object structure contains many classes of objects with differing interfaces, and you want to perform operations on these
 objects that depend on their concrete classes.
