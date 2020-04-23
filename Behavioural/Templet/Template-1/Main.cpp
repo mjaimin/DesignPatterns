@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+using namespace std;
 
 class CaffeineBeverageWithHook {
 public:
@@ -33,27 +34,14 @@ public:
    void addCondiments() { std::cout << "Adding Lemon" << std::endl; }
    bool customerWantsCondiments()
    {
-      std::string answer = getUserInput();
-
-      if (answer.compare("y") == 0)
-      {
-         return true;
-      }
-      else
-      {
-         return false;
-      }
+      return (getUserInput().compare("y") == 0)?  true : false;
    }
 
 private:
    std::string getUserInput()
    {
-      std::string answer;
-
       std::cout << "Would you like lemon with your tea (y/n)? ";
-      std::cin >> answer;
-
-      return answer;
+      return std::string("y");// Assume Random
    }
 };
 
@@ -63,27 +51,14 @@ public:
    void addCondiments() { std::cout << "Adding Sugar and Milk" << std::endl; }
    bool customerWantsCondiments()
    {
-      std::string answer = getUserInput();
-
-      if (answer.compare("y") == 0)
-      {
-         return true;
-      }
-      else
-      {
-         return false;
-      }
+      return (getUserInput().compare("y") == 0)?  true : false;
    }
 
 private:
    std::string getUserInput()
    {
-      std::string answer;
-
       std::cout << "Would you like milk and sugar with your coffee (y/n)? ";
-      std::cin >> answer;
-
-      return answer;
+      return std::string("y");// Assume Random
    }
 };
 
