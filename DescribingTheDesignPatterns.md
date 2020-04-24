@@ -1,8 +1,8 @@
 ## Describing The DesignPatterns
 -   **Pattern Name and Classification**
--   Intent
+-   **Intent**
     +   What does thedesign pattern do? What is its rationaleand intent? What particular design issueor problem does it address?
--    Also Known As
+-    **Also Known As**
 -   **Motivation**
     +   A scenario that illustrates a design problem and how theclass and object structures in the pattern solvetheproblem. 
 -   **Applicability**
