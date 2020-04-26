@@ -1,4 +1,4 @@
-Class (change class relationships at compile time)
+<sub>Class (change class relationships at compile time)</sub>
 
 ## Factory Method
 
