@@ -1,7 +1,9 @@
 **Catalog and organization of catalog**
 +    We classify design patterns by two criteria. The first criterion, called purpose, reflects what a pattern does. Patterns can have a creational, structural, or behavioral purpose. Creational patterns concern the process of object creation. Structural patterns deal with the composition of classes or objects. Behavioral patterns characterize how classes or objects interact and distribute responsibility.
 +    The second criterion, called a scope, specifies whether the pattern applies primarily to classes or to objects. Class patterns deal with relationships between classes and their subclasses. These relationships are established through inheritance, so they are static—fixed at compile-time. Object patterns deal with object relationships, which can be changed at run-time and are more dynamic. - - 
-
+##
+![alt text](./ScopeClassObjectPurpose.png "ScopeClassObjectPurpose")
+##
 **Design Patterns to solve design problems**
 +    Design patterns solve many of the day-to-day problems object-oriented designers face, and in many different ways. Here are several of these problems and how design patterns solve them. 
 1.	**Finding Appropriate Objects**
