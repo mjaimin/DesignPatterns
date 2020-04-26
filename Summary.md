@@ -22,6 +22,7 @@ is a creational design pattern that lets you produce families of related objects
 
 (Families of product objects can vary)
 +	**Purpose**
+
 	Provide an interface that delegates creation calls to one or more concrete classes in order to deliver specific objects.
 +	**Use When**
 	+	The creation of objects should be independent of the system utilizing them.
@@ -38,7 +39,8 @@ is a creational design pattern that lets you produce different types and represe
 
 (How a composite object gets created can vary)
 +	**Purpose**
-Allows for the dynamic creation of objects based upon easily interchangeable algorithms.
+
+	Allows for the dynamic creation of objects based upon easily interchangeable algorithms.
 +	**Use When**
 	+	Object creation algorithms should be decoupled from the system.
 	+	Multiple representations of creation algorithms are required.
@@ -58,7 +60,8 @@ is a creational design pattern that lets you produce new objects by copying exis
 
 (Class of object that is instantiated can vary)
 +	**Purpose**
-Create objects based upon a template of an existing objects through cloning.
+
+	Create objects based upon a template of an existing objects through cloning.
 +	**Use When**
 	+	Composition, creation, and representation of objects should be decoupled from a system.
 	+	Classes to be created are specified at runtime.
@@ -76,7 +79,8 @@ object (change object relationships at runtime)
 is a creational design pattern that lets you ensure that a class has only one instance and provide a global access point to this instance.
 (The sole instance of a class can vary)
 +	**Purpose**
-Ensures that only one instance of a class is allowed within a system.
+
+	Ensures that only one instance of a class is allowed within a system.
 +	**Use When**
 	+	Exactly one instance of a class is required.
 	+	Controlled access to a single object is necessary.
@@ -91,7 +95,8 @@ is a structural design pattern that allows objects with incompatible interfaces 
 
 (Interface to an object can vary)
 +	**Purpose**
-Permits classes with disparate interfaces to work together by creating a common object by which they may communicate and interact.
+
+	Permits classes with disparate interfaces to work together by creating a common object by which they may communicate and interact.
 +	**Use When**
 	+	A class to be used doesn’t meet interface requirements.
 	+	Complex conditions tie object behavior to its state.
@@ -117,7 +122,8 @@ is a structural design pattern that lets you split a giant class or a set of clo
 
 (Implementation of an object can vary, let abstractions and implementations vary independently)
 +	**Purpose**
-Defines an abstract object structure independently of the implementation object structure in order to limit coupling.
+
+	Defines an abstract object structure independently of the implementation object structure in order to limit coupling.
 +	**Use When**
 	+	Abstractions and implementations should not be bound at compile time.
 	+	Abstractions and implementations should be independently extensible.
@@ -133,7 +139,8 @@ is a structural design pattern that lets you compose objects into tree structure
 
 (Structure and composition of an object can vary)
 +	**Purpose**
-Facilitates the creation of object hierarchies where each object can be treated independently or as a set of nested objects through the same interface.
+
+	Facilitates the creation of object hierarchies where each object can be treated independently or as a set of nested objects through the same interface.
 +	**Use When**
 	+	Hierarchical representations of objects are needed.
 	+	Objects and compositions of objects should be treated uniformly.
@@ -146,7 +153,8 @@ is a structural design pattern that lets you attach new behaviors to objects by 
 
 (Responsibilities of an object without subclassing can vary)
 +	**Purpose**
-Allows for the dynamic wrapping of objects in order to modify their existing responsibilities and behaviors.
+
+	Allows for the dynamic wrapping of objects in order to modify their existing responsibilities and behaviors.
 +	**Use When**
 	+	Object responsibilities and behaviors should be dynamically modifiable.
 	+	Concrete implementations should be decoupled from responsibilities and behaviors.
@@ -162,7 +170,8 @@ is a structural design pattern that lets you provide a simplified interface to a
 
 (Interface to a subsystem can vary)
 +	**Purpose**
-Supplies a single interface to a set of interfaces within a system.
+
+	Supplies a single interface to a set of interfaces within a system.
 +	**Use When**
 	+	A simple interface is needed to provide access to a complex system.
 	+	There are many dependencies between system implementations and clients.
@@ -174,7 +183,8 @@ object (change object relationships at runtime)
 
 is a structural design pattern that lets you fit more objects into the available amount of RAM by sharing common parts of object state among multiple objects, instead of keeping it in each object.
 +	**Purpose**
-Facilitates the reuse of many fine grained objects, making the utilization of large numbers of objects more efficient.
+
+	Facilitates the reuse of many fine grained objects, making the utilization of large numbers of objects more efficient.
 +	**Use When**
 	+	Many like objects are used and storage cost is high.
 	+	The majority of each object’s state can be made extrinsic.
@@ -192,7 +202,8 @@ is a structural design pattern that lets you provide a substitute or placeholder
 
 (How an object is accessed can vary; its location can vary)
 +	**Purpose**
-Allows for object level access control by acting as a pass through entity or a placeholder object.
+
+	Allows for object level access control by acting as a pass through entity or a placeholder object.
 +	**Use When**
 	+	The object being represented is external to the system.
 	+	Objects need to be created on demand.
@@ -208,7 +219,8 @@ Class (change class relationships at compile time)
 
 is a behavioral design pattern that lets you access the elements of an aggregate object sequentially without exposing its underlying representation.
 +	**Purpose**
-Allows for access to the elements of an aggregate object without allowing access to its underlying representation.
+
+	Allows for access to the elements of an aggregate object without allowing access to its underlying representation.
 +	**Use When**
 	+	Access to elements is needed without access to the entire representation.
 	+	Multiple or concurrent traversals of the elements are needed.
@@ -221,7 +233,8 @@ Class (change class relationships at compile time)
 
 is a behavioral design pattern that lets you define the skeleton of an algorithm and allow subclasses to redefine certain steps of the algorithm without changing its structure.
 +	**Purpose**
-Identifies the framework of an algorithm, allowing implementing classes to define the actual behavior.
+
+	Identifies the framework of an algorithm, allowing implementing classes to define the actual behavior.
 +	**Use When**
 A single abstract implementation of an algorithm is needed.
 Common behavior among subclasses should be localized to a common class.
@@ -235,7 +248,8 @@ object (change object relationships at runtime)
 
 is a behavioral design pattern that lets you avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
 +	**Purpose**
-Gives more than one object an opportunity to handle a request by linking receiving objects together.
+
+	Gives more than one object an opportunity to handle a request by linking receiving objects together.
 +	**Use When**
 	+	Multiple objects may handle a request and the handler doesn’t have to be a specific object.
 	+	A set of objects should be able to handle a request with the handler determined at runtime.
@@ -247,7 +261,8 @@ object (change object relationships at runtime)
 
 is a behavioral design pattern that lets you turn a request into stand-alone object, which can be used to parametrize objects with different requests, queue or log requests, and support undoable operations.
 +	**Purpose**
-Encapsulates a request allowing it to be treated as an object. This allows the request to be handled in traditionally object based relationships such as queuing and callbacks.
+
+	Encapsulates a request allowing it to be treated as an object. This allows the request to be handled in traditionally object based relationships such as queuing and callbacks.
 +	**Use When**
 	+	You need callback functionality.
 	+	Requests need to be handled at variant times or in variant orders.
@@ -262,7 +277,8 @@ is a behavioral design pattern that lets you define an object that encapsulates 
 
 (encapsulates relations between a set of objects)
 +	**Purpose**
-Allows loose coupling by encapsulating the way disparate sets of objects interact and communicate with each other. Allows for the actions of each object set to vary independently of one another.
+
+	Allows loose coupling by encapsulating the way disparate sets of objects interact and communicate with each other. Allows for the actions of each object set to vary independently of one another.
 +	**Use When**
 	+	Communication between sets of objects is well defined and complex.
 	+	Too many relationships exist and common point of control or communication is needed.
@@ -275,7 +291,8 @@ is a behavioral design pattern that lets you capture the object's internal state
 
 (capture the object's internal state)
 +	**Purpose**
-Allows for capturing and externalizing an object’s internal state so that it can be restored later, all without violating encapsulation.
+
+	Allows for capturing and externalizing an object’s internal state so that it can be restored later, all without violating encapsulation.
 +	**Use When**
 	+	The internal state of an object must be saved and restored at a later time.
 	+	Internal state cannot be exposed by interfaces without exposing implementation.
@@ -289,7 +306,8 @@ is a behavioral design pattern that lets you define a one-to-many dependency bet
 
 (one-to-many dependency)
 +	**Purpose**
-Lets one or more objects be notified of state changes in other objects within the system.
+
+	Lets one or more objects be notified of state changes in other objects within the system.
 +	**Use When**
 	+	State changes in one or more objects should trigger behavior in other objects
 	+	Broadcasting capabilities are required.
@@ -303,7 +321,8 @@ is a behavioral design pattern that allows an object to alter its behavior when 
 
 (alter its behavior when its internal state changes)
 +	**Purpose**
-Ties object circumstances to its behavior, allowing the object to behave in different ways based upon its internal state.
+
+	Ties object circumstances to its behavior, allowing the object to behave in different ways based upon its internal state.
 +	**Use When**
 	+	The behavior of an object should be influenced by its state.
 	+	Complex conditions tie object behavior to its state.
@@ -317,7 +336,8 @@ is a behavioral design pattern that lets you define a family of algorithms, enca
 
 (vary independently from the clients)
 +	**Purpose**
-Defines a set of encapsulated algorithms that can be swapped to carry out a specific behavior.
+
+	Defines a set of encapsulated algorithms that can be swapped to carry out a specific behavior.
 +	**Use When**
 	+	The only difference between many related classes is their behavior.
 	+	Multiple versions or variations of an algorithm are required.
@@ -331,7 +351,8 @@ object (change object relationships at runtime)
 
 is a behavioral design pattern that lets you define a new operation without changing the classes of the objects on which it operates.
 +	**Purpose**
-Allows for one or more operations to be applied to a set of objects at runtime, decoupling the operations from the object structure.
+
+	Allows for one or more operations to be applied to a set of objects at runtime, decoupling the operations from the object structure.
 +	**Use When**
 	+	An object structure must have many unrelated operations performed upon it.
 	+	The object structure can’t change but operations performed on it can.
