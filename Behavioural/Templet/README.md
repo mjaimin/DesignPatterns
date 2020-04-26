@@ -25,10 +25,10 @@ Sometimes you want to specify the order of operations that a method uses, but al
 +   ConcreteClass relies on AbstractClass to implement the invariant steps of the algorithm.
 
 ## Use Template When
-+   To implement the invariant parts of an algorithm once in base class and leave it up to subclasses to implement the behavior that can vary
-+   To localize common behavior among subclasses and place it in a common class (in this case, a superclass) to avoid code duplication. This is a classic example of ”code refactoring.”
-+   We want to avoid code duplication, implementing variations of the algorithm in subclasses
-+   We want to control the point that sub classing is allowed.
++   A single abstract implementation of an algorithm is needed.
++   Common behavior among subclasses should be localized to a common class.
++   Parent classes should be able to uniformly invoke behavior in their subclasses.
++   Most or all subclasses need to implement the behavior.
 
 ## CONSEQUENCES
 
