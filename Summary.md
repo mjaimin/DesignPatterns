@@ -1,4 +1,4 @@
-## Factory Method <sub>Class (change class relationships at compile time)</sub>
+</sub>## Factory Method <sub>Class (change class relationships at compile time)</sub>
 
 is a creational design pattern that provides an interface for creating objects in superclass, but allow subclasses to alter the type of objects that will be created.
 
@@ -12,9 +12,8 @@ is a creational design pattern that provides an interface for creating objects i
 	+	Subclasses may specify what objects should be created.
 	+	Parent classes wish to defer creation to their subclasses.
 
-object (change object relationships at runtime)
 
-## Abstract Factory
+## Abstract Factory <sub>object (change object relationships at runtime)
 
 is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
 
@@ -29,9 +28,8 @@ is a creational design pattern that lets you produce families of related objects
 	+	Libraries must be published without exposing implementation details.
 	+	Concrete classes should be decoupled from clients.
 
-object (change object relationships at runtime)
 
-## Builder
+## Builder <sub>object (change object relationships at runtime)</sub>
 
 is a creational design pattern that lets you produce different types and representations of an object using the same building process. Builder allows constructing complex objects step by step.
 
@@ -50,9 +48,8 @@ CarBuilder builder = new CarBuilder();
 director.constructSportsCar(builder);
 Car car = builder.getResult();
 
-object (change object relationships at runtime)
 
-## Prototype
+## Prototype <sub>object (change object relationships at runtime)</sub>
 
 is a creational design pattern that lets you produce new objects by copying existing ones without compromising their internals.
 
@@ -70,9 +67,8 @@ private Shape clone() {
     return new Circle(this);
 }
 
-object (change object relationships at runtime)
 
-## Singleton
+## Singleton <sub>object (change object relationships at runtime)</sub>
 
 is a creational design pattern that lets you ensure that a class has only one instance and provide a global access point to this instance.
 (The sole instance of a class can vary)
@@ -85,9 +81,9 @@ is a creational design pattern that lets you ensure that a class has only one in
 	+	Structural -- (create large composition)
 	+	Responsible for building simple and efficient class hierarchies and relations between different classes.
 
-Class (change class relationships at compile time)
 
-## Adapter
+
+## Adapter <sub>Class (change class relationships at compile time)</sub>
 
 is a structural design pattern that allows objects with incompatible interfaces to collaborate.
 
@@ -112,9 +108,8 @@ public class SquarePegAdapter extends RoundPeg {
     }
 }
 
-object (change object relationships at runtime)
 
-## Bridge
+## Bridge <sub>object (change object relationships at runtime)</sub>
 
 is a structural design pattern that lets you split a giant class or a set of closely related classes into two separate hierarchies, abstraction and implementation, which can be developed independently of each other.
 
@@ -129,9 +124,8 @@ is a structural design pattern that lets you split a giant class or a set of clo
 	+	Implementation details should be hidden from the client.
 
 
-object (change object relationships at runtime)
 
-## Composite
+## Composite <sub>object (change object relationships at runtime)</sub>
 
 is a structural design pattern that lets you compose objects into tree structures and allow clients to work with these structures as if they were individual objects.
 
@@ -143,9 +137,8 @@ is a structural design pattern that lets you compose objects into tree structure
 	+	Hierarchical representations of objects are needed.
 	+	Objects and compositions of objects should be treated uniformly.
 
-object (change object relationships at runtime)
 
-## Decorator (Wrapper)
+## Decorator (Wrapper) <sub>object (change object relationships at runtime)</sub>
 
 is a structural design pattern that lets you attach new behaviors to objects by placing them inside wrapper objects that contain these behaviors.
 
@@ -160,9 +153,8 @@ is a structural design pattern that lets you attach new behaviors to objects by 
 	+	Specific functionality should not reside high in the object hierarchy.
 	+	A lot of little objects surrounding a concrete implementation is acceptable.
 
-object (change object relationships at runtime)
 
-## Facade
+## Facade <sub>object (change object relationships at runtime)</sub>
 
 is a structural design pattern that lets you provide a simplified interface to a complex system of classes, library or framework.
 
@@ -175,9 +167,8 @@ is a structural design pattern that lets you provide a simplified interface to a
 	+	There are many dependencies between system implementations and clients.
 	+	Systems and subsystems should be layered.
 
-object (change object relationships at runtime)
 
-## Flyweight
+## Flyweight <sub>object (change object relationships at runtime)</sub>
 
 is a structural design pattern that lets you fit more objects into the available amount of RAM by sharing common parts of object state among multiple objects, instead of keeping it in each object.
 +	**Purpose**
@@ -192,9 +183,8 @@ is a structural design pattern that lets you fit more objects into the available
 	+	intrinsic state: fields that contain unchanging data, duplicate across many objects;
 	+	extrinsic state: fields that contain contextual data, unique for all objects
 
-object (change object relationships at runtime)
 
-## Proxy (Surrogate)
+## Proxy (Surrogate) <sub>object (change object relationships at runtime)</sub>
 
 is a structural design pattern that lets you provide a substitute or placeholder for another object to control access to it.
 
@@ -210,10 +200,7 @@ is a structural design pattern that lets you provide a substitute or placeholder
 	+	Behavioral (divide responsibilities)
 	+	Responsible for the efficient and safe distribution of behaviors among the program's objects.
 
-
-Class (change class relationships at compile time)
-
-## Iterator
+## Iterator <sub>Class (change class relationships at compile time)</sub>
 
 is a behavioral design pattern that lets you access the elements of an aggregate object sequentially without exposing its underlying representation.
 +	**Purpose**
@@ -225,9 +212,7 @@ is a behavioral design pattern that lets you access the elements of an aggregate
 	+	A uniform interface for traversal is needed.
 	+	Subtle differences exist between the implementation details of various iterators.
 
-Class (change class relationships at compile time)
-
-## Template Method
+## Template Method <sub>Class (change class relationships at compile time)</sub>
 
 is a behavioral design pattern that lets you define the skeleton of an algorithm and allow subclasses to redefine certain steps of the algorithm without changing its structure.
 +	**Purpose**
@@ -240,9 +225,8 @@ Parent classes should be able to uniformly invoke behavior in their subclasses.
 Most or all subclasses need to implement the behavior.
 
 
-object (change object relationships at runtime)
 
-## Chain of Responsibility
+## Chain of Responsibility <sub>object (change object relationships at runtime)</sub>
 
 is a behavioral design pattern that lets you avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
 +	**Purpose**
@@ -253,9 +237,8 @@ is a behavioral design pattern that lets you avoid coupling the sender of a requ
 	+	A set of objects should be able to handle a request with the handler determined at runtime.
 	+	A request not being handled is an acceptable potential outcome.
 
-object (change object relationships at runtime)
 
-## Command
+## Command <sub>object (change object relationships at runtime)</sub>
 
 is a behavioral design pattern that lets you turn a request into stand-alone object, which can be used to parametrize objects with different requests, queue or log requests, and support undoable operations.
 +	**Purpose**
@@ -267,9 +250,8 @@ is a behavioral design pattern that lets you turn a request into stand-alone obj
 	+	A history of requests is needed.
 	+	The invoker should be decoupled from the object handling the invocation.
 
-object (change object relationships at runtime)
 
-## Mediator
+## Mediator <sub>object (change object relationships at runtime)</sub>
 
 is a behavioral design pattern that lets you define an object that encapsulates relations between a set of objects to make them independent of each other.
 
@@ -281,9 +263,8 @@ is a behavioral design pattern that lets you define an object that encapsulates 
 	+	Communication between sets of objects is well defined and complex.
 	+	Too many relationships exist and common point of control or communication is needed.
 
-object (change object relationships at runtime)
 
-## Memento
+## Memento <sub>object (change object relationships at runtime)</sub>
 
 is a behavioral design pattern that lets you capture the object's internal state without exposing its internal structure, so that the object can be returned to this state later.
 
@@ -296,9 +277,8 @@ is a behavioral design pattern that lets you capture the object's internal state
 	+	Internal state cannot be exposed by interfaces without exposing implementation.
 	+	Encapsulation boundaries must be preserved.
 
-object (change object relationships at runtime)
 
-## Observer
+## Observer <sub>object (change object relationships at runtime)</sub>
 
 is a behavioral design pattern that lets you define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
 
@@ -311,9 +291,8 @@ is a behavioral design pattern that lets you define a one-to-many dependency bet
 	+	Broadcasting capabilities are required.
 	+	An understanding exists that objects will be blind to the expense of notification.
 
-object (change object relationships at runtime)
 
-## State
+## State <sub>object (change object relationships at runtime)</sub>
 
 is a behavioral design pattern that allows an object to alter its behavior when its internal state changes. The object will appear to change its class.
 
@@ -326,9 +305,8 @@ is a behavioral design pattern that allows an object to alter its behavior when 
 	+	Complex conditions tie object behavior to its state.
 	+	Transitions between states need to be explicit.
 
-object (change object relationships at runtime)
 
-## Strategy
+## Strategy <sub>object (change object relationships at runtime)</sub>
 
 is a behavioral design pattern that lets you define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from the clients that use it.
 
@@ -343,9 +321,8 @@ is a behavioral design pattern that lets you define a family of algorithms, enca
 	+	The behavior of a class should be defined at runtime.
 	+	Conditional statements are complex and hard to maintain.
 
-object (change object relationships at runtime)
 
-## Visitor
+## Visitor <sub>object (change object relationships at runtime)</sub>
 
 is a behavioral design pattern that lets you define a new operation without changing the classes of the objects on which it operates.
 +	**Purpose**
