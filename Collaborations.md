@@ -20,7 +20,7 @@
 
 ## Prototype ##
 
-+	Prototype has many of the same consequences that Abstract Factory and Builder have: It hides the concrete product classes from the client, thereby reducing the number of names clients know about. Moreover, these patterns let a client work with application-specific classes without modification.
++	A client asks a prototype to clone itself.
 
 ## Adapter (Wrapper) ##
 
@@ -78,8 +78,12 @@
 +	Colleagues send and receive requests from a Mediator object. The mediator implements the cooperative behavior by routing requests between the appropriate colleague(s).
 
 ## Memento (Token) ##
++	A caretaker requests a memento from an originator, holds it for a time, and passes it back to the originator, but sometimes the caretaker won't pass the memento back to the originator, because the originator might never need to revert to an earlier state.
++	Mementos are passive. Only the originator that created a memento will assign or retrieve its state.
 
 ## Observer (Dependents, Publish-Subscribe) ##
++	ConcreteSubject notifies its observers whenever a change occurs that could make its observers' state inconsistent with its own.
++	After being informed of a change in the concrete subject, a ConcreteObserver object may query the subject for information. ConcreteObserver uses this information to reconcile its state with that of the subject.
 
 ## State ##
 
@@ -98,4 +102,5 @@
 +	ConcreteClass relies on AbstractClass to implement the invariant steps of the algorithm.
 
 ## Visitor (Agent) ##
-
++	A client that uses the Visitor pattern must create a ConcreteVisitor object and then traverse the object structure, visiting each element with the visitor.
++	When an element is visited, it calls the Visitor operation that corresponds to its class. The element supplies itself as an argument to this operation to let the visitor access its state, if necessary.
