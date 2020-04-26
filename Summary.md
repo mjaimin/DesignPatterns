@@ -7,6 +7,7 @@ is a creational design pattern that provides an interface for creating objects i
 (Subclass of object that is instantiated can vary)
 
 +	**Purpose**
+
 	Exposes a method for creating objects, allowing subclasses to control the actual creation process.
 +	**Use When**
 	+	A class will not know what classes it will be required to create.
