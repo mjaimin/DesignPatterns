@@ -1,33 +1,36 @@
 ## Purpose
+Identifies the framework of an algorithm, allowing implementing classes to define the actual behavior.
 
 ## Intent
 Defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template method lets subclasses redefine certain steps of an algorithm without changing the algorithm’s structure.
 
-# Description
+## Description
 
-# Motivation
+## Motivation
 Sometimes you want to specify the order of operations that a method uses, but allow subclasses to provide their own implementations of some of these operations
 
 ##
 ![alt text](./Images/Template-1.md.png "Template Design Pattern")
 ##
 
-
 ## Participant
 ### Abstract class
 +   Defines abstract primitive operations that concrete subclasses define to implement steps of an algorithm.
-+   Implements a template method defining the skeleton of an algorithm. The template method calls primitive operations as well as operations defined in AbstractClass or those of other objects. 
++   Implements a template method defining the skeleton of an algorithm. The template method calls primitive operations as well as operations defined in AbstractClass or those of other objects.
+
 ### Concrete class
 +   Implements the primitive operations to carry out subclass-specific steps of the algorithm.
 
-# Use Template When
+## Collaborations
++   ConcreteClass relies on AbstractClass to implement the invariant steps of the algorithm.
+
+## Use Template When
 +   To implement the invariant parts of an algorithm once in base class and leave it up to subclasses to implement the behavior that can vary
 +   To localize common behavior among subclasses and place it in a common class (in this case, a superclass) to avoid code duplication. This is a classic example of ”code refactoring.”
 +   We want to avoid code duplication, implementing variations of the algorithm in subclasses
 +   We want to control the point that sub classing is allowed.
 
-
-# CONSEQUENCES
+## CONSEQUENCES
 
 ## Benifit
 
@@ -40,5 +43,9 @@ Sometimes you want to specify the order of operations that a method uses, but al
 
 
 ## Misc
+
+## Guideline
+Use Template Methods to delegate to subclasses.
+
 
 
