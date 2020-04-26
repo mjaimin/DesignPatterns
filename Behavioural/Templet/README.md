@@ -1,3 +1,5 @@
+**Class (change class relationships at compile time)**
+
 ## Purpose
 Identifies the framework of an algorithm, allowing implementing classes to define the actual behavior.
 
