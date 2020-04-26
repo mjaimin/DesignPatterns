@@ -1,4 +1,5 @@
 Class (change class relationships at compile time)
+
 **Factory Method**
 is a creational design pattern that provides an interface for creating objects in superclass, but allow subclasses to alter the type of objects that will be created.
 
@@ -12,6 +13,7 @@ Exposes a method for creating objects, allowing subclasses to control the actual
 	+	Parent classes wish to defer creation to their subclasses.
 
 object (change object relationships at runtime)
+
 **Abstract Factory**
 is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
 
@@ -26,6 +28,7 @@ is a creational design pattern that lets you produce families of related objects
 	+	Concrete classes should be decoupled from clients.
 
 object (change object relationships at runtime)
+
 **Builder**
 is a creational design pattern that lets you produce different types and representations of an object using the same building process. Builder allows constructing complex objects step by step.
 
@@ -44,6 +47,7 @@ director.constructSportsCar(builder);
 Car car = builder.getResult();
 
 object (change object relationships at runtime)
+
 **Prototype**
 is a creational design pattern that lets you produce new objects by copying existing ones without compromising their internals.
 
@@ -61,6 +65,7 @@ private Shape clone() {
 }
 
 object (change object relationships at runtime)
+
 **Singleton**
 is a creational design pattern that lets you ensure that a class has only one instance and provide a global access point to this instance.
 (The sole instance of a class can vary)
@@ -73,6 +78,7 @@ Ensures that only one instance of a class is allowed within a system.
 	+	Responsible for building simple and efficient class hierarchies and relations between different classes.
 
 Class (change class relationships at compile time)
+
 **Adapter**
 is a structural design pattern that allows objects with incompatible interfaces to collaborate.
 
@@ -97,6 +103,7 @@ public class SquarePegAdapter extends RoundPeg {
 }
 
 object (change object relationships at runtime)
+
 **Bridge**
 is a structural design pattern that lets you split a giant class or a set of closely related classes into two separate hierarchies, abstraction and implementation, which can be developed independently of each other.
 
@@ -111,6 +118,7 @@ Defines an abstract object structure independently of the implementation object 
 
 
 object (change object relationships at runtime)
+
 **Composite**
 is a structural design pattern that lets you compose objects into tree structures and allow clients to work with these structures as if they were individual objects.
 
@@ -122,6 +130,7 @@ Facilitates the creation of object hierarchies where each object can be treated 
 	+	Objects and compositions of objects should be treated uniformly.
 
 object (change object relationships at runtime)
+
 **Decorator (Wrapper)**
 is a structural design pattern that lets you attach new behaviors to objects by placing them inside wrapper objects that contain these behaviors.
 
@@ -136,6 +145,7 @@ Allows for the dynamic wrapping of objects in order to modify their existing res
 	+	A lot of little objects surrounding a concrete implementation is acceptable.
 
 object (change object relationships at runtime)
+
 **Facade**
 is a structural design pattern that lets you provide a simplified interface to a complex system of classes, library or framework.
 
@@ -148,6 +158,7 @@ Supplies a single interface to a set of interfaces within a system.
 	+	Systems and subsystems should be layered.
 
 object (change object relationships at runtime)
+
 **Flyweight**
 is a structural design pattern that lets you fit more objects into the available amount of RAM by sharing common parts of object state among multiple objects, instead of keeping it in each object.
 +	**Purpose**
@@ -162,6 +173,7 @@ Facilitates the reuse of many fine grained objects, making the utilization of la
 	+	extrinsic state: fields that contain contextual data, unique for all objects
 
 object (change object relationships at runtime)
+
 **Proxy (Surrogate)**
 is a structural design pattern that lets you provide a substitute or placeholder for another object to control access to it.
 
@@ -178,6 +190,7 @@ Allows for object level access control by acting as a pass through entity or a p
 
 
 Class (change class relationships at compile time)
+
 **Iterator**
 is a behavioral design pattern that lets you access the elements of an aggregate object sequentially without exposing its underlying representation.
 +	**Purpose**
@@ -189,6 +202,7 @@ Allows for access to the elements of an aggregate object without allowing access
 	+	Subtle differences exist between the implementation details of various iterators.
 
 Class (change class relationships at compile time)
+
 **Template Method**
 is a behavioral design pattern that lets you define the skeleton of an algorithm and allow subclasses to redefine certain steps of the algorithm without changing its structure.
 +	**Purpose**
@@ -201,6 +215,7 @@ Most or all subclasses need to implement the behavior.
 
 
 object (change object relationships at runtime)
+
 **Chain of Responsibility**
 is a behavioral design pattern that lets you avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
 +	**Purpose**
@@ -211,6 +226,7 @@ Gives more than one object an opportunity to handle a request by linking receivi
 	+	A request not being handled is an acceptable potential outcome.
 
 object (change object relationships at runtime)
+
 **Command**
 is a behavioral design pattern that lets you turn a request into stand-alone object, which can be used to parametrize objects with different requests, queue or log requests, and support undoable operations.
 +	**Purpose**
@@ -222,6 +238,7 @@ Encapsulates a request allowing it to be treated as an object. This allows the r
 	+	The invoker should be decoupled from the object handling the invocation.
 
 object (change object relationships at runtime)
+
 **Mediator**
 is a behavioral design pattern that lets you define an object that encapsulates relations between a set of objects to make them independent of each other.
 
@@ -233,6 +250,7 @@ Allows loose coupling by encapsulating the way disparate sets of objects interac
 	+	Too many relationships exist and common point of control or communication is needed.
 
 object (change object relationships at runtime)
+
 **Memento**
 is a behavioral design pattern that lets you capture the object's internal state without exposing its internal structure, so that the object can be returned to this state later.
 
@@ -245,6 +263,7 @@ Allows for capturing and externalizing an object’s internal state so that it c
 	+	Encapsulation boundaries must be preserved.
 
 object (change object relationships at runtime)
+
 **Observer**
 is a behavioral design pattern that lets you define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
 
@@ -257,6 +276,7 @@ Lets one or more objects be notified of state changes in other objects within th
 	+	An understanding exists that objects will be blind to the expense of notification.
 
 object (change object relationships at runtime)
+
 **State**
 is a behavioral design pattern that allows an object to alter its behavior when its internal state changes. The object will appear to change its class.
 
@@ -269,6 +289,7 @@ Ties object circumstances to its behavior, allowing the object to behave in diff
 	+	Transitions between states need to be explicit.
 
 object (change object relationships at runtime)
+
 **Strategy**
 is a behavioral design pattern that lets you define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from the clients that use it.
 
@@ -283,6 +304,7 @@ Defines a set of encapsulated algorithms that can be swapped to carry out a spec
 	+	Conditional statements are complex and hard to maintain.
 
 object (change object relationships at runtime)
+
 **Visitor**
 is a behavioral design pattern that lets you define a new operation without changing the classes of the objects on which it operates.
 +	**Purpose**
