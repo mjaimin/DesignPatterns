@@ -1,14 +1,14 @@
 ## GOF Design Patterns
 
-Creational: **(decouple constructors)** Factory Method, Abstract Factory, Builder, Prototype, Singleton
+**Creational: (decouple constructors)** Factory Method, Abstract Factory, Builder, Prototype, Singleton
 +   Responsible for efficient object creation mechanisms, which increase the flexibility and reuse of existing code.
 
 
-Structural: **(create large composition)** Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy
+**Structural: (create large composition)** Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy
 +   Responsible for building simple and efficient class hierarchies and relations between different classes.
 
 
-Behavioral: **(divide responsibilities)** Chain of responsibility, Command, Momento, Observer, State, Strategy, Iterator, Mediator, Template, Visitor
+**Behavioral: (divide responsibilities)** Chain of responsibility, Command, Momento, Observer, State, Strategy, Iterator, Mediator, Template, Visitor
 +   Responsible for the efficient and safe distribution of behaviors among the program's objects.
 
 
