@@ -85,4 +85,4 @@
 6.  **Define application-specific names for operations in the pattern.**
     Here again, the names generally depend on the application. Use the responsibilities and collaborations associated with each operation as a guide. Also, be consistent in your naming conventions. For example, you might use the "Create-" prefix consistently to denote a factory method.
 7.  **Implement the operations to carry out the responsibilities and collaborations in the pattern.**
-    The Implementationsectionoffershints to guide you in the implementation. The examples in the Sample Code section can help as well. Shubham Narkhede 6th Semester CSE, Design Patterns
+    The Implementationsectionoffershints to guide you in the implementation. The examples in the Sample Code section can help as well.
