@@ -1,5 +1,9 @@
 ## GOF Design Patterns
 
+Creational: **(decouple constructors)** Factory Method, Abstract Factory, Builder, Prototype, Singleton
+Structural: **(create large composition)** Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy
+Behavioral: **(divide responsibilities)** Chain of responsibility, Command, Momento, Observer, State, Strategy, Iterator, Mediator, Template, Visitor
+
 ## Creational patterns
 Creational patterns are ones that create objects for you, rather than having you
 instantiate objects directly. This gives your program more flexibility in deciding
