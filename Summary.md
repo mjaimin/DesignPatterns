@@ -1,4 +1,4 @@
-</sub>## Factory Method <sub>Class (change class relationships at compile time)</sub>
+## Factory Method <sub>Class (change class relationships at compile time)</sub>
 
 is a creational design pattern that provides an interface for creating objects in superclass, but allow subclasses to alter the type of objects that will be created.
 
