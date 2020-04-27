@@ -9,7 +9,6 @@ Defines the skeleton of an algorithm in a method, deferring some steps to subcla
 ## Description
 
 ## Motivation
-Sometimes you want to specify the order of operations that a method uses, but allow subclasses to provide their own implementations of some of these operations
 
 ##
 ![alt text](./Images/Template-1.md.png "Template Design Pattern")
@@ -47,6 +46,12 @@ Sometimes you want to specify the order of operations that a method uses, but al
 +   Declare a Template method in a superclass that holds the core algorithm implementation steps
 +   Derived classes can override placeholder methods
 +   Derived classes can override implemented methods
+
+## Intent 2
+The template method design pattern belongs to the behavioral family of patterns that defines the steps for an algorithm and allows the subclass to provide the implementation for one or more steps. This design pattern helps in maximizing the code reusability.
+
+## Intent 3
+Sometimes you want to specify the order of operations that a method uses, but allow subclasses to provide their own implementations of some of these operations
 
 ## Misc
 +   The Template method should be declares as final to avoid its subclass overriding its implementation logic.
