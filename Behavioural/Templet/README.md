@@ -1,4 +1,5 @@
 ## Purpose
+Identifies the framework of an algorithm, allowing implementing classes to define the actual behavior.
 
 ## Intent
 Defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template method lets subclasses redefine certain steps of an algorithm without changing the algorithm’s structure.
