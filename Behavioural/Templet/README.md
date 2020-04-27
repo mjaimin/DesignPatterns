@@ -39,12 +39,18 @@ Sometimes you want to specify the order of operations that a method uses, but al
 
 ## Potential Drawbacks
 +   Operations which must be overridden by a subclass should be made abstract
-+   If the template method itself should not be overridden by a subclass,it should be made final
-+   In a template method, the parent class calls the operations of a subclass and not the other way around. This is an inverted control structure that’s sometimes referred to as "the Hollywood principle," as in, "Don't call us, we'll call you".
 +   When inheritance is used as the way to add new functionality, it becomes impossible to add functionality in more than one axis at the same time without defining more and more classes.  This kind of system can rapidly become fragile. Changes at any one level can disturb operation above or below that level in the template methods. There is often a feeling of unpredictability when adding new functionality as it difficult to predict how behavior will change in all cases. You often also tend to build finer and finer tweaks by splitting the algorithmic parts of the template class and inserting more layers, thus exacerbating the problem.
 
+## How does the Template Method Works?
++   Define an abstract base class with some fully qualified method containing common implementation logic
++   Declare the abstract methods for subclasses to override specific behaviors
++   Declare a Template method in a superclass that holds the core algorithm implementation steps
++   Derived classes can override placeholder methods
++   Derived classes can override implemented methods
 
 ## Misc
++   The Template method should be declares as final to avoid its subclass overriding its implementation logic.
++   The template method in a super class follows the Hollywood principle, Don’t call us, we’ll call you. This refers to the fact that instead of calling the base class methods in the subclasses, the methods from the subclass are called form super class template method.
 
 ## Guideline
 Use Template Methods to delegate to subclasses.
