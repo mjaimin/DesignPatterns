@@ -1,28 +1,23 @@
 
-# Purpose
+## Purpose
 
 Defines a set of encapsulated algorithms that can be swapped to carry out a specific behavior.
 	
-# Intent
+## Intent
 Define a family of algorithms, encapsulate each one, and make them interchangeable. Lets the algorithm vary independently from clients that use it.
-Also
+
+## Intent 2
 The Strategy pattern encapsulates a set of algorithms uniformly (sibling subclasses that inherit a common interface) to achieve interchangeability among them.
 	
 ##
 ![alt text](./Images/Strategy-1.md.png "Strategy")
 ##
 
-# Participant	
-Context
-		A class that maintains contextual information for an IStrategy object’s algorithm to work on
-		The Context class is the trafﬁc cop that decides which strategy is to be called.
-IStrategy
-		Defines an interface common to all the strategies
-		Context uses this interface to call the algorithm defined by a ConcreteStrategy
-StrategyA, StrategyB
-		Classes that include algorithms that implement the IStrategy interface
-Client: 
-		Any aspect of the application or system that has prior knowledge of the concrete strategy to be used by the context
+## Participant	
+**Context:**	A class that maintains contextual information for an IStrategy object’s algorithm to work on the Context class is the trafﬁc cop that decides which strategy is to be called.
+**IStrategy:** Defines an interface common to all the strategies Context uses this interface to call the algorithm defined by a ConcreteStrategy
+**StrategyA, StrategyB:** Classes that include algorithms that implement the IStrategy interface
+**Client:** Any aspect of the application or system that has prior knowledge of the concrete strategy to be used by the context
 
 ## Use When
 + Many related classes differ only in their behavior.
