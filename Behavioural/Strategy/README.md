@@ -25,6 +25,13 @@ The Strategy pattern encapsulates a set of algorithms uniformly (sibling subclas
 + The algorithm uses data to which the client should not have access
 + The behavior of a class should be defined at runtime.
 + Conditional statements are complex and hard to maintain.
++ 
++   The only difference between many related classes is their behavior.
++   Multiple versions or variations of an algorithm are required.
++   Algorithms access or utilize data that calling code shouldn’t be exposed to.
++   The behavior of a class should be defined at runtime.
++   Conditional statements are complex and hard to maintain. 
+
 
 ## Motivation
 Objects have responsibilities. 
