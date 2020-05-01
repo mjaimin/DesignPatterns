@@ -2,161 +2,100 @@
 #include <string>
 #include <vector>
 using namespace std;
-
 class TCPconnection;
 
-class State
-{
+class State {
 public:
-   virtual void Open() {}
-   virtual void Close() {}
-   virtual void Acknowledge() {}
+   virtual void Open() = 0;
+   virtual void Close() = 0;
+   virtual void Acknowledge() = 0;
 };
 
-class TCPopen : public State
-{
-public:
+class TCPopen : public State {
    TCPconnection *tcp;
-   TCPopen(TCPconnection *tcp)
-   {
-      this->tcp = tcp;
-   }
+public:
+   TCPopen(TCPconnection *tcp): tcp(tcp) { }
 
-   void Open()
-   {
-      cout << "The Tcp is already opened." << endl;
-   }
-
+   void Open() { cout << "The Tcp is already opened." << endl; }
    void Acknowledge();
    void Close();
 };
-class TCPclose : public State
-{
-public:
+
+class TCPclose : public State {
    TCPconnection *tcp;
-   TCPclose(TCPconnection *tcp)
-   {
-      this->tcp = tcp;
-   }
+public:
+   TCPclose(TCPconnection *tcp): tcp(tcp) { }
 
-   void Acknowledge()
-   {
-      cout << "The Tcp is not opened yet." << endl;
-   }
-
-   void Close()
-   {
-      cout << "The Tcp is already close." << endl;
-   }
-
+   void Acknowledge() { cout << "The Tcp is not opened yet." << endl; }
+   void Close() { cout << "The Tcp is already close." << endl; }
    void Open();
 };
 
 class TCPacknowledge : public State
 {
-public:
    TCPconnection *tcp;
-   TCPacknowledge(TCPconnection *tcp)
-   {
-      this->tcp = tcp;
-   }
+public:
+   TCPacknowledge(TCPconnection *tcp): tcp(tcp) { }
 
-   void Open()
-   {
-      cout << "The Tcp is already open" << endl;
-   }
-
-   void Acknowledge()
-   {
-      cout << "The Tcp is already acknowleged." << endl;
-   }
-
+   void Open() { cout << "The Tcp is already open" << endl; }
+   void Acknowledge() { cout << "The Tcp is already acknowleged." << endl; }
    void Close();
 };
 
 class TCPconnection
 {
+   State *currentState;
+   State *stateOpened;
+   State *stateClosed;
+   State *stateAcknowledged;
 public:
-   State *state;
-   TCPconnection()
-   {
-      state = new TCPclose(this);
+   TCPconnection() { 
+      stateOpened = new TCPopen(this); 
+      stateClosed = new TCPclose(this); 
+      stateAcknowledged = new TCPacknowledge(this); 
+      currentState = stateClosed;
    }
 
-   void Open()
-   {
-      state->Open();
-   }
+   void Open() { currentState->Open(); }
+   void Close() { currentState->Close(); }
+   void Acknowledge() { currentState->Acknowledge(); }
+   void changeCurrentState(State *state) { this->currentState= state; }
 
-   void Close()
-   {
-      state->Close();
-   }
-
-   void Acknowledge()
-   {
-      state->Acknowledge();
-   }
-
-   void setState(State *state)
-   {
-      this->state = state;
-   }
-
-   State *getTCPclose()
-   {
-      return new TCPclose(this);
-   }
-
-   State *getTCPopen()
-   {
-      return new TCPopen(this);
-   }
-
-   State *getTCPacknowledge()
-   {
-      return new TCPacknowledge(this);
-   }
+   State *getTCPclose() { return stateClosed; }
+   State *getTCPopen() { return stateOpened; }
+   State *getTCPacknowledge() { return stateAcknowledged; }
 };
+
 // because the classes have cross-reference
 // so the following methods MUST be defined after TCPconnection
-void TCPopen::Acknowledge()
-{
+void TCPopen::Acknowledge() {
    cout << "The Tcp is acknowleged." << endl;
-   tcp->setState(tcp->getTCPacknowledge());
+   tcp->changeCurrentState(tcp->getTCPacknowledge());
 }
 
-
-void TCPopen::Close()
-{
+void TCPopen::Close() {
    cout << "Yeah. The Tcp is close." << endl;
-   tcp->setState(tcp->getTCPclose());
+   tcp->changeCurrentState(tcp->getTCPclose());
 }
 
-
-void TCPclose::Open()
-{
+void TCPclose::Open() {
    cout << "The Tcp is open" << endl;
-   tcp->setState(tcp->getTCPopen());
+   tcp->changeCurrentState(tcp->getTCPopen());
 }
 
-
-void TCPacknowledge::Close()
-{
+void TCPacknowledge::Close() {
    cout << "The Tcp is closed." << endl;
-   tcp->setState(tcp->getTCPclose());
+   tcp->changeCurrentState(tcp->getTCPclose());
 }
-
-
 int main()
 {
    TCPconnection tcp;
 
-   tcp.state->Open();
-   tcp.state->Open();
-   tcp.state->Acknowledge();
-   tcp.state->Close();
+   tcp.Open();
+   tcp.Open();
+   tcp.Acknowledge();
+   tcp.Close();
 
-   tcp.state->Acknowledge(); // will not acknowleged, since the tcp is not open
+   tcp.Acknowledge(); // will not acknowleged, since the tcp is not open
    return 0;
 }
