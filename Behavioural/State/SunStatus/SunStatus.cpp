@@ -50,11 +50,11 @@ public:
    const char *getState() { return m_state->toString(); }
 };
 
-void Dawn::nextState(Sun *sun) { sun->changeState(new Morning()); }
-void Morning::nextState(Sun *sun) { sun->changeState(new MidDay()); }
-void MidDay::nextState(Sun *sun) { sun->changeState(new Evening()); }
-void Evening::nextState(Sun *sun) { sun->changeState(new Night()); }
-void Night::nextState(Sun *sun) { sun->changeState(new Dawn()); }
+void Dawn::nextState(Sun *sun) 		{ sun->changeState(new Morning()); }
+void Morning::nextState(Sun *sun) 	{ sun->changeState(new MidDay()); }
+void MidDay::nextState(Sun *sun) 	{ sun->changeState(new Evening()); }
+void Evening::nextState(Sun *sun) 	{ sun->changeState(new Night()); }
+void Night::nextState(Sun *sun) 	{ sun->changeState(new Dawn()); }
 
 
 int main()
