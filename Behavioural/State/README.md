@@ -1,4 +1,4 @@
-##Intent/Purpose
+## Intent/Purpose
 	Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
 	also
 	Allows an object to alter its behavior by delegating to a separate and changeable state object.
@@ -8,7 +8,7 @@
 ##
 
 
-#Participant
+# Participant
 
 Context
 +	defines the interface of interest to clients
@@ -21,30 +21,30 @@ State
 ConcreteState
 +	ConcreteState(s) represent specific states in the lifetime of the Context.  They implement behavior specific to these states.
 
-##Motivation
+## Motivation
 +	The State pattern is useful when you want to have an object represent the state of an application, and you want to change the state by changing that object. 
 +	The State pattern is intended to provide a mechanism to allow an object to alter its behavior in response to internal state changes. To the client, it appears as though the object has changed its class. 
 +	The benefit of the State pattern is that state-specific logic is localized in classes that represent that state.
 
 
-##Use When
+## Use When
 +	The behavior of an object should be influenced by its state. An object’s behavior depends on its state and changes its behavior at run-time.
 +	Complex conditions tie object behavior to its state.
 +	Transitions between states need to be explicit.
 +	you want to have an object represent the state of your application and switch application states by switching objects.
 
-#Consequences
+# Consequences
 +	It localizes state-specific behavior and partitions behavior for different states.
 +	It makes state transitions explicit.
 +	State objects can be shared.
 
-#Collaborations
+# Collaborations
 +	Context delegates state-specific requests to the current ConcreteState object.
 +	A context may pass itself as an argument to the State object handling the request.  This lets the State object access the context if necessary.
 +	Context is the primary interface for clients.  Clients can configure a context with State objects.  Once a context is configured, its clients don’t have to deal with the State objects directly.
 +	Either Context or the ConcreteState subclasses can decide which state succeeds another and under what circumstances.
 
-#Key Features
+# Key Features
 The following key features characterize the State design pattern:
 +	States exist internally as part of an object.
 +	Objects change in certain ways when states change. Objects may appear to change classes, but they’re changing behavior that is part of the class.
