@@ -2,29 +2,13 @@
 class Player
 {
     public:
-	void attack() {
-	    std::cout << "Player Attack" << std::endl;
-	}
-	void fireBumb() {
-	    std::cout << "Player Bombs" << std::endl;
-	}
-	void fireGunblade() {
-	    std::cout << "Player Gunpointed" << std::endl;
-	}
-	void fireLaserPistol() {
-	    std::cout << "Player Laser Attack" << std::endl;
-	}
-	void survive() {
-	    std::cout << "Player on survival mode" << std::endl;
-	}
-	void firePistol() {
-	    std::cout << "Player only Pistol capability" << std::endl;
-	}
-	void dead() {
-	    std::cout << "Player is dead" << std::endl;
-	}
-
-
+	void attack() { std::cout << "Player Attack" << std::endl; }
+	void fireBumb() { std::cout << "Player Bombs" << std::endl; }
+	void fireGunblade() { std::cout << "Player Gunpointed" << std::endl; }
+	void fireLaserPistol() { std::cout << "Player Laser Attack" << std::endl; }
+	void survive() { std::cout << "Player on survival mode" << std::endl; }
+	void firePistol() { std::cout << "Player only Pistol capability" << std::endl; }
+	void dead() { std::cout << "Player is dead" << std::endl; }
 };
 
 class PlayerState {	
@@ -68,7 +52,6 @@ class GameContext {
 	void setState(PlayerState* state) { this->state = state; }
 	void gameAction() { state->action(player); }
 };
-
 
 int main() {
     GameContext* context = new GameContext();
