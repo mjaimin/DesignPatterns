@@ -1,12 +1,11 @@
 ## Intent/Purpose
-	Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
-	also
-	Allows an object to alter its behavior by delegating to a separate and changeable state object.
+Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
+also
+Allows an object to alter its behavior by delegating to a separate and changeable state object.
 
 ##
 ![alt text](./Images/State-1.md.png "State")
 ##
-
 
 # Participant
 
@@ -25,7 +24,6 @@ ConcreteState
 +	The State pattern is useful when you want to have an object represent the state of an application, and you want to change the state by changing that object. 
 +	The State pattern is intended to provide a mechanism to allow an object to alter its behavior in response to internal state changes. To the client, it appears as though the object has changed its class. 
 +	The benefit of the State pattern is that state-specific logic is localized in classes that represent that state.
-
 
 ## Use When
 +	The behavior of an object should be influenced by its state. An object’s behavior depends on its state and changes its behavior at run-time.
