@@ -1,7 +1,6 @@
 ## Intent/Purpose
+
 Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
-also
-Allows an object to alter its behavior by delegating to a separate and changeable state object.
 
 ##
 ![alt text](./Images/State-1.md.png "State")
