@@ -10,7 +10,6 @@ Allow an object to alter its behavior when its internal state changes. The objec
 ##
 
 # Participant
-
 Context
 +	defines the interface of interest to clients
 +	maintains an instance of a ConcreteState subclass that defines the current state.
@@ -51,3 +50,6 @@ The following key features characterize the State design pattern:
 +	Each state’s behavior depends on the current state of other states in the object
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbODM0MjM3ODNdfQ==
+-->
