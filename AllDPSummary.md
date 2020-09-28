@@ -1,3 +1,5 @@
+AllDPSummary
+
 # Behavioral Design Patterns
 
 ## Observer

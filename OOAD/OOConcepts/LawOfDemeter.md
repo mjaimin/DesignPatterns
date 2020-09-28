@@ -1,3 +1,5 @@
+LawOfDemeter
+
 #Law Of Demeter#
 A method of an object should invoke only the methods of the following kinds of objects:
 

@@ -1,3 +1,5 @@
+README
+
 ## Purpose
 Allows for one or more operations to be applied to a set of objects at runtime, decoupling the operations from the object structure.
 	

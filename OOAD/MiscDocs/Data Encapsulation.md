@@ -1,3 +1,5 @@
+Data Encapsulation
+
 # Encapsulation #
 
 **Data encapsulation** is a mechanism of bundling the data and the functions in program.

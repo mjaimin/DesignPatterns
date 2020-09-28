@@ -1,3 +1,5 @@
+ClassInheritance
+
 # Class Inheritance #
 
 +	what if a graduate student needs different course requirements than an undergraduate?

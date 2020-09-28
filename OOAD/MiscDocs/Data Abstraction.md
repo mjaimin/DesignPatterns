@@ -1,3 +1,5 @@
+Data Abstraction
+
 ## DATA Abstraction ##
 
 **Data Abstraction** is a mechanism of exposing only the interfaces and hiding the implementation details from the user.

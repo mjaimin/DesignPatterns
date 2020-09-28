@@ -1,3 +1,5 @@
+SixPrinciplesofPackageDesign
+
 # Reuse/Release Equivalency Principle #
 
 "The granularity of reuse is the same as the granularity of release. Only components that are released through a tracking system can be effectively reused."

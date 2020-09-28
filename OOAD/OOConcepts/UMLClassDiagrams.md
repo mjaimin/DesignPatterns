@@ -1,3 +1,5 @@
+UMLClassDiagrams
+
 # UML Class Diagrams #
 
 +	Represent a class as a rectangle.

@@ -1,3 +1,5 @@
+CommonClosurePrinciple
+
 # Common Closure Principle #
 
 "Classes within a released component should share common closure. If one need to be changed, they all are likely to need to be changed. What affects one, affect all."

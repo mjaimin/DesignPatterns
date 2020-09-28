@@ -1,3 +1,5 @@
+SelectingClass-2
+
 # Selecting Classes #
 
 Draw a class diagram for a **barn** that contains some **animals** such as **chickens**, **horses**, **cows**, and **calfs**. A **farmer** milks any **cows** in the **barn**, and the **animals** eat **hay bales** that are stored in the **barn**. The **barn** is made of **wood planks**.

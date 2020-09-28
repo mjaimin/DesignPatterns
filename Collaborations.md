@@ -1,3 +1,5 @@
+Collaborations
+
 ## Abstract Factory (Kit) ##
 +	Normally a single instance of a ConcreteFactory class is created at run-time. This concrete factory creates product objects having a particular implementation. To create different product objects, clients should use a different concrete factory.
 +	AbstractFactory defers creation of product objects to its ConcreteFactory subclass.

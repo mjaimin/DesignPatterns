@@ -1,3 +1,5 @@
+README
+
 ## Purpose
 Ties object circumstances to its behavior, allowing the object to behave in different ways based upon its internal state.
 

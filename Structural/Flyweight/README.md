@@ -1,3 +1,5 @@
+README
+
 ##Definition
 	Use sharing to support large numbers of fine-grained objects efficiently. 
 
@@ -11,7 +13,7 @@
 ![alt text](./Images/FlyWeight.md.png "FlyWeight")
 ##
 
-##Participants
+## Participants
 +	Flyweight
 		Declares an interface through which ﬂyweights can receive and act on extrinsic state
 +	ConcreteFlyweight
@@ -23,7 +25,7 @@
 +	Client
 		Maintains extrinsic state and stores references to ﬂyweights
 
-##Use Composite when
+## Use Composite when
 Apply flyweight when ALL of the following are true:
 +	An application uses a large number of objects
 +	Storage cost is high because of the quantity of objects
@@ -32,7 +34,7 @@ Apply flyweight when ALL of the following are true:
 +	objects once extrinsic state is removed
 +	The application does not depend on object identity
 
-##CONSEQUENCES
+## CONSEQUENCES
 
 **Benefits**
 +	Space saving by using shared objects
@@ -42,7 +44,7 @@ Apply flyweight when ALL of the following are true:
 +	Flyweights may introduce run-time costs associated with transferring, finding, and/or computing extrinsic state
 
 
-##Collaborations
+## Collaborations
 
 +	Data that a ﬂyweight needs to process must be classiﬁed as intrinsic or extrinsic
 		Intrinsic is stored with ﬂyweight; Extrinsic is stored with client

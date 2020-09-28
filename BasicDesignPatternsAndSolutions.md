@@ -1,3 +1,5 @@
+BasicDesignPatternsAndSolutions
+
 ## Inheritance ##
 **Problem**: Similar abstractions have similar members (fields and methods). Repeating these is tedious, error-prone, and a maintenance headache.
 

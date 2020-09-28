@@ -1,4 +1,6 @@
-##Intent/Purpose
+README
+
+## Intent/Purpose
 > Separates an abstraction( ro interface) from its implementation, allowing implementations and abstractions to vary independently of one another.
 
 ##
@@ -13,7 +15,7 @@ Use When
 +	Changes in the implementation of an abstraction should have no impact on clients.
 +	Implementation details should be hidden from the client.
 
-##Participant
+## Participant
 
 +	Abstraction
 
@@ -36,7 +38,7 @@ Use When
 
 		A method in the Bridge that is called from the Operation in the Abstraction
 
-##Motivation
+## Motivation
  
 +	Need to avoid a permanent binding between an abstraction and implementation.
 +	When abstractions and implementations should be extensible through subclassing.
@@ -49,7 +51,7 @@ Use When
 +	We should be able to extend both abstraction and implementation independent of each other.
 +	When the implementation has to be shared among multiple objects without client knowledge.
 
-##Benefits in using Bridge Pattern
+## Benefits in using Bridge Pattern
 
 **Decoupling abstraction from implementation** - Inheritance tightly couples an abstraction with an implementation at compile time. Bridge pattern can be used to avoid the binding between abstraction and implementation and to select the implementation at run time.
 
@@ -63,6 +65,6 @@ Use When
 
 **Loosely coupled client code** - Abstraction separates the client code from the implementation. So, the implementation can be changed without affecting the client code and the client code need not be compiled when the implementation changes. (NOTE : In the above mentioned example, for the sake of simplicity, the application configures the CImage object with the right CImageImp object. However, alternate methods like Abstract Factory can be adopted to choose the CImageImp object.)
 
-##Drawbacks in using Bridge Pattern
+## Drawbacks in using Bridge Pattern
 
 **Double indirection** - This will have a slight impact on performance.

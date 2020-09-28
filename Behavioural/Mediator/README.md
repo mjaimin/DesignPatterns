@@ -1,3 +1,5 @@
+README
+
 #Purpose
 	Allows loose coupling by encapsulating the way disparate sets of objects interact and communicate with each other. Allows for the actions of each object set to vary independently of one another.
 #Intent
@@ -13,7 +15,7 @@
 ![alt text](./Images/Mediator-1.md.png "Mediator")
 ##
 
-#Participant
+# Participant
 	● Mediator 
 		❍ defines an interface for communicating with Colleague objects.
 		❍ Broadcasts sent messages to all signed-on Colleagues using the Respond delegate
@@ -25,7 +27,7 @@
 		❍ each colleague communicates with its mediator whenever it would have otherwise communicated with another colleague.
  
  
-#Consequences
+# Consequences
 	
 	*Advantages*
 	1. Comprehension - The mediator encapsulate the logic of mediation between the colleagues. From this reason it' more easier to understand this logic since it is kept in only one class.
@@ -38,13 +40,13 @@
     2. The Mediator can become a “god class,” having too much knowledge of the rest of the program. This can make it hard to change and maintain. Sometimes you can improve this situation by putting more of the function into the inditasks, and the Mediator should only manage the interaction between objects.
 
 
-#Use When
+# Use When
 	• Objects communicate in well-structured but potentially complex ways.
 	• The objects’ identities should be protected even though they communicate.
 	• Some object behaviors can be grouped and customized.
 
 
-#Note
+# Note
 	Implementation
 		Key points of the Mediator pattern are:
 		• Each Colleague is passed a Mediator at instantiation and keeps it as a private reference.

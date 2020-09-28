@@ -1,3 +1,5 @@
+Coupling  & Cohesion
+
 # Coupling (or dependency or connectivity)#
 +	**Understanding** - The number of connections between modules.
 +	**We want low coupling** - Each module is connected to very few others.

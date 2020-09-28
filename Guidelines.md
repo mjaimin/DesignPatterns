@@ -1,3 +1,5 @@
+Guidelines
+
 +	Use Decorators to avoid hierarchy explosion.
 +	Use Proxies to serve as sophisticated references.
 +	Use Iterators to provide sequential access to the elements of a collection.
