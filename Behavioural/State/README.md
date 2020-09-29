@@ -8,7 +8,7 @@ Ties object circumstances to its behavior, allowing the object to behave in diff
 
 Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
 
-##
+## Image ##
 
 ![alt text](./Images/State-1.md.png "State")
 

@@ -4,7 +4,7 @@ README
 
 	Provide a surrogate or placeholder for another object to control access to it.
 
-##
+## Image ##
 
 ![alt text](./Images/Proxy.md.png "Proxy")
 

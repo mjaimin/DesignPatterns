@@ -13,7 +13,7 @@ Facilitates the creation of object hierarchies where each object can be treated 
 + Compose objects into tree structures to represent part-whole hierarchies.
 + Composite lets clients treat individual objects and compositions of objects uniformly.
 
-##
+## Image ##
 
 ![alt text](./Images/Composite.md.png "Composite")
 

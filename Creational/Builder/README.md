@@ -15,7 +15,7 @@ way the objects are assembled is achieved using a Factory.
 
 *	Separate the construction of a complex object from its representation so that the same construction process can create different representations.
 
-##
+## Image ##
 
 ![alt text](./Images/Builder-1.md.png "Builder")
 

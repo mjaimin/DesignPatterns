@@ -22,7 +22,7 @@ visitable classes providing Accept() methods that accept a visitor
 + Desire to keep the logic together; as opposed to distributing the code over all classes that can be in the object structure
 + Support frequent addition of new operations
 
-##
+## Image ##
 
 ![alt text](./Images/Visitor-1.md.png "Visitor")
 ![alt text](./Images/Visitor-2.md.png "Visitor")

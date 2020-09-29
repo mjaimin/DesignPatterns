@@ -13,7 +13,7 @@ README
 	OR
 	Define a central class that acts as a message routing service to all other classes.
 
-##
+## Image ##
 
 ![alt text](./Images/Mediator-1.md.png "Mediator")
 

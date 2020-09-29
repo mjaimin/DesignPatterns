@@ -14,7 +14,7 @@ Defines the skeleton of an algorithm in a method, deferring some steps to subcla
 
 ## Motivation ##
 
-##
+## Image ##
 
 ![alt text](./Images/Template-1.md.png "Template Design Pattern")
 

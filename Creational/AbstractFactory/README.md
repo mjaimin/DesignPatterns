@@ -8,7 +8,7 @@ Provide an interface for creating families of related or dependent objects witho
 
 Enables a class to delegate the responsibility of creating a valid object.
 
-##
+## Image ##
 
 ![alt text](./Images/AbstractFactory-1.md.png "AbstractFactory")
 

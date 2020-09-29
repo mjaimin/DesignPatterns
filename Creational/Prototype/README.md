@@ -14,7 +14,7 @@ a new instance, when creating new instances is more expensive.
 *	Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
 *	Reduce complex initialisation and constructor processing and instead clone an exist instance
 
-##
+## Image ##
 
 ![alt text](./Images/Prototype-1.md.png "Prototype")
 

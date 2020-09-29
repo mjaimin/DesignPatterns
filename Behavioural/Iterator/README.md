@@ -9,7 +9,7 @@ README
 	OR
 	Provides a way to navigate a collection in a formalized manner.
 
-##
+## Image ##
 
 ![alt text](./Images/Iterator-1.md.png "Iterator")
 

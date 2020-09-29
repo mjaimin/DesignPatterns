@@ -9,7 +9,7 @@ README
 	OR
 	Allows you to restore an object to its previous state.
 
-##
+## Image ##
 
 ![alt text](./Images/Memento-1.md.png "Memento")
 

@@ -9,7 +9,7 @@ README
 
 	Provides a simple interface and controls access to a series of complicated interfaces(subsystems).
 
-##
+## Image ##
 
 ![alt text](./Images/Facade-1.md "Facade")
 ![alt text](./Images/Facade-2.md "Facade")

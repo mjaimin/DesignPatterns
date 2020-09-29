@@ -4,7 +4,7 @@ README
 
 > Separates an abstraction( ro interface) from its implementation, allowing implementations and abstractions to vary independently of one another.
 
-##
+## Image ##
 
 ![alt text](./Images/Bridge-1.md.png "Bridge")
 ![alt text](./Images/Bridge-2.md.png "Bridge")

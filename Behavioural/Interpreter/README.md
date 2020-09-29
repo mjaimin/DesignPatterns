@@ -10,7 +10,7 @@ README
 	OR
 	Interpreter Specifies how to evaluate sentences in a language.
 
-##
+## Image ##
 
 ![alt text](./Images/Interpreter-1.md.png "Interpreter")
 

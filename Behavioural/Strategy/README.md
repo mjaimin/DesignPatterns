@@ -12,7 +12,7 @@ Define a family of algorithms, encapsulate each one, and make them interchangeab
 
 The Strategy pattern encapsulates a set of algorithms uniformly (sibling subclasses that inherit a common interface) to achieve interchangeability among them.
 
-##
+## Image ##
 
 ![alt text](./Images/Strategy-1.md.png "Strategy")
 

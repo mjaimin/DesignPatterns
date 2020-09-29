@@ -8,7 +8,7 @@ Ensure a class only has one instance, and provide a global point of access to it
 
 The purpose of the Singleton pattern is to ensure that there is only one instance of a class, and that there is a global access point to that object. The pattern ensures that the class is instantiated only once and that all requests are directed to that one and only object. Moreover, the object should not be created until it is actually needed. In the Singleton pattern, it is the class itself that is responsible for ensuring this constraint, not the clients of the class.
 
-##
+## Image ##
 
 ![alt text](./Images/Singleton-1.md.png "Singleton")
 

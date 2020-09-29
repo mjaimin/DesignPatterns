@@ -13,7 +13,7 @@ Allows for the dynamic wrapping of objects in order to modify their existing res
 *	The Decorator pattern enables new behavior to be added to an object dynamically via composition. The pattern achieves this by either inheriting from the same base class or implementing a shared interface in conjunction with injecting an instance of the class to be decorated.
 *	In other words, the Decorator pattern is the process of wrapping an existing class with another class that extends the behavior or state. Multiple decorators can be added to a class to combine extended behavior.
 
-##
+## Image ##
 
 ![alt text](./Images/Decorator.md.png "Decorator")
 

@@ -15,7 +15,7 @@ This design pattern is based on one of the OOPs concepts - encapsulation. In gen
 
 Enables a class to delegate the responsibility of creating a valid object.
 
-##
+## Image ##
 
 ![alt text](./Images/Factory-1.md.png "Factory")
 

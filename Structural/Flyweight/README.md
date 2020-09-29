@@ -12,7 +12,7 @@ README
 
 	Use sharing to support large numbers of fine-grained objects efficiently.
 
-##
+## Image ##
 
 ![alt text](./Images/FlyWeight.md.png "FlyWeight")
 
