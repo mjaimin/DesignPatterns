@@ -38,7 +38,7 @@ Enables a class to delegate the responsibility of creating a valid object.
 
 ## Consequences ##
 
-**Benefits**
+## Benefits ##
 
 + Factory Method Pattern allows the sub-classes to choose the type of objects to create.
 

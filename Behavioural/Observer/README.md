@@ -47,7 +47,7 @@
 	A change to one object requires changing others.
 	An object should be able to notify other objects without making assumptions about the objects.
 
-## The pattern’s benefits are as follows:
+## Benefits ##
 	• Synchronizes state-dependent objects
 	• Uses a one-to-many relationships
 	• Lets subjects and observers also be observers and subjects

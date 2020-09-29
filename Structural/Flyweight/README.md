@@ -41,7 +41,7 @@ Apply flyweight when ALL of the following are true:
 
 ## Consequences ##
 
-**Benefits**
+## Benefits ##
 + Space saving by using shared objects
 + Adds functionality to the application
 

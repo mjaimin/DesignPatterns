@@ -45,7 +45,7 @@ parts.
 
 ## Consequences ##
 
-**Benefits**
+## Benefits ##
 
 + Encapsulation: The builder pattern encapsulates the construction process of a complex object and thereby increases the modularity of an application.
 + A builder lets you vary an object’s representation without changing the way the object is constructed.

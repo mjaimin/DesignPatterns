@@ -34,7 +34,7 @@ represented.
 
 ## Consequences ##
 
-**Benefits**
+## Benefits ##
 
 **Potential Drawbacks**
 

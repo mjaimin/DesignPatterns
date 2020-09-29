@@ -53,7 +53,7 @@
 + We should be able to extend both abstraction and implementation independent of each other.
 + When the implementation has to be shared among multiple objects without client knowledge.
 
-## Benefits in using Bridge Pattern
+## Benefits ##
 
 **Decoupling abstraction from implementation** - Inheritance tightly couples an abstraction with an implementation at compile time. Bridge pattern can be used to avoid the binding between abstraction and implementation and to select the implementation at run time.
 

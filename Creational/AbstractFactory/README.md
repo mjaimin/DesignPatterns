@@ -32,7 +32,7 @@ The creator relies on its subclasses to define the factory method so that it ret
 
 ## Consequences ##
 
-**Benefits**
+## Benefits ##
 
 + An Abstract Factory isolates concrete classes by encapsulating the process and responsibility of creating
 objects.

@@ -28,7 +28,7 @@ There are several cases where a Proxy can be useful.
 
 ## Consequences ##
 
-**Benefits**
+## Benefits ##
 
 + Enhanced efficiency and lower cost
 + Decoupling clients from the location of remote server components

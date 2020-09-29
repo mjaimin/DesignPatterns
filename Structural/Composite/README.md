@@ -47,7 +47,7 @@ The classes and/or objects participating in this pattern are:
 
 ## Consequences ##
 
-**Benefits**
+## Benefits ##
 
 + It makes it easy to add new kinds of components
 + It makes clients simpler, since they do not have to know if they are dealing with a leaf or a composite component

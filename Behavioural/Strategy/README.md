@@ -55,7 +55,7 @@ It is a good design practice to separate behaviors that occur in the problem dom
 + There are different algorithms for a given purpose, and the selection criteria can be codified.
 + The algorithm uses data to which the client should not have access.
 
-## The pattern’s benefits are as follows ##
+## Benefits ##
 
 + Algorithms can be used among varying systems
 + Algorithms can be more easily maintained

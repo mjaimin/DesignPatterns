@@ -38,7 +38,7 @@ A subsystem could consist of a large number of classes. Clients of a subsystem m
 
 ## Consequences ##
 
-**Benefits**
+## Benefits ##
 + It hides the implementation of the subsystem from clients, making the subsystem easier to use
 + It promotes weak coupling between the subsystem and its clients. This allows you to change the classes the comprise the subsystem without affecting the clients.
 + It reduces compilation dependencies in large software systems
