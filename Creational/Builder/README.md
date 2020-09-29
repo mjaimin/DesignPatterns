@@ -16,8 +16,8 @@ way the objects are assembled is achieved using a Factory.
 *	Separate the construction of a complex object from its representation so that the same construction process can create different representations.
 
 ##
-![alt text](./Images/Builder-1.md.png "Builder")
 
+![alt text](./Images/Builder-1.md.png "Builder")
 
 ## Participants ##
 
@@ -27,6 +27,7 @@ way the objects are assembled is achieved using a Factory.
 +	Product: The object under construction, by parts
 
 ## Use Builder when ##
+
 +	Need to isolate knowledge of the creation of a complex object from its
 parts.
 +	Need to allow different implementations/interfaces of an object's parts.
@@ -36,6 +37,7 @@ parts.
 +	You need fine control over the construction process.
 
 ## Collaborations ##
+
 +	The client creates the Director object and configures it with the desired Builder object.
 +	Director notifies the builder whenever a part of the product should be built.
 +	Builder handles requests from the director and adds parts to the product.

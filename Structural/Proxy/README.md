@@ -8,7 +8,6 @@ README
 
 ![alt text](./Images/Proxy.md.png "Proxy")
 
-
 ## Participants ##
 
 +	The **Client** depends on the abstract Subject. Both the RealSubject and the Proxy implement the same interface, so the client is unaware of which she is using.
@@ -19,6 +18,7 @@ README
 +	The **RealSubject** class is the real object behind the scene. It has the Operation method that performs the actual work.
 
 ## Use Proxy when ##
+
 There are several cases where a Proxy can be useful.
 
 +	The object being represented is external to the system.

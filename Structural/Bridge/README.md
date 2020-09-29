@@ -9,8 +9,8 @@ README
 ![alt text](./Images/Bridge-1.md.png "Bridge")
 ![alt text](./Images/Bridge-2.md.png "Bridge")
 
-
 ## Use When ##
+
 +	Abstractions and implementations should not be bound at compile time.
 +	Abstractions and implementations should be independently extensible.
 +	You want run-time binding of the implementation.

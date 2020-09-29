@@ -14,8 +14,8 @@ Allows for the dynamic wrapping of objects in order to modify their existing res
 *	In other words, the Decorator pattern is the process of wrapping an existing class with another class that extends the behavior or state. Multiple decorators can be added to a class to combine extended behavior.
 
 ##
-![alt text](./Images/Decorator.md.png "Decorator")
 
+![alt text](./Images/Decorator.md.png "Decorator")
 
 ## Participants ##
 
@@ -25,6 +25,7 @@ Allows for the dynamic wrapping of objects in order to modify their existing res
 +	ConcreteDecorator inherits from Decorator(ProductDecorator) and add state and new behavior to the Component(IProduct) instance.
 
 ## Use Decorator when ##
+
 +	 Object responsibilities and behaviors should be dynamically modifiable.
 +	 Concrete implementations should be decoupled from responsibilities and behaviors.
 +	 Subclassing to achieve modification is impractical or impossible.

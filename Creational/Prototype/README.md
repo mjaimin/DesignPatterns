@@ -15,8 +15,8 @@ a new instance, when creating new instances is more expensive.
 *	Reduce complex initialisation and constructor processing and instead clone an exist instance
 
 ##
-![alt text](./Images/Prototype-1.md.png "Prototype")
 
+![alt text](./Images/Prototype-1.md.png "Prototype")
 
 ## Participants ##
 
@@ -25,6 +25,7 @@ a new instance, when creating new instances is more expensive.
 +	Client: Creates a new object by asking a prototype to clone itself
 
 ## Use Prototydpe when ##
+
 +	When the class to instantiate are specified at run-time, for example, by dynamic loading.
 +	To avoid building a class hierarchy of factories that parallels the class hierarchy of products.
 +	When instances of a class can have one of only a few different combinations of state

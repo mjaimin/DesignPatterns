@@ -13,8 +13,8 @@ Define a family of algorithms, encapsulate each one, and make them interchangeab
 The Strategy pattern encapsulates a set of algorithms uniformly (sibling subclasses that inherit a common interface) to achieve interchangeability among them.
 
 ##
-![alt text](./Images/Strategy-1.md.png "Strategy")
 
+![alt text](./Images/Strategy-1.md.png "Strategy")
 
 ## Participants ##
 
@@ -56,17 +56,21 @@ It is a good design practice to separate behaviors that occur in the problem dom
 + The algorithm uses data to which the client should not have access.
 
 ## The pattern’s benefits are as follows ##
+
 + Algorithms can be used among varying systems
 + Algorithms can be more easily maintained
 + Algorithms can be interchanged both during development and at runtime
 ## And it has these drawbacks ##
+
 + Clients must be aware of the strategies.
 + Strategies are more objects to manage.
 
 ## Key Features ##
+
 + Define and encapsulate a family of algorithms.
 + Make encapsulated algorithms interchangeable.
 + Allow algorithms to change independently from the clients that use it.
 
 ## Notes ##
+
 The Strategy pattern involves removing an algorithm from its host class and putting it in a separate class.

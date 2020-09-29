@@ -16,8 +16,8 @@ This design pattern is based on one of the OOPs concepts - encapsulation. In gen
 Enables a class to delegate the responsibility of creating a valid object.
 
 ##
-![alt text](./Images/Factory-1.md.png "Factory")
 
+![alt text](./Images/Factory-1.md.png "Factory")
 
 ## Participants ##
 
@@ -33,6 +33,7 @@ Enables a class to delegate the responsibility of creating a valid object.
 +	When the parent classes delegate responsibility to one of several helper subclasses.
 
 ## Collaborations ##
+
 +	The creator relies on its subclasses to define the factory method so that it returns an instance of the appropriate subclass
 
 ## Consequences ##

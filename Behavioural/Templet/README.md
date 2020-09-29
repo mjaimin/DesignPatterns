@@ -15,8 +15,8 @@ Defines the skeleton of an algorithm in a method, deferring some steps to subcla
 ## Motivation ##
 
 ##
-![alt text](./Images/Template-1.md.png "Template Design Pattern")
 
+![alt text](./Images/Template-1.md.png "Template Design Pattern")
 
 ## Participants ##
 

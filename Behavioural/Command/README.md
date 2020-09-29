@@ -8,7 +8,6 @@ Command is a behavioral design pattern that turns a request into a stand-alone o
 
 ![alt text](./Images/Command-1.md.png "Command")
 
-
 ## Participants ##
 
 	Client(User of the editor, who selects a Cut command on a menu)

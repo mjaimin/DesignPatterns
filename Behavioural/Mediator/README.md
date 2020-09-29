@@ -14,10 +14,11 @@ README
 	Define a central class that acts as a message routing service to all other classes.
 
 ##
+
 ![alt text](./Images/Mediator-1.md.png "Mediator")
 
-
 ## Participants ##
+
 	● Mediator
 		❍ defines an interface for communicating with Colleague objects.
 		❍ Broadcasts sent messages to all signed-on Colleagues using the Respond delegate
@@ -41,11 +42,13 @@ README
     2. The Mediator can become a “god class,” having too much knowledge of the rest of the program. This can make it hard to change and maintain. Sometimes you can improve this situation by putting more of the function into the inditasks, and the Mediator should only manage the interaction between objects.
 
 ## Use Mediator When ##
+
 	• Objects communicate in well-structured but potentially complex ways.
 	• The objects’ identities should be protected even though they communicate.
 	• Some object behaviors can be grouped and customized.
 
 ## Notes ##
+
 	Implementation
 		Key points of the Mediator pattern are:
 		• Each Colleague is passed a Mediator at instantiation and keeps it as a private reference.

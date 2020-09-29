@@ -10,9 +10,9 @@ README
 	Provides a simple interface and controls access to a series of complicated interfaces(subsystems).
 
 ##
+
 ![alt text](./Images/Facade-1.md "Facade")
 ![alt text](./Images/Facade-2.md "Facade")
-
 
 ## Participants ##
 
@@ -22,6 +22,7 @@ The **Facade** hides the complexities of the system behind its simple API. The F
 SubSystemA and SubSystemB perform the work for the client.
 
 ## Motivation ##
+
 +	Structuring a system into subsystems helps reduce complexity
 +	Subsystems are groups of classes, or groups of classes and other subsystems
 +	The interface exposed by the classes in a subsystem or set of subsystems can become quite complex
@@ -30,6 +31,7 @@ SubSystemA and SubSystemB perform the work for the client.
 A subsystem could consist of a large number of classes. Clients of a subsystem may need to interact with a number of subsystem classes for their needs. This leads to a high degree of coupling between the client objects and the subsystem. The Façade pattern provides a higher level, simplified interface for a subsystem resulting in reduced complexity and dependency. Clients interact with the Façade object to deal with the subsystem instead of interacting directly with subsystem classes. Even though clients interact with the Façade, when needed, a client will be able to access subsystem components directly through the lower level interfaces of the subsystem.
 
 ## Use Facade When ##
+
 +	A simple interface is needed to provide access to a complex system.
 +	There are many dependencies between system implementations and clients.
 +	Systems and subsystems should be layered.

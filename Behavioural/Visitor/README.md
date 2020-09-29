@@ -12,18 +12,20 @@ Represent an operation to be performed on the elements of an object structure.
 Define a new operation without changing the classes of the elements on which it operates
 
 ## Description ##
+
 The visitor pattern consists of two parts:
 a method called Visit() which is implemented by the visitor and is called for every element in the data structure
 visitable classes providing Accept() methods that accept a visitor
 
 ## Motivation ##
+
 +	Desire to keep the logic together; as opposed to distributing the code over all classes that can be in the object structure
 +	Support frequent addition of new operations
 
 ##
+
 ![alt text](./Images/Visitor-1.md.png "Visitor")
 ![alt text](./Images/Visitor-2.md.png "Visitor")
-
 
 ## Participants ##
 
@@ -41,6 +43,7 @@ visitable classes providing Accept() methods that accept a visitor
 		May either be a composite or a collection such as a list or a set
 
 # Use Visitor When ##
+
 +	An object structure contains many classes of objects with differing interfaces, and you want to perform operations on these
 objects that depend on their concrete classes.
 +	Classes defining the object structure rarely change, but operations performed on it can.

@@ -11,13 +11,15 @@ README
 	The Observer pattern defines a relationship between objects so that when one changes its state, all the others are notified accordingly. There is usually an identifiable single publisher of new state, and many subscribers who wish to receive it.
 
 ##
+
 ![alt text](./Images/Observer-1.md.png "Observer")
 
-
 ## Motivation ##
+
 	The need to maintain consistency between related objects without making classes tightly coupled
 
 ## Participants ##
+
 	Subject
 		The class whose instances independently change their state and notify Observers
 		Keeps track of its observers
@@ -39,6 +41,7 @@ README
 		The event mechanism for calling the Update operation on all Observers
 
 ## Use Observer When ##
+
 	An abstraction has two aspects, one dependent on the other.
 	State changes in one or more objects should trigger behavior in other objects
 	A change to one object requires changing others.
@@ -57,6 +60,7 @@ README
 	• It may cause redundant notifications.
 
 ## Consequences ##
+
 	Vary subjects and observers independently.
 	Abstract coupling between Subject and Observer.
 	Support for broadcast communication.
