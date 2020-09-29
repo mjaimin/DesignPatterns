@@ -32,7 +32,6 @@ A subsystem could consist of a large number of classes. Clients of a subsystem m
 +	There are many dependencies between system implementations and clients.
 +	Systems and subsystems should be layered.
 
-
 ## Consequences ##
 
 **Benefits**

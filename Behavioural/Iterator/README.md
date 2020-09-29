@@ -11,7 +11,6 @@ README
 ![alt text](./Images/Iterator-1.md.png "Iterator")
 ##
 
-
 ## Participants ##
 	Iterator
 		defines an interface for accessing and traversing elements.

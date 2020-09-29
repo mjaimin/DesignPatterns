@@ -37,8 +37,6 @@ There are several cases where a Proxy can be useful.
 +	Less efficiency due to indirection
 +	Complex implementation
 
-
-
 ## Types of Proxies
 
 +	**Remote Proxy** - Hides fact that object resides in a different address space.

@@ -51,7 +51,6 @@ The following key features characterize the State design pattern:
 +	Objects change in certain ways when states change. Objects may appear to change classes, but they’re changing behavior that is part of the class.
 +	Each state’s behavior depends on the current state of other states in the object
 
-
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbODM0MjM3ODNdfQ==
 -->

@@ -37,7 +37,6 @@ Defines the skeleton of an algorithm in a method, deferring some steps to subcla
 
 ## Benifit
 
-
 ## Potential Drawbacks
 +   Operations which must be overridden by a subclass should be made abstract
 +   When inheritance is used as the way to add new functionality, it becomes impossible to add functionality in more than one axis at the same time without defining more and more classes.  This kind of system can rapidly become fragile. Changes at any one level can disturb operation above or below that level in the template methods. There is often a feeling of unpredictability when adding new functionality as it difficult to predict how behavior will change in all cases. You often also tend to build finer and finer tweaks by splitting the algorithmic parts of the template class and inserting more layers, thus exacerbating the problem.
@@ -61,6 +60,4 @@ Sometimes you want to specify the order of operations that a method uses, but al
 
 ## Guideline
 Use Template Methods to delegate to subclasses.
-
-
 

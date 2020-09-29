@@ -5,14 +5,11 @@ README
 **Creational: (decouple constructors)** Factory Method, Abstract Factory, Builder, Prototype, Singleton
 +   Responsible for efficient object creation mechanisms, which increase the flexibility and reuse of existing code.
 
-
 **Structural: (create large composition)** Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy
 +   Responsible for building simple and efficient class hierarchies and relations between different classes.
 
-
 **Behavioral: (divide responsibilities)** Chain of responsibility, Command, Momento, Observer, State, Strategy, Iterator, Mediator, Template, Visitor
 +   Responsible for the efficient and safe distribution of behaviors among the program's objects.
-
 
 ## Creational patterns
 Creational patterns are ones that create objects for you, rather than having you
@@ -39,7 +36,6 @@ These concern class and object composition. They use inheritance to compose inte
 +   **Decorator**: Dynamically adds/overrides behaviour in an existing method of an object.
 +   **Facade**: Provides a simplified interface to a large body of code.
 +   **Proxy**: provides a placeholder for another object to control access, reduce cost, and reduce complexity.
-
 
  **Intent** | **Patterns**
 :-----------|:------------

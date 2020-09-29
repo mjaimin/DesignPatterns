@@ -26,7 +26,6 @@ README
 		❍ each Colleague class knows its Mediator object.
 		❍ each colleague communicates with its mediator whenever it would have otherwise communicated with another colleague.
 
-
 ## Consequences ##
 
 	*Advantages*
@@ -39,12 +38,10 @@ README
     1. Complexity - in practice the mediators tends to become more complex and complex. A good practice is to take care to make the mediator classes responsible only for the communication part. For example when implementing different screens the the screen class should not contain code which is not a part of the screen operations. It should be put in some other classes.
     2. The Mediator can become a “god class,” having too much knowledge of the rest of the program. This can make it hard to change and maintain. Sometimes you can improve this situation by putting more of the function into the inditasks, and the Mediator should only manage the interaction between objects.
 
-
 ## Use Mediator When ##
 	• Objects communicate in well-structured but potentially complex ways.
 	• The objects’ identities should be protected even though they communicate.
 	• Some object behaviors can be grouped and customized.
-
 
 ## Notes ##
 	Implementation

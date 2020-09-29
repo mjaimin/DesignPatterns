@@ -44,7 +44,6 @@ objects that depend on their concrete classes.
 +	Classes defining the object structure rarely change, but operations performed on it can.
 +	Exposing internal state or operations of the object structure is acceptable.
 
-
 ## Consequences ##
 
 ## Benifit

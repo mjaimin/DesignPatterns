@@ -31,7 +31,6 @@ Enables a class to delegate the responsibility of creating a valid object.
 +	When a class wants that its sub-classes specify the objects to be created.
 +	When the parent classes delegate responsibility to one of several helper subclasses.
 
-
 ## Collaborations ##
 +	The creator relies on its subclasses to define the factory method so that it returns an instance of the appropriate subclass
 

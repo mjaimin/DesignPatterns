@@ -30,7 +30,6 @@ README
 
 	invokes the Interpret operation.
 
-
 ## Use Interpreter When ##
 +	There is grammar to interpret that can be represented as large syntax trees.
 +	The grammar is simple.

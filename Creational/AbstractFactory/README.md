@@ -6,9 +6,7 @@ Provide an interface for creating families of related or dependent objects witho
 ## Purpose ##
 Enables a class to delegate the responsibility of creating a valid object.
 
-
 ![alt text](./Images/AbstractFactory-1.md.png "AbstractFactory")
-
 
 ## Participants ##
 
@@ -23,8 +21,6 @@ Enables a class to delegate the responsibility of creating a valid object.
 +	When a system should be independent of how its products are created, composed, and represented.
 +	When a system should be configured with one of multiple families of products or a developer needs to enforce a family of related objects to be used together.
 +	Need to hide product implementations and just present interfaces.
-
-
 
 ## Collaborations ##
 The creator relies on its subclasses to define the factory method so that it returns an instance of the appropriate subclass
@@ -48,5 +44,4 @@ interface.
 +	Supporting new kinds of products is difficult because it requires the extension of the entire interface. In other words, the train factory now has to make boats, which have different process of being made.
 +	All of the product objects are returned to the client with the same abstract interface as given by the return type. This means that the client will not be able to access subclass specific operations through the abstract interface.
 +	Subclass Specific Operations May Require Runtime Dependent Casting
-
 

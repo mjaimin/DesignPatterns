@@ -1,6 +1,5 @@
 README
 
-
 ## Purpose
 
 Defines a set of encapsulated algorithms that can be swapped to carry out a specific behavior.
@@ -34,7 +33,6 @@ The Strategy pattern encapsulates a set of algorithms uniformly (sibling subclas
 +   The behavior of a class should be defined at runtime.
 +   Conditional statements are complex and hard to maintain.
 
-
 ## Motivation ##
 Objects have responsibilities.
 Different, specific implementations of these responsibilities are manifested through the use of polymorphism.
@@ -50,7 +48,6 @@ It is a good design practice to separate behaviors that occur in the problem dom
 + related classes differ only in their behavior.
 + There are different algorithms for a given purpose, and the selection criteria can be codified.
 + The algorithm uses data to which the client should not have access.
-
 
 ## The pattern’s benefits are as follows:
 + Algorithms can be used among varying systems

@@ -43,7 +43,6 @@ Apply flyweight when ALL of the following are true:
 **Potential Drawbacks**
 +	Flyweights may introduce run-time costs associated with transferring, finding, and/or computing extrinsic state
 
-
 ## Collaborations ##
 
 +	Data that a ﬂyweight needs to process must be classiﬁed as intrinsic or extrinsic
@@ -64,11 +63,9 @@ Apply flyweight when ALL of the following are true:
 **Role of Manager in FlyWeight** (can be client(main) also)
 	A manager object is used to store the object’s extrinsic state. When invoking any of the objects’ methods, the manager will pass in these extrinsic states as argument.
 
-
 ## Intrinsic and Extrinsic State ##
 	Categorizing an object’s data as intrinsic or extrinsic can be a bit arbitrary.
 	You want to make as much of the data as possible extrinsic while still maintaining the modularity of each object. This distinction can be somewhat arbitrary. In this example, the physical car data (make, model, year) is intrinsic, and the owner data (owner name, tag number, last registration date) is extrinsic. This means that only one car object is needed for each combination of make, model, and year. This is still a lot of objects, but it is several orders of magnitude fewer than before. The single instance of each make-model-year combination will be shared among all the owners of that type of car. Here is what the new Car class looks like.
-
 
 ## Instantiation Using a Factory ##
 	The factory is fairly simple. It checks to see whether a car of this particular make-model-year combination has been created before. If so, it returns it. If not, it creates a new car and stores it for later use. This ensures that only a single copy of each unique intrinsic state is created
