@@ -14,24 +14,24 @@ The purpose of the Singleton pattern is to ensure that there is only one instanc
 
 ## Participants ##
 
-+	Singleton: The class containing the mechanism for a unique instance of itself
++ Singleton: The class containing the mechanism for a unique instance of itself
 
 ## Use Builder when ##
 
-+	You need to ensure there is only one instance of a class.
-+	Controlled access to that instance is essential.
++ You need to ensure there is only one instance of a class.
++ Controlled access to that instance is essential.
 
 ## Collaborations ##
 
-+	Other objects can only use the single instance of that object.
++ Other objects can only use the single instance of that object.
 
 ## Consequences ##
 
-+	It can be difficult to subclass a Singleton, since this can only work if the base Singleton class has not yet been instantiated.
-+	 You can easily change a Singleton to allow a small number of instances where this is allowable and meaningful.
++ It can be difficult to subclass a Singleton, since this can only work if the base Singleton class has not yet been instantiated.
++  You can easily change a Singleton to allow a small number of instances where this is allowable and meaningful.
 
 **Benefits**
-+	Controlled access to sole instance.
++ Controlled access to sole instance.
 
 **Potential Drawbacks**
 

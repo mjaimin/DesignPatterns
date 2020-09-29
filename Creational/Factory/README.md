@@ -9,7 +9,7 @@ This design pattern is based on one of the OOPs concepts - encapsulation. In gen
 
 ## Intent ##
 
-+	Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Methode lets a class defer instantiation to subclasses.
++ Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Methode lets a class defer instantiation to subclasses.
 
 ## Purpose ##
 
@@ -28,25 +28,25 @@ Enables a class to delegate the responsibility of creating a valid object.
 
 ## Use Factory when ##
 
-+	When a class doesn't know what sub-classes will be required to create.
-+	When a class wants that its sub-classes specify the objects to be created.
-+	When the parent classes delegate responsibility to one of several helper subclasses.
++ When a class doesn't know what sub-classes will be required to create.
++ When a class wants that its sub-classes specify the objects to be created.
++ When the parent classes delegate responsibility to one of several helper subclasses.
 
 ## Collaborations ##
 
-+	The creator relies on its subclasses to define the factory method so that it returns an instance of the appropriate subclass
++ The creator relies on its subclasses to define the factory method so that it returns an instance of the appropriate subclass
 
 ## Consequences ##
 
 **Benefits**
 
-+	Factory Method Pattern allows the sub-classes to choose the type of objects to create.
++ Factory Method Pattern allows the sub-classes to choose the type of objects to create.
 
-+	The Factory Pattern promotes loose coupling by eliminating the need to bind application-specific classes into the code. That means the code interacts solely with the resultant interface or abstract class, so that it will work with any classes that implement that interface or that extends that abstract class.
++ The Factory Pattern promotes loose coupling by eliminating the need to bind application-specific classes into the code. That means the code interacts solely with the resultant interface or abstract class, so that it will work with any classes that implement that interface or that extends that abstract class.
 
 **Potential Drawbacks**
 
-+	The factory has to be used for a family of objects. If the classes doesn’t extend common base class or interface they cannot be used in a factory design template.
++ The factory has to be used for a family of objects. If the classes doesn’t extend common base class or interface they cannot be used in a factory design template.
 
 ## Conclusion
 

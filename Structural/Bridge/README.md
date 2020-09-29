@@ -11,47 +11,47 @@ README
 
 ## Use When ##
 
-+	Abstractions and implementations should not be bound at compile time.
-+	Abstractions and implementations should be independently extensible.
-+	You want run-time binding of the implementation.
-+	Changes in the implementation of an abstraction should have no impact on clients.
-+	Implementation details should be hidden from the client.
++ Abstractions and implementations should not be bound at compile time.
++ Abstractions and implementations should be independently extensible.
++ You want run-time binding of the implementation.
++ Changes in the implementation of an abstraction should have no impact on clients.
++ Implementation details should be hidden from the client.
 
 ## Participants ##
 
-+	Abstraction
++ Abstraction
 
 		The interface that the client sees
 		maintains a reference to an object of type Implementor.
-+	Implementor/Bridge
++ Implementor/Bridge
 
 		An interface defining those parts of the Abstraction that might vary
-+	RefinedAbstractio/AbstractionImpl
++ RefinedAbstractio/AbstractionImpl
 
 		extends the interface defined by Abstraction.
 		Implements the abstraction interface using a reference to an object of type Implementor.
-+	ImplementationA and ImplementationB
++ ImplementationA and ImplementationB
 
 		Implementations of the Bridge interface
-+	Operation
++ Operation
 
 		A method that is called by the client
-+	OperationImp
++ OperationImp
 
 		A method in the Bridge that is called from the Operation in the Abstraction
 
 ## Motivation ##
 
-+	Need to avoid a permanent binding between an abstraction and implementation.
-+	When abstractions and implementations should be extensible through subclassing.
-+	When implementation changes should not impact clients.
-+	When the implementation should be completely hidden from the client.
-+	When you have a proliferation of classes.
-+	When, unknown to the client, implementations are shared among objects.
-+	The changes in actual implementation should be transparent to the client.
-+	The details of implementation is only seen by concrete implementers and hidden from abstraction.
-+	We should be able to extend both abstraction and implementation independent of each other.
-+	When the implementation has to be shared among multiple objects without client knowledge.
++ Need to avoid a permanent binding between an abstraction and implementation.
++ When abstractions and implementations should be extensible through subclassing.
++ When implementation changes should not impact clients.
++ When the implementation should be completely hidden from the client.
++ When you have a proliferation of classes.
++ When, unknown to the client, implementations are shared among objects.
++ The changes in actual implementation should be transparent to the client.
++ The details of implementation is only seen by concrete implementers and hidden from abstraction.
++ We should be able to extend both abstraction and implementation independent of each other.
++ When the implementation has to be shared among multiple objects without client knowledge.
 
 ## Benefits in using Bridge Pattern
 

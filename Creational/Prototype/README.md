@@ -20,16 +20,16 @@ a new instance, when creating new instances is more expensive.
 
 ## Participants ##
 
-+	Prototype: Declares an interface for cloning itself
-+	ConcretePrototype: Implements an operation for cloning itself
-+	Client: Creates a new object by asking a prototype to clone itself
++ Prototype: Declares an interface for cloning itself
++ ConcretePrototype: Implements an operation for cloning itself
++ Client: Creates a new object by asking a prototype to clone itself
 
 ## Use Prototydpe when ##
 
-+	When the class to instantiate are specified at run-time, for example, by dynamic loading.
-+	To avoid building a class hierarchy of factories that parallels the class hierarchy of products.
-+	When instances of a class can have one of only a few different combinations of state
-+	Need to be independent of how its products are created, composed, and
++ When the class to instantiate are specified at run-time, for example, by dynamic loading.
++ To avoid building a class hierarchy of factories that parallels the class hierarchy of products.
++ When instances of a class can have one of only a few different combinations of state
++ Need to be independent of how its products are created, composed, and
 represented.
 
 ## Consequences ##
@@ -38,5 +38,5 @@ represented.
 
 **Potential Drawbacks**
 
-+	Initializing clones using deepcopy
++ Initializing clones using deepcopy
 

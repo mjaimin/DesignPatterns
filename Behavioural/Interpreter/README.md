@@ -34,10 +34,10 @@ README
 
 ## Use Interpreter When ##
 
-+	There is grammar to interpret that can be represented as large syntax trees.
-+	The grammar is simple.
-+	Efficiency is not important.
-+	Decoupling grammar from underlying expressions is desired.
++ There is grammar to interpret that can be represented as large syntax trees.
++ The grammar is simple.
++ Efficiency is not important.
++ Decoupling grammar from underlying expressions is desired.
 
 ## Consequences ##
 

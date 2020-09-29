@@ -18,41 +18,41 @@ README
 
 ## Participants ##
 
-+	Flyweight
++ Flyweight
 		Declares an interface through which ﬂyweights can receive and act on extrinsic state
-+	ConcreteFlyweight
++ ConcreteFlyweight
 		Implements Flyweight interface and adds storage for intrinsic state
-+	UnsharedConcreteFlyweight
++ UnsharedConcreteFlyweight
 		Not all ﬂyweights need to be shared, unshared ﬂyweights typically have children which are ﬂyweights
-+	FlyweightFactory
++ FlyweightFactory
 		Generates and manages ﬂyweight objects
-+	Client
++ Client
 		Maintains extrinsic state and stores references to ﬂyweights
 
 ## Use Composite when ##
 
 Apply flyweight when ALL of the following are true:
-+	An application uses a large number of objects
-+	Storage cost is high because of the quantity of objects
-+	Most objects can be made extrinsic
-+	Many groups of objects can be replaced by relatively few shared
-+	objects once extrinsic state is removed
-+	The application does not depend on object identity
++ An application uses a large number of objects
++ Storage cost is high because of the quantity of objects
++ Most objects can be made extrinsic
++ Many groups of objects can be replaced by relatively few shared
++ objects once extrinsic state is removed
++ The application does not depend on object identity
 
 ## Consequences ##
 
 **Benefits**
-+	Space saving by using shared objects
-+	Adds functionality to the application
++ Space saving by using shared objects
++ Adds functionality to the application
 
 **Potential Drawbacks**
-+	Flyweights may introduce run-time costs associated with transferring, finding, and/or computing extrinsic state
++ Flyweights may introduce run-time costs associated with transferring, finding, and/or computing extrinsic state
 
 ## Collaborations ##
 
-+	Data that a ﬂyweight needs to process must be classiﬁed as intrinsic or extrinsic
++ Data that a ﬂyweight needs to process must be classiﬁed as intrinsic or extrinsic
 		Intrinsic is stored with ﬂyweight; Extrinsic is stored with client
-+	Clients should not instantiate ConcreteFlyweights directly
++ Clients should not instantiate ConcreteFlyweights directly
 
 ## Additional Notes ##
 
