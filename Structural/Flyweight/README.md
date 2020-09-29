@@ -19,15 +19,15 @@
 ## Participants ##
 
 + Flyweight
-		Declares an interface through which ﬂyweights can receive and act on extrinsic state
+  - Declares an interface through which ﬂyweights can receive and act on extrinsic state
 + ConcreteFlyweight
-		Implements Flyweight interface and adds storage for intrinsic state
+  - Implements Flyweight interface and adds storage for intrinsic state
 + UnsharedConcreteFlyweight
-		Not all ﬂyweights need to be shared, unshared ﬂyweights typically have children which are ﬂyweights
+  - Not all ﬂyweights need to be shared, unshared ﬂyweights typically have children which are ﬂyweights
 + FlyweightFactory
-		Generates and manages ﬂyweight objects
+  - Generates and manages ﬂyweight objects
 + Client
-		Maintains extrinsic state and stores references to ﬂyweights
+  - Maintains extrinsic state and stores references to ﬂyweights
 
 ## Use Composite when ##
 

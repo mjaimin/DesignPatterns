@@ -39,10 +39,10 @@ The Strategy pattern encapsulates a set of algorithms uniformly (sibling subclas
 
 ## Motivation ##
 
-Objects have responsibilities.
-Different, specific implementations of these responsibilities are manifested through the use of polymorphism.
-There is a need to manage several different implementations of what is, conceptually, the same algorithm.
-It is a good design practice to separate behaviors that occur in the problem domain from each other— that is, to decouple them. This allows me to change the class responsible for one behavior without adversely affecting another.
++ Objects have responsibilities.
++ Different, specific implementations of these responsibilities are manifested through the use of polymorphism.
++ There is a need to manage several different implementations of what is, conceptually, the same algorithm.
++ It is a good design practice to separate behaviors that occur in the problem domain from each other— that is, to decouple them. This allows me to change the class responsible for one behavior without adversely affecting another.
 
 ## Examples
 

@@ -16,23 +16,23 @@ Allows for capturing and externalizing an object’s internal state so that it c
 
 ## Participants ##
 
-	Originator:
-		A class that has state to be saved
-		Creates and uses a memento.
-		Creates a memento containing a snapshot of its own current internal state.
-		Uses the memento to restore its internal state.
-	Caretaker:
-		A class that is a holder for the mementos
-		Invokes the originator.
-		is responsible for the memento's safekeeping
-		The memento is opaque to the caretaker, But never operates on or examines the contents of a memento.
-	Memento:
-		A class for objects representing the Originator’s saved state
-		A black box.
-		The memento must not reveal its contents to anything other than the originator
-		the lock box that is written and read by the Originator, and shepherded by the Caretaker.
-	Client:
-		Keeps a copy of the originator
++ Originator:
+  + A class that has state to be saved
+  + Creates and uses a memento.
+  + Creates a memento containing a snapshot of its own current internal state.
+  + Uses the memento to restore its internal state.
++ Caretaker:
+  + A class that is a holder for the mementos
+  + Invokes the originator.
+  + is responsible for the memento's safekeeping
+  + The memento is opaque to the caretaker, But never operates on or examines the contents of a memento.
++ Memento:
+  + A class for objects representing the Originator’s saved state
+  + A black box.
+  + The memento must not reveal its contents to anything other than the originator
+  + the lock box that is written and read by the Originator, and shepherded by the Caretaker.
++ Client:
+  + Keeps a copy of the originator
 
 ## Motivation ##
 

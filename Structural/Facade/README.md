@@ -2,12 +2,12 @@
 
 ## Purpose ##
 
-	Supplies a single interface to a set of interfaces within a system.
-	Acts as an entry point into the application.
+1. Supplies a single interface to a set of interfaces within a system.
+2. Acts as an entry point into the application.
 
 ## Intent ##
 
-	Provides a simple interface and controls access to a series of complicated interfaces(subsystems).
+Provides a simple interface and controls access to a series of complicated interfaces(subsystems).
 
 ## Image ##
 

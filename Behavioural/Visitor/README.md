@@ -6,10 +6,10 @@ Allows for one or more operations to be applied to a set of objects at runtime, 
 
 ## Intent ##
 
-Deﬁne an operation to be performed over a complex object structure without changing the elements on which it operates.	Enables new functionality to be performed on a class without affecting its structure.
-OR
-Represent an operation to be performed on the elements of an object structure.
-Define a new operation without changing the classes of the elements on which it operates
+1. Deﬁne an operation to be performed over a complex object structure without changing the elements on which it operates.	Enables new functionality to be performed on a class without affecting its structure.
+**OR**
+2. Represent an operation to be performed on the elements of an object structure.
+3. Define a new operation without changing the classes of the elements on which it operates
 
 ## Description ##
 
