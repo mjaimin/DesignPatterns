@@ -12,7 +12,7 @@ README
 ##
 
 
-## Participant ##
+## Participants ##
 	Iterator
 		defines an interface for accessing and traversing elements.
 	ConcreteIterator

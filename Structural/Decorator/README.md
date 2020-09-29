@@ -30,7 +30,7 @@ Allows for the dynamic wrapping of objects in order to modify their existing res
 +	 Specific functionality should not reside high in the object hierarchy.
 +	 A lot of little objects surrounding a concrete implementation is acceptable.
 
-## CONSEQUENCES ##
+## Consequences ##
 
 **Benefits**
 

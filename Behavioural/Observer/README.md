@@ -15,7 +15,7 @@ README
 ## Motivation ##
 	The need to maintain consistency between related objects without making classes tightly coupled
 
-## Participants
+## Participants ##
 	Subject
 		The class whose instances independently change their state and notify Observers
 		Keeps track of its observers
@@ -54,7 +54,7 @@ README
 	• Object lookup speeds can affect performance.
 	• It may cause redundant notifications.
 
-## Consequences
+## Consequences ##
 	Vary subjects and observers independently.
 	Abstract coupling between Subject and Observer.
 	Support for broadcast communication.

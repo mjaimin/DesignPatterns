@@ -11,7 +11,7 @@ Allow an object to alter its behavior when its internal state changes. The objec
 ![alt text](./Images/State-1.md.png "State")
 ##
 
-## Participant ##
+## Participants ##
 Context
 +	defines the interface of interest to clients
 +	maintains an instance of a ConcreteState subclass that defines the current state.

@@ -15,7 +15,7 @@ README
 ![alt text](./Images/Mediator-1.md.png "Mediator")
 ##
 
-## Participant ##
+## Participants ##
 	● Mediator
 		❍ defines an interface for communicating with Colleague objects.
 		❍ Broadcasts sent messages to all signed-on Colleagues using the Respond delegate

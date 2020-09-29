@@ -11,7 +11,7 @@ README
 ![alt text](./Images/Memento-1.md.png "Memento")
 ##
 
-## Participant ##
+## Participants ##
 	Originator:
 		A class that has state to be saved
 		Creates and uses a memento.

@@ -46,7 +46,7 @@ Avoid coupling sender of request to its receiver by giving more than one object 
 + Want to issue request to one of several objects without specifying receiver explicitly.
 + Set of objects that can handle a request should be specified dynamically
 
-## CONSEQUENCES ##
+## Consequences ##
 
 ### Benefits ###
 

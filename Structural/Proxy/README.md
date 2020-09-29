@@ -24,7 +24,7 @@ There are several cases where a Proxy can be useful.
 +	Access control for the original object is required.
 +	Added functionality is required when an object is accessed.
 
-## CONSEQUENCES ##
+## Consequences ##
 
 **Benefits**
 

@@ -23,7 +23,7 @@ visitable classes providing Accept() methods that accept a visitor
 ![alt text](./Images/Visitor-2.md.png "Visitor")
 ##
 
-## Participant ##
+## Participants ##
 
 +	**Visitor**
 		This is an interface or an abstract class used to declare the visit operations for all the types of visitable classes.
@@ -45,7 +45,7 @@ objects that depend on their concrete classes.
 +	Exposing internal state or operations of the object structure is acceptable.
 
 
-## CONSEQUENCES ##
+## Consequences ##
 
 ## Benifit
 +	Saperates the algorithm from the data structure

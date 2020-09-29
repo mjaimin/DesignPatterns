@@ -34,7 +34,7 @@ Apply flyweight when ALL of the following are true:
 +	objects once extrinsic state is removed
 +	The application does not depend on object identity
 
-## CONSEQUENCES ##
+## Consequences ##
 
 **Benefits**
 +	Space saving by using shared objects

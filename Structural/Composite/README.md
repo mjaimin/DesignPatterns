@@ -41,7 +41,7 @@ The classes and/or objects participating in this pattern are:
 +	Hierarchical representations of objects are needed.
 +	Objects and compositions of objects should be treated uniformly.
 
-## CONSEQUENCES ##
+## Consequences ##
 
 **Benefits**
 

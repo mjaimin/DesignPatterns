@@ -15,7 +15,7 @@ README
 +	Changes in the implementation of an abstraction should have no impact on clients.
 +	Implementation details should be hidden from the client.
 
-## Participant ##
+## Participants ##
 
 +	Abstraction
 

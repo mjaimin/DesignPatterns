@@ -33,7 +33,7 @@ Use Facade When
 +	Systems and subsystems should be layered.
 
 
-## CONSEQUENCES ##
+## Consequences ##
 
 **Benefits**
 +	It hides the implementation of the subsystem from clients, making the subsystem easier to use

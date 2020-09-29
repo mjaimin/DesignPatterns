@@ -16,7 +16,7 @@ Defines the skeleton of an algorithm in a method, deferring some steps to subcla
 ![alt text](./Images/Template-1.md.png "Template Design Pattern")
 ##
 
-## Participant ##
+## Participants ##
 ### Abstract class
 +   Defines abstract primitive operations that concrete subclasses define to implement steps of an algorithm.
 +   Implements a template method defining the skeleton of an algorithm. The template method calls primitive operations as well as operations defined in AbstractClass or those of other objects.
@@ -33,7 +33,7 @@ Defines the skeleton of an algorithm in a method, deferring some steps to subcla
 +   Parent classes should be able to uniformly invoke behavior in their subclasses.
 +   Most or all subclasses need to implement the behavior.
 
-## CONSEQUENCES
+## Consequences ##
 
 ## Benifit
 

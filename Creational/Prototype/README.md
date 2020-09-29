@@ -31,7 +31,7 @@ a new instance, when creating new instances is more expensive.
 +	Need to be independent of how its products are created, composed, and
 represented.
 
-## CONSEQUENCES ##
+## Consequences ##
 
 **Benefits**
 

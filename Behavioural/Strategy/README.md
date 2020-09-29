@@ -15,7 +15,7 @@ The Strategy pattern encapsulates a set of algorithms uniformly (sibling subclas
 ![alt text](./Images/Strategy-1.md.png "Strategy")
 ##
 
-## Participant ##
+## Participants ##
 **Context:**	A class that maintains contextual information for an IStrategy object’s algorithm to work on the Context class is the trafﬁc cop that decides which strategy is to be called.
 **IStrategy:** Defines an interface common to all the strategies Context uses this interface to call the algorithm defined by a ConcreteStrategy
 **StrategyA, StrategyB:** Classes that include algorithms that implement the IStrategy interface

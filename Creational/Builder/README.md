@@ -40,7 +40,7 @@ parts.
 +	Builder handles requests from the director and adds parts to the product.
 +	The client retrieves the product from the builder.
 
-## CONSEQUENCES ##
+## Consequences ##
 
 **Benefits**
 

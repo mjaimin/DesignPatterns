@@ -35,7 +35,7 @@ Enables a class to delegate the responsibility of creating a valid object.
 ## Collaborations ##
 +	The creator relies on its subclasses to define the factory method so that it returns an instance of the appropriate subclass
 
-## CONSEQUENCES ##
+## Consequences ##
 
 **Benefits**
 

@@ -23,7 +23,7 @@ The purpose of the Singleton pattern is to ensure that there is only one instanc
 ## Collaborations ##
 +	Other objects can only use the single instance of that object.
 
-## CONSEQUENCES ##
+## Consequences ##
 
 +	It can be difficult to subclass a Singleton, since this can only work if the base Singleton class has not yet been instantiated.
 +	 You can easily change a Singleton to allow a small number of instances where this is allowable and meaningful.
