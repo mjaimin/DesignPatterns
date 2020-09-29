@@ -1,8 +1,8 @@
 README
 
-#Purpose
+## Purpose ##
 	Allows loose coupling by encapsulating the way disparate sets of objects interact and communicate with each other. Allows for the actions of each object set to vary independently of one another.
-#Intent
+## Intent ##
 	Define an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.
 	OR
 	The Mediator pattern is there to enable objects to communicate without knowing each other’s identities. It also encapsulates a protocol that objects can follow.
@@ -15,7 +15,7 @@ README
 ![alt text](./Images/Mediator-1.md.png "Mediator")
 ##
 
-# Participant
+## Participant ##
 	● Mediator
 		❍ defines an interface for communicating with Colleague objects.
 		❍ Broadcasts sent messages to all signed-on Colleagues using the Respond delegate
@@ -27,7 +27,7 @@ README
 		❍ each colleague communicates with its mediator whenever it would have otherwise communicated with another colleague.
 
 
-# Consequences
+## Consequences ##
 
 	*Advantages*
 	1. Comprehension - The mediator encapsulate the logic of mediation between the colleagues. From this reason it' more easier to understand this logic since it is kept in only one class.

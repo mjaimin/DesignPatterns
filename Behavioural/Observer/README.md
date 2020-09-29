@@ -3,7 +3,7 @@ README
 ## Purpose
 	Lets one or more objects be notified of state changes in other objects within the system.
 
-## Intent
+## Intent ##
 	Defines the way one or more classes can be alerted to a change in another class.
 	OR
 	The Observer pattern defines a relationship between objects so that when one changes its state, all the others are notified accordingly. There is usually an identifiable single publisher of new state, and many subscribers who wish to receive it.
@@ -12,7 +12,7 @@ README
 ![alt text](./Images/Observer-1.md.png "Observer")
 ##
 
-## Motivation
+## Motivation ##
 	The need to maintain consistency between related objects without making classes tightly coupled
 
 ## Participants

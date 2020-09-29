@@ -3,7 +3,7 @@ README
 ## Purpose
 	Defines a representation for a grammar as well as a mechanism to understand and act upon the grammar.
 
-## Intent
+## Intent ##
 	Given a language, define a represention for its grammar along with an interpreter that uses the representation to interpret sentences in the language.
 	OR
 	Interpreter Specifies how to evaluate sentences in a language.

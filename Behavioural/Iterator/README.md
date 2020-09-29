@@ -2,7 +2,7 @@ README
 
 # Purpose
 	Allows for access to the elements of an aggregate object without allowing access to its underlying representation.
-# Intent
+## Intent ##
 	Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
 	OR
 	Provides a way to navigate a collection in a formalized manner.
@@ -12,7 +12,7 @@ README
 ##
 
 
-# Participant
+## Participant ##
 	Iterator
 		defines an interface for accessing and traversing elements.
 	ConcreteIterator
@@ -23,7 +23,7 @@ README
 	ConcreteAggregate
 		implements the Iterator creation interface to return an instance of the proper ConcreteIterator
 
-# Motivation
+## Motivation ##
 	An aggregate object such as a list should allow a way to traverse its elements without exposing its internal structure
 	It should allow different traversal methods
 	It should allow multiple traversals to be in progress concurrently
@@ -35,7 +35,7 @@ README
 	A uniform interface for traversal is needed.
 	Subtle differences exist between the implementation details of various iterators.
 
-# Consequences
+## Consequences ##
 	There are three major consequences.
 	1. Iterator Pattern supports variations in the traversal of an aggregate. Every time you want to change the traversal algorithm, you just replace the iterator instance with a different one.
 	2. Iterators simplify the Aggregate interface.

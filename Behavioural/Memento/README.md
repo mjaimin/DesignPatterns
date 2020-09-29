@@ -2,7 +2,7 @@ README
 
 ## Purpose
 	Allows for capturing and externalizing an object’s internal state so that it can be restored later, all without violating encapsulation.
-## Intent
+## Intent ##
 	Without violating encapsulation, capture and externalize an object’s internal state so that the object can be returned to this state later.
 	OR
 	Allows you to restore an object to its previous state.
@@ -11,7 +11,7 @@ README
 ![alt text](./Images/Memento-1.md.png "Memento")
 ##
 
-## Participant
+## Participant ##
 	Originator:
 		A class that has state to be saved
 		Creates and uses a memento.
@@ -30,7 +30,7 @@ README
 	Client:
 		Keeps a copy of the originator
 
-## Motivation
+## Motivation ##
 	It is sometimes necessary to capture the internal state of an object at some point and have the ability to restore the object to that state later in time. Such a case is useful in case of error or failure. OR For most applications it is important to allow the users to "undo" an operation or to return to a previous state.
 
 ## Benefits:

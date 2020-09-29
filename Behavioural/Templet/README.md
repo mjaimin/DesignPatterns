@@ -5,18 +5,18 @@ README
 ## Purpose
 Identifies the framework of an algorithm, allowing implementing classes to define the actual behavior.
 
-## Intent
+## Intent ##
 Defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template method lets subclasses redefine certain steps of an algorithm without changing the algorithm’s structure.
 
-## Description
+## Description ##
 
-## Motivation
+## Motivation ##
 
 ##
 ![alt text](./Images/Template-1.md.png "Template Design Pattern")
 ##
 
-## Participant
+## Participant ##
 ### Abstract class
 +   Defines abstract primitive operations that concrete subclasses define to implement steps of an algorithm.
 +   Implements a template method defining the skeleton of an algorithm. The template method calls primitive operations as well as operations defined in AbstractClass or those of other objects.
@@ -24,7 +24,7 @@ Defines the skeleton of an algorithm in a method, deferring some steps to subcla
 ### Concrete class
 +   Implements the primitive operations to carry out subclass-specific steps of the algorithm.
 
-## Collaborations
+## Collaborations ##
 +   ConcreteClass relies on AbstractClass to implement the invariant steps of the algorithm.
 
 ## Use Template When

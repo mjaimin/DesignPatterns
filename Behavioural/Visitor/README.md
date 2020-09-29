@@ -3,18 +3,18 @@ README
 ## Purpose
 Allows for one or more operations to be applied to a set of objects at runtime, decoupling the operations from the object structure.
 
-## Intent
+## Intent ##
 Deﬁne an operation to be performed over a complex object structure without changing the elements on which it operates.	Enables new functionality to be performed on a class without affecting its structure.
 OR
 Represent an operation to be performed on the elements of an object structure.
 Define a new operation without changing the classes of the elements on which it operates
 
-# Description
+## Description ##
 The visitor pattern consists of two parts:
 a method called Visit() which is implemented by the visitor and is called for every element in the data structure
 visitable classes providing Accept() methods that accept a visitor
 
-# Motivation
+## Motivation ##
 +	Desire to keep the logic together; as opposed to distributing the code over all classes that can be in the object structure
 +	Support frequent addition of new operations
 
@@ -23,7 +23,7 @@ visitable classes providing Accept() methods that accept a visitor
 ![alt text](./Images/Visitor-2.md.png "Visitor")
 ##
 
-## Participant
+## Participant ##
 
 +	**Visitor**
 		This is an interface or an abstract class used to declare the visit operations for all the types of visitable classes.
@@ -45,7 +45,7 @@ objects that depend on their concrete classes.
 +	Exposing internal state or operations of the object structure is acceptable.
 
 
-# CONSEQUENCES
+## CONSEQUENCES ##
 
 ## Benifit
 +	Saperates the algorithm from the data structure

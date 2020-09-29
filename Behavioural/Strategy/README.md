@@ -5,7 +5,7 @@ README
 
 Defines a set of encapsulated algorithms that can be swapped to carry out a specific behavior.
 
-## Intent
+## Intent ##
 Define a family of algorithms, encapsulate each one, and make them interchangeable. Lets the algorithm vary independently from clients that use it.
 
 ## Intent 2
@@ -15,7 +15,7 @@ The Strategy pattern encapsulates a set of algorithms uniformly (sibling subclas
 ![alt text](./Images/Strategy-1.md.png "Strategy")
 ##
 
-## Participant
+## Participant ##
 **Context:**	A class that maintains contextual information for an IStrategy object’s algorithm to work on the Context class is the trafﬁc cop that decides which strategy is to be called.
 **IStrategy:** Defines an interface common to all the strategies Context uses this interface to call the algorithm defined by a ConcreteStrategy
 **StrategyA, StrategyB:** Classes that include algorithms that implement the IStrategy interface
@@ -35,7 +35,7 @@ The Strategy pattern encapsulates a set of algorithms uniformly (sibling subclas
 +   Conditional statements are complex and hard to maintain.
 
 
-## Motivation
+## Motivation ##
 Objects have responsibilities.
 Different, specific implementations of these responsibilities are manifested through the use of polymorphism.
 There is a need to manage several different implementations of what is, conceptually, the same algorithm.
