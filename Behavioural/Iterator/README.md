@@ -41,7 +41,7 @@ README
 	2. Iterators simplify the Aggregate interface.
 	3. More than one traversal can be pending on an aggregate. An iterator keeps track of its own traversal state. Therefore you can have more than one traversal in progress at once.
 
-# Benefits
+## Benefits ##
 	1. 	Simplifies the interface of the Aggregate by not polluting it with traversal methods
 	2. 	Supports multiple, concurrent traversals
 	3. 	Supports variant traversal techniques

@@ -48,7 +48,7 @@ Avoid coupling sender of request to its receiver by giving more than one object 
 
 ## Consequences ##
 
-### Benefits ###
+## Benefits ##
 
 + Decoupling of senders and receivers, that is sender doesn’t need to know specifically who the handlers are
 + Added flexibility, while assigning the responsibility to the object

@@ -12,7 +12,7 @@ README
 ![alt text](./Images/Interpreter-1.md.png "Interpreter")
 ##
 
-##Participants
+## Participants ##
 
 **AbstractExpression**
 

@@ -12,7 +12,7 @@ README
 ![alt text](./Images/Facade-2.md "Facade")
 ##
 
-## participants
+## Participants ##
 
 The **client** uses the simple API of the Facade to perform a task. The client remains unaware of what is really needed to achieve the transaction.
 The **Facade** hides the complexities of the system behind its simple API. The Facade knows which subsystem classes are responsible for a request and then delegates to the subsystems and collates the responses.

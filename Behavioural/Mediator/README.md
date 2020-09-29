@@ -46,7 +46,7 @@ README
 	• Some object behaviors can be grouped and customized.
 
 
-# Note
+## Notes ##
 	Implementation
 		Key points of the Mediator pattern are:
 		• Each Colleague is passed a Mediator at instantiation and keeps it as a private reference.

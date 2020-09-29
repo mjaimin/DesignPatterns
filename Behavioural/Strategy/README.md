@@ -65,5 +65,5 @@ It is a good design practice to separate behaviors that occur in the problem dom
 + Make encapsulated algorithms interchangeable.
 + Allow algorithms to change independently from the clients that use it.
 
-# Note
+## Notes ##
 The Strategy pattern involves removing an algorithm from its host class and putting it in a separate class.
