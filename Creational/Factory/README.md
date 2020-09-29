@@ -48,6 +48,6 @@ Enables a class to delegate the responsibility of creating a valid object.
 
 + The factory has to be used for a family of objects. If the classes doesn’t extend common base class or interface they cannot be used in a factory design template.
 
-## Conclusion
+## Conclusion ##
 
 The main reason the factory pattern is used is that it introduces weak coupling instead of tight coupling, hiding concrete classes from the application. It provides customization hooks and the implementation comfortably accommodates new changes.

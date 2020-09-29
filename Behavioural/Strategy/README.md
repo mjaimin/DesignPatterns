@@ -18,7 +18,7 @@ The Strategy pattern encapsulates a set of algorithms uniformly (sibling subclas
 
 ## Participants ##
 
-**Context:**	A class that maintains contextual information for an IStrategy object’s algorithm to work on the Context class is the trafﬁc cop that decides which strategy is to be called.
+**Context:** A class that maintains contextual information for an IStrategy object’s algorithm to work on the Context class is the trafﬁc cop that decides which strategy is to be called.
 **IStrategy:** Defines an interface common to all the strategies Context uses this interface to call the algorithm defined by a ConcreteStrategy
 **StrategyA, StrategyB:** Classes that include algorithms that implement the IStrategy interface
 **Client:** Any aspect of the application or system that has prior knowledge of the concrete strategy to be used by the context
@@ -44,7 +44,7 @@ The Strategy pattern encapsulates a set of algorithms uniformly (sibling subclas
 + There is a need to manage several different implementations of what is, conceptually, the same algorithm.
 + It is a good design practice to separate behaviors that occur in the problem domain from each other— that is, to decouple them. This allows me to change the class responsible for one behavior without adversely affecting another.
 
-## Examples
+## Examples ##
 
 + Save ﬁles in different formats
 + Compress ﬁles using different algorithms
@@ -60,7 +60,8 @@ The Strategy pattern encapsulates a set of algorithms uniformly (sibling subclas
 + Algorithms can be used among varying systems
 + Algorithms can be more easily maintained
 + Algorithms can be interchanged both during development and at runtime
-## And it has these drawbacks ##
+
+## Drawbacks ##
 
 + Clients must be aware of the strategies.
 + Strategies are more objects to manage.

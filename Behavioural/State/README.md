@@ -15,14 +15,17 @@ Allow an object to alter its behavior when its internal state changes. The objec
 ## Participants ##
 
 Context
+
 + defines the interface of interest to clients
 + maintains an instance of a ConcreteState subclass that defines the current state.
 
 State
+
 + defines an interface for encapsulating the behavior associated with a particular state of the Context.
 + The State represents the interface that defines the behavior dependent on the state of the Context.
 
 ConcreteState
+
 + ConcreteState(s) represent specific states in the lifetime of the Context.  They implement behavior specific to these states.
 
 ## Motivation ##
@@ -51,12 +54,11 @@ ConcreteState
 + Context is the primary interface for clients.  Clients can configure a context with State objects.  Once a context is configured, its clients don’t have to deal with the State objects directly.
 + Either Context or the ConcreteState subclasses can decide which state succeeds another and under what circumstances.
 
-# Key Features
+## Key Features ##
+
 The following key features characterize the State design pattern:
+
 + States exist internally as part of an object.
 + Objects change in certain ways when states change. Objects may appear to change classes, but they’re changing behavior that is part of the class.
 + Each state’s behavior depends on the current state of other states in the object
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbODM0MjM3ODNdfQ==
--->

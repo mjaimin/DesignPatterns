@@ -9,7 +9,7 @@
 ![alt text](./Images/Bridge-1.md.png "Bridge")
 ![alt text](./Images/Bridge-2.md.png "Bridge")
 
-## Use When ##
+## Use Bridge When ##
 
 + Abstractions and implementations should not be bound at compile time.
 + Abstractions and implementations should be independently extensible.
@@ -20,25 +20,19 @@
 ## Participants ##
 
 + Abstraction
-
-		The interface that the client sees
-		maintains a reference to an object of type Implementor.
+  + The interface that the client sees
+  + maintains a reference to an object of type Implementor.
 + Implementor/Bridge
-
-		An interface defining those parts of the Abstraction that might vary
+  + An interface defining those parts of the Abstraction that might vary
 + RefinedAbstractio/AbstractionImpl
-
-		extends the interface defined by Abstraction.
-		Implements the abstraction interface using a reference to an object of type Implementor.
+  + extends the interface defined by Abstraction.
+  + Implements the abstraction interface using a reference to an object of type Implementor.
 + ImplementationA and ImplementationB
-
-		Implementations of the Bridge interface
+  + Implementations of the Bridge interface
 + Operation
-
-		A method that is called by the client
+  + A method that is called by the client
 + OperationImp
-
-		A method in the Bridge that is called from the Operation in the Abstraction
+  + A method in the Bridge that is called from the Operation in the Abstraction
 
 ## Motivation ##
 
@@ -67,6 +61,6 @@
 
 **Loosely coupled client code** - Abstraction separates the client code from the implementation. So, the implementation can be changed without affecting the client code and the client code need not be compiled when the implementation changes. (NOTE : In the above mentioned example, for the sake of simplicity, the application configures the CImage object with the right CImageImp object. However, alternate methods like Abstract Factory can be adopted to choose the CImageImp object.)
 
-## Drawbacks in using Bridge Pattern
+## Drawbacks ##
 
 **Double indirection** - This will have a slight impact on performance.

@@ -28,7 +28,7 @@ Command is a behavioral design pattern that turns a request into a stand-alone o
 + Action(Cut)
   + The operation that needs to be performed
 
-## Key Features of the Command Pattern
+## Key Features of the Command Pattern ##
 
 The primary usefulness of the command pattern is the flexibility and extensibility it affords when defining behavior in applications.
 

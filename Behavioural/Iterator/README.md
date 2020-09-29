@@ -1,6 +1,6 @@
 # Iterator #
 
-# Purpose
+## Purpose ##
 
 Allows for access to the elements of an aggregate object without allowing access to its underlying representation.
 
@@ -33,7 +33,7 @@ Allows for access to the elements of an aggregate object without allowing access
 + It should allow multiple traversals to be in progress concurrently
 + But, we really do not want to add all these methods to the interface for the aggregate
 
-# Use Iterator When ##
+## Use Iterator When ##
 
 + Access to elements is needed without access to the entire representation.
 + Multiple or concurrent traversals of the elements are needed.
@@ -50,7 +50,6 @@ There are three major consequences.
 
 ## Benefits ##
 
-1. 	Simplifies the interface of the Aggregate by not polluting it with traversal methods
-2. 	Supports multiple, concurrent traversals
-3. 	Supports variant traversal techniques
-
+1. Simplifies the interface of the Aggregate by not polluting it with traversal methods
+2. Supports multiple, concurrent traversals
+3. Supports variant traversal techniques

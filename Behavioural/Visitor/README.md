@@ -42,7 +42,7 @@ Can enumerate its elements.
 May provide a high-level interface to allow the visitor to visit its elements.
 May either be a composite or a collection such as a list or a set
 
-# Use Visitor When ##
+## Use Visitor When ##
 
 + An object structure contains many classes of objects with differing interfaces, and you want to perform operations on these
 objects that depend on their concrete classes.
@@ -51,7 +51,7 @@ objects that depend on their concrete classes.
 
 ## Consequences ##
 
-## Benefit ##
+## Benefits ##
 
 + Saperates the algorithm from the data structure
 + Single visitor object is used to visit all elements of the Item classes.

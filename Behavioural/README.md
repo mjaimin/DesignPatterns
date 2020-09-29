@@ -1,6 +1,6 @@
 README
 
-## Behavioural Patterns
+## Behavioural Patterns ##
 
 Behavioral patterns focus on the responsibilities that an object has. It deals with the interaction among objects to achieve larger functionality.
 
