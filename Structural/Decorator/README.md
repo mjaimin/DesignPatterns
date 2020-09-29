@@ -26,11 +26,11 @@ Allows for the dynamic wrapping of objects in order to modify their existing res
 
 ## Use Decorator when ##
 
-+  Object responsibilities and behaviors should be dynamically modifiable.
-+  Concrete implementations should be decoupled from responsibilities and behaviors.
-+  Subclassing to achieve modification is impractical or impossible.
-+  Specific functionality should not reside high in the object hierarchy.
-+  A lot of little objects surrounding a concrete implementation is acceptable.
++ Object responsibilities and behaviors should be dynamically modifiable.
++ Concrete implementations should be decoupled from responsibilities and behaviors.
++ Subclassing to achieve modification is impractical or impossible.
++ Specific functionality should not reside high in the object hierarchy.
++ A lot of little objects surrounding a concrete implementation is acceptable.
 
 ## Consequences ##
 

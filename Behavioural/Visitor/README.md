@@ -51,7 +51,7 @@ objects that depend on their concrete classes.
 
 ## Consequences ##
 
-## Benifit ##
+## Benefit ##
 
 + Saperates the algorithm from the data structure
 + Single visitor object is used to visit all elements of the Item classes.

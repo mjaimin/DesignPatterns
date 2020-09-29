@@ -28,7 +28,7 @@ The purpose of the Singleton pattern is to ensure that there is only one instanc
 ## Consequences ##
 
 + It can be difficult to subclass a Singleton, since this can only work if the base Singleton class has not yet been instantiated.
-+  You can easily change a Singleton to allow a small number of instances where this is allowable and meaningful.
++ You can easily change a Singleton to allow a small number of instances where this is allowable and meaningful.
 
 **Benefits**
 + Controlled access to sole instance.
