@@ -37,7 +37,7 @@ Command is a behavioral design pattern that turns a request into a stand-alone o
 	• The command pattern allows a client to dynamically create new behavior by creating new command objects and assigning them to invokers at runtime.
 	• The command pattern allows for straightforward implementation of command chaining, undo, redo and logging features into an application.
 
-## Use the Command pattern when
+## Use Command When ##
 
 	You have:
 		• Commands that different receivers can handle in different ways

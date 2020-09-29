@@ -29,7 +29,7 @@ README
 	It should allow multiple traversals to be in progress concurrently
 	But, we really do not want to add all these methods to the interface for the aggregate
 
-# Use When
+# Use Iterator When ##
 	Access to elements is needed without access to the entire representation.
 	Multiple or concurrent traversals of the elements are needed.
 	A uniform interface for traversal is needed.

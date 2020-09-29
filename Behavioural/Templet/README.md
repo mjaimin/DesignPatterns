@@ -27,7 +27,7 @@ Defines the skeleton of an algorithm in a method, deferring some steps to subcla
 ## Collaborations ##
 +   ConcreteClass relies on AbstractClass to implement the invariant steps of the algorithm.
 
-## Use Template When
+## Use Template When ##
 +   A single abstract implementation of an algorithm is needed.
 +   Common behavior among subclasses should be localized to a common class.
 +   Parent classes should be able to uniformly invoke behavior in their subclasses.

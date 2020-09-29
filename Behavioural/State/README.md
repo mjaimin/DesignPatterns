@@ -28,7 +28,7 @@ ConcreteState
 +	The State pattern is intended to provide a mechanism to allow an object to alter its behavior in response to internal state changes. To the client, it appears as though the object has changed its class.
 +	The benefit of the State pattern is that state-specific logic is localized in classes that represent that state.
 
-## Use When
+## Use State When ##
 +	The behavior of an object should be influenced by its state. An object’s behavior depends on its state and changes its behavior at run-time.
 +	Complex conditions tie object behavior to its state.
 +	Transitions between states need to be explicit.

@@ -25,7 +25,7 @@ README
 +	Client
 		Maintains extrinsic state and stores references to ﬂyweights
 
-## Use Composite when
+## Use Composite when ##
 Apply flyweight when ALL of the following are true:
 +	An application uses a large number of objects
 +	Storage cost is high because of the quantity of objects

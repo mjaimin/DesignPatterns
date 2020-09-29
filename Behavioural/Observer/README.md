@@ -36,7 +36,7 @@ README
 	Notify
 		The event mechanism for calling the Update operation on all Observers
 
-## Use When
+## Use Observer When ##
 	An abstraction has two aspects, one dependent on the other.
 	State changes in one or more objects should trigger behavior in other objects
 	A change to one object requires changing others.

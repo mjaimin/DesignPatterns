@@ -40,7 +40,7 @@ README
     2. The Mediator can become a “god class,” having too much knowledge of the rest of the program. This can make it hard to change and maintain. Sometimes you can improve this situation by putting more of the function into the inditasks, and the Mediator should only manage the interaction between objects.
 
 
-# Use When
+## Use Mediator When ##
 	• Objects communicate in well-structured but potentially complex ways.
 	• The objects’ identities should be protected even though they communicate.
 	• Some object behaviors can be grouped and customized.

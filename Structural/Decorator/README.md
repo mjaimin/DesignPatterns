@@ -23,7 +23,7 @@ Allows for the dynamic wrapping of objects in order to modify their existing res
 +	The Decorator(ProductDecorator) implements the Component(IProduct) interface and is injected with a reference to an Component(IProduct) instance that enables the inner instance to be wrapped.
 +	ConcreteDecorator inherits from Decorator(ProductDecorator) and add state and new behavior to the Component(IProduct) instance.
 
-##Use Decorator when
+## Use Decorator when ##
 +	 Object responsibilities and behaviors should be dynamically modifiable.
 +	 Concrete implementations should be decoupled from responsibilities and behaviors.
 +	 Subclassing to achieve modification is impractical or impossible.

@@ -17,7 +17,7 @@ README
 **AbstractExpression**
 
 	declares an interface for executing an operation
-**TerminalExpression**	
+**TerminalExpression**
 
 	implements an Interpret operation associated with terminal symbols in the grammar. an instance is required for every terminal symbol in the sentence.
 **NonTerminalExpression**
@@ -31,7 +31,7 @@ README
 	invokes the Interpret operation.
 
 
-## Use When
+## Use Interpreter When ##
 +	There is grammar to interpret that can be represented as large syntax trees.
 +	The grammar is simple.
 +	Efficiency is not important.

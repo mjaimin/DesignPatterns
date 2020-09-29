@@ -21,7 +21,7 @@ The Strategy pattern encapsulates a set of algorithms uniformly (sibling subclas
 **StrategyA, StrategyB:** Classes that include algorithms that implement the IStrategy interface
 **Client:** Any aspect of the application or system that has prior knowledge of the concrete strategy to be used by the context
 
-## Use When
+## Use Strategy When ##
 + Many related classes differ only in their behavior.
 + There are different algorithms for a given purpose, and the selection criteria can be codified.
 + The algorithm uses data to which the client should not have access

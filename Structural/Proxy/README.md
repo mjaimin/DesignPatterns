@@ -16,7 +16,7 @@ README
 +	The **Subject** interface is the interface that both the Proxy class and the RealSubject class implements. It has the Operation method.
 +	The **RealSubject** class is the real object behind the scene. It has the Operation method that performs the actual work.
 
-## Use Proxy when
+## Use Proxy when ##
 There are several cases where a Proxy can be useful.
 
 +	The object being represented is external to the system.
