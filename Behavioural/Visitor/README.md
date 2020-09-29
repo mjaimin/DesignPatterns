@@ -2,7 +2,7 @@ README
 
 ## Purpose
 Allows for one or more operations to be applied to a set of objects at runtime, decoupling the operations from the object structure.
-	
+
 ## Intent
 Deﬁne an operation to be performed over a complex object structure without changing the elements on which it operates.	Enables new functionality to be performed on a class without affecting its structure.
 OR
@@ -32,12 +32,12 @@ visitable classes providing Accept() methods that accept a visitor
 +	**Element(Visitable)**
 		This is an interface which declares the accept operation. This is the entry point which enables an object to be “visited” by the visitor object.
 +	**ConcreteElement (ConcreteVisitable)**
-		Implements an Accept operation that thakes a visitor as an argument. These classes implement the Visitable interface or class and defines the accept operation. The visitor object is passed to this object using the accept operation. 
+		Implements an Accept operation that thakes a visitor as an argument. These classes implement the Visitable interface or class and defines the accept operation. The visitor object is passed to this object using the accept operation.
 +	**ObjectStructure**
 		Can enumerate its elements.
 		May provide a high-level interface to allow the visitor to visit its elements.
 		May either be a composite or a collection such as a list or a set
-		
+
 # Use Visitor When
 +	An object structure contains many classes of objects with differing interfaces, and you want to perform operations on these
 objects that depend on their concrete classes.

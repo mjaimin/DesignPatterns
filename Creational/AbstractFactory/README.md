@@ -44,9 +44,9 @@ interface.
 
 **Potential Drawbacks**
 
-+	Supporting new Products Means a New Interface 
++	Supporting new Products Means a New Interface
 +	Supporting new kinds of products is difficult because it requires the extension of the entire interface. In other words, the train factory now has to make boats, which have different process of being made.
 +	All of the product objects are returned to the client with the same abstract interface as given by the return type. This means that the client will not be able to access subclass specific operations through the abstract interface.
-+	Subclass Specific Operations May Require Runtime Dependent Casting 
++	Subclass Specific Operations May Require Runtime Dependent Casting
 
 

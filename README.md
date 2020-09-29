@@ -41,11 +41,11 @@ These concern class and object composition. They use inheritance to compose inte
 +   **Proxy**: provides a placeholder for another object to control access, reduce cost, and reduce complexity.
 
 
- **Intent** | **Patterns** 
+ **Intent** | **Patterns**
 :-----------|:------------
- *Interfaces*    |Adapter, Facade, Composite, Bridge                                       
+ *Interfaces*    |Adapter, Facade, Composite, Bridge
  *Responsibility*|Singleton, Observer, Mediator, Proxy, Chain Of Responsibility, Flyweight
- *Construction*  |Builder, Factory Method, Abstract Factory, Prototype, Memento            
- *Operations*    |Template Method, State, Strategy, Command, Interpreter                    
- *Extensions*    |Decorator, Iterator, Visitor                                            
- 
+ *Construction*  |Builder, Factory Method, Abstract Factory, Prototype, Memento
+ *Operations*    |Template Method, State, Strategy, Command, Interpreter
+ *Extensions*    |Decorator, Iterator, Visitor
+

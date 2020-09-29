@@ -39,7 +39,7 @@ Use When
 		A method in the Bridge that is called from the Operation in the Abstraction
 
 ## Motivation
- 
+
 +	Need to avoid a permanent binding between an abstraction and implementation.
 +	When abstractions and implementations should be extensible through subclassing.
 +	When implementation changes should not impact clients.

@@ -2,16 +2,16 @@ README
 
 ## Intent/Purpose
 	Provide a surrogate or placeholder for another object to control access to it.
-	
+
 ##
 ![alt text](./Images/Proxy.md.png "Proxy")
 ##
-	
+
 ## Participants
 
-+	The **Client** depends on the abstract Subject. Both the RealSubject and the Proxy implement the same interface, so the client is unaware of which she is using. 
-+	The **Proxy** class is the proxy for the RealSubject class. 
-		+	It has the realSubject variable that points to the real object behind the scene. 
++	The **Client** depends on the abstract Subject. Both the RealSubject and the Proxy implement the same interface, so the client is unaware of which she is using.
++	The **Proxy** class is the proxy for the RealSubject class.
+		+	It has the realSubject variable that points to the real object behind the scene.
 		+	It has the Operation method that encapsulate the real object's Operation method. This is the place where you can add additional logic to the real object's methods.
 +	The **Subject** interface is the interface that both the Proxy class and the RealSubject class implements. It has the Operation method.
 +	The **RealSubject** class is the real object behind the scene. It has the Operation method that performs the actual work.
@@ -23,7 +23,7 @@ There are several cases where a Proxy can be useful.
 +	Objects need to be created on demand.
 +	Access control for the original object is required.
 +	Added functionality is required when an object is accessed.
-	
+
 ## CONSEQUENCES
 
 **Benefits**

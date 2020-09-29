@@ -1,7 +1,7 @@
 README
 
 ## Definition
-Attach additional responsibilities and behaviors to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality. 
+Attach additional responsibilities and behaviors to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
 
 ## Purpose
 
@@ -9,7 +9,7 @@ Allows for the dynamic wrapping of objects in order to modify their existing res
 
 ## Intent
 
-*	The Decorator pattern enables new behavior to be added to an object dynamically via composition. The pattern achieves this by either inheriting from the same base class or implementing a shared interface in conjunction with injecting an instance of the class to be decorated. 
+*	The Decorator pattern enables new behavior to be added to an object dynamically via composition. The pattern achieves this by either inheriting from the same base class or implementing a shared interface in conjunction with injecting an instance of the class to be decorated.
 *	In other words, the Decorator pattern is the process of wrapping an existing class with another class that extends the behavior or state. Multiple decorators can be added to a class to combine extended behavior.
 
 ##

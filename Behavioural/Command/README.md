@@ -13,7 +13,7 @@ Command is a behavioral design pattern that turns a request into a stand-alone o
 
 	Client(User of the editor, who selects a Cut command on a menu)
 		Creates and executes Commands
-		The client instantiates the command and passes it on to the invoker	
+		The client instantiates the command and passes it on to the invoker
 	ICommand(Menu)
 		An interface that specifies the Execute operation
 		The abstract command may also houses the reference of the receiver to which its subclasses are bound.

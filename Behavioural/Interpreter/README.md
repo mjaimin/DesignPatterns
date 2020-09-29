@@ -17,7 +17,7 @@ README
 **AbstractExpression**
 
 	declares an interface for executing an operation
-**TerminalExpression**	
+**TerminalExpression**
 
 	implements an Interpret operation associated with terminal symbols in the grammar. an instance is required for every terminal symbol in the sentence.
 **NonTerminalExpression**
@@ -37,7 +37,7 @@ README
 +	Efficiency is not important.
 +	Decoupling grammar from underlying expressions is desired.
 
-## Consequences ##
+##  Consequences  ##
 
 1. Easily extensible grammar
 1. Implementing grammar is easy

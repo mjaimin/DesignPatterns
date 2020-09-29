@@ -24,8 +24,8 @@ ConcreteState
 +	ConcreteState(s) represent specific states in the lifetime of the Context.  They implement behavior specific to these states.
 
 ## Motivation
-+	The State pattern is useful when you want to have an object represent the state of an application, and you want to change the state by changing that object. 
-+	The State pattern is intended to provide a mechanism to allow an object to alter its behavior in response to internal state changes. To the client, it appears as though the object has changed its class. 
++	The State pattern is useful when you want to have an object represent the state of an application, and you want to change the state by changing that object.
++	The State pattern is intended to provide a mechanism to allow an object to alter its behavior in response to internal state changes. To the client, it appears as though the object has changed its class.
 +	The benefit of the State pattern is that state-specific logic is localized in classes that represent that state.
 
 ## Use When

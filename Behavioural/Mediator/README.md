@@ -6,7 +6,7 @@ README
 	Define an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.
 	OR
 	The Mediator pattern is there to enable objects to communicate without knowing each other’s identities. It also encapsulates a protocol that objects can follow.
-	OR	
+	OR
 	Defines an object that allows communication between two other objects without them knowing about one another.
 	OR
 	Define a central class that acts as a message routing service to all other classes.
@@ -16,22 +16,22 @@ README
 ##
 
 # Participant
-	● Mediator 
+	● Mediator
 		❍ defines an interface for communicating with Colleague objects.
 		❍ Broadcasts sent messages to all signed-on Colleagues using the Respond delegate
-	● ConcreteMediator  
+	● ConcreteMediator
 		❍ implements cooperative behavior by coordinating Colleague objects.
 		❍ knows and maintains its colleagues.
-	● Colleague classes  
+	● Colleague classes
 		❍ each Colleague class knows its Mediator object.
 		❍ each colleague communicates with its mediator whenever it would have otherwise communicated with another colleague.
- 
- 
+
+
 # Consequences
-	
+
 	*Advantages*
 	1. Comprehension - The mediator encapsulate the logic of mediation between the colleagues. From this reason it' more easier to understand this logic since it is kept in only one class.
-    2. Decoupled Colleagues - The colleague classes are totally decoupled. Adding a new colleague class is very easy due to this decoupling level. You can add new controls or other classes without changing anything except the Mediator.    3. 
+    2. Decoupled Colleagues - The colleague classes are totally decoupled. Adding a new colleague class is very easy due to this decoupling level. You can add new controls or other classes without changing anything except the Mediator.    3.
     3. Simplified object protocols - The colleague objects need to communicate only with the mediator objects. Practically the mediator pattern reduce the required communication channels(protocols) from many to many to one to many and many to one.
     4. Limits Subclassing - Because the entire communication logic is encapsulated by the mediator class, when this logic need to be extended only the mediator class need to be extended.
 

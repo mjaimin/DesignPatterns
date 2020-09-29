@@ -14,7 +14,7 @@ README
 
 # Participant
 	Iterator
-		defines an interface for accessing and traversing elements. 
+		defines an interface for accessing and traversing elements.
 	ConcreteIterator
 		implements the Iterator interface.
 		keeps track of the current position in the traversal of the aggregate.
@@ -33,14 +33,14 @@ README
 	Access to elements is needed without access to the entire representation.
 	Multiple or concurrent traversals of the elements are needed.
 	A uniform interface for traversal is needed.
-	Subtle differences exist between the implementation details of various iterators.	
+	Subtle differences exist between the implementation details of various iterators.
 
 # Consequences
 	There are three major consequences.
 	1. Iterator Pattern supports variations in the traversal of an aggregate. Every time you want to change the traversal algorithm, you just replace the iterator instance with a different one.
 	2. Iterators simplify the Aggregate interface.
 	3. More than one traversal can be pending on an aggregate. An iterator keeps track of its own traversal state. Therefore you can have more than one traversal in progress at once.
-	
+
 # Benefits
 	1. 	Simplifies the interface of the Aggregate by not polluting it with traversal methods
 	2. 	Supports multiple, concurrent traversals
