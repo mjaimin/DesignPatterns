@@ -1,13 +1,13 @@
 README
 
-## Definition
+## Definition ##
 Attach additional responsibilities and behaviors to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
 
-## Purpose
+## Purpose ##
 
 Allows for the dynamic wrapping of objects in order to modify their existing responsibilities and behaviors.
 
-## Intent
+## Intent ##
 
 *	The Decorator pattern enables new behavior to be added to an object dynamically via composition. The pattern achieves this by either inheriting from the same base class or implementing a shared interface in conjunction with injecting an instance of the class to be decorated.
 *	In other words, the Decorator pattern is the process of wrapping an existing class with another class that extends the behavior or state. Multiple decorators can be added to a class to combine extended behavior.
@@ -16,7 +16,7 @@ Allows for the dynamic wrapping of objects in order to modify their existing res
 ![alt text](./Images/Decorator.md.png "Decorator")
 ##
 
-## Participants
+## Participants ##
 
 +	The Component(IProduct) defines the interface for a product. The ConcreteComponent and Decorator must implement this interface.
 +	The ConcreteComponent(DefaultProduct) Defines an object to which additional responsibilities and behaviors can be attached.
@@ -30,7 +30,7 @@ Allows for the dynamic wrapping of objects in order to modify their existing res
 +	 Specific functionality should not reside high in the object hierarchy.
 +	 A lot of little objects surrounding a concrete implementation is acceptable.
 
-## CONSEQUENCES
+## CONSEQUENCES ##
 
 **Benefits**
 

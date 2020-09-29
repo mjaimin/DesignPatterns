@@ -7,35 +7,35 @@ Factory pattern allows user to create an object without exposing the creation lo
 
 This design pattern is based on one of the OOPs concepts - encapsulation. In general, we write object creation code at the client side, but in the factory pattern, we delegate the object creation responsibility to the subclass code that is factory code. So, depending on the data provided to the factory, it can return an object of one of several possible classes.
 
-## Intent
+## Intent ##
 
 +	Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Methode lets a class defer instantiation to subclasses.
 
-## Purpose
+## Purpose ##
 Enables a class to delegate the responsibility of creating a valid object.
 
 ##
 ![alt text](./Images/Factory-1.md.png "Factory")
 ##
 
-## Participants
+## Participants ##
 
 + Product: defines the interface for objects the factory method creates.
 + ConcreteProduct: implements the Product interface.
 + Creator:(also refered as Factory because it creates the Product objects) declares the method FactoryMethod, which returns a Product object. May call the generating method for creating Product objects
 + ConcreteCreator: Overrides the generating method for creating ConcreteProduct objects and Decides which class to instantiate.
 
-## Use Factory when
+## Use Factory when ##
 
 +	When a class doesn't know what sub-classes will be required to create.
 +	When a class wants that its sub-classes specify the objects to be created.
 +	When the parent classes delegate responsibility to one of several helper subclasses.
 
 
-## Collaborations
+## Collaborations ##
 +	The creator relies on its subclasses to define the factory method so that it returns an instance of the appropriate subclass
 
-## CONSEQUENCES
+## CONSEQUENCES ##
 
 **Benefits**
 

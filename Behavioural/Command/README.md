@@ -1,7 +1,7 @@
 README
 
 
-## Intent
+## Intent ##
 
 Command is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you parameterize methods with different requests, delay or queue a request’s execution, and support undoable operations.
 
@@ -9,7 +9,7 @@ Command is a behavioral design pattern that turns a request into a stand-alone o
 ![alt text](./Images/Command-1.md.png "Command")
 ##
 
-## Participant
+## Participant ##
 
 	Client(User of the editor, who selects a Cut command on a menu)
 		Creates and executes Commands

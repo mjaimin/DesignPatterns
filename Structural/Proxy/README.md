@@ -1,13 +1,13 @@
 README
 
-## Intent/Purpose
+## Intent ##
 	Provide a surrogate or placeholder for another object to control access to it.
 
 ##
 ![alt text](./Images/Proxy.md.png "Proxy")
 ##
 
-## Participants
+## Participants ##
 
 +	The **Client** depends on the abstract Subject. Both the RealSubject and the Proxy implement the same interface, so the client is unaware of which she is using.
 +	The **Proxy** class is the proxy for the RealSubject class.
@@ -24,7 +24,7 @@ There are several cases where a Proxy can be useful.
 +	Access control for the original object is required.
 +	Added functionality is required when an object is accessed.
 
-## CONSEQUENCES
+## CONSEQUENCES ##
 
 **Benefits**
 

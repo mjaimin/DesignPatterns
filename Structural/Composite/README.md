@@ -1,12 +1,12 @@
 README
 
-##Definition
+## Definition ##
 Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.
 
-##Purpose
+## Purpose ##
 Facilitates the creation of object hierarchies where each object can be treated independently or as a set of nested objects through the same interface.
 
-##Intent
+## Intent ##
 +	Compose objects into tree structures to represent part-whole hierarchies.
 +	Composite lets clients treat individual objects and compositions of objects uniformly.
 
@@ -14,7 +14,7 @@ Facilitates the creation of object hierarchies where each object can be treated 
 ![alt text](./Images/Composite.md.png "Composite")
 ##
 
-## Participants
+## Participants ##
 The classes and/or objects participating in this pattern are:
 
 +	Component   (DrawingElement)
@@ -36,12 +36,12 @@ The classes and/or objects participating in this pattern are:
 
 		-	Mzanipulates objects in the composition through the Component interface.
 
-## Use Composite when
+## Use Composite when ##
 
 +	Hierarchical representations of objects are needed.
 +	Objects and compositions of objects should be treated uniformly.
 
-## CONSEQUENCES
+## CONSEQUENCES ##
 
 **Benefits**
 

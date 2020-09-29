@@ -1,16 +1,16 @@
 README
 
-## Intent
+## Intent ##
 Provide an interface for creating families of related or dependent objects without specifying their concrete classes
 
-## Purpose
+## Purpose ##
 Enables a class to delegate the responsibility of creating a valid object.
 
 
 ![alt text](./Images/AbstractFactory-1.md.png "AbstractFactory")
 
 
-## Participants
+## Participants ##
 
 +	AbstractFactory: Declares an interface for operations that create abstract product objects
 +	ConcreteFactory: Implements the operations to create concrete product objects
@@ -18,7 +18,7 @@ Enables a class to delegate the responsibility of creating a valid object.
 +	ConcreteProduct: Defines a product object to be created by the corresponding +	Concrete factory: Implements the AbstractProduct interface
 +	Client: Uses only interfaces declared by AbstractFactory and AbstractProduct classes
 
-## Applicability
+## Applicability ##
 
 +	When a system should be independent of how its products are created, composed, and represented.
 +	When a system should be configured with one of multiple families of products or a developer needs to enforce a family of related objects to be used together.
@@ -26,10 +26,10 @@ Enables a class to delegate the responsibility of creating a valid object.
 
 
 
-## Collaborations
+## Collaborations ##
 The creator relies on its subclasses to define the factory method so that it returns an instance of the appropriate subclass
 
-## Consequences
+## Consequences ##
 
 **Benefits**
 

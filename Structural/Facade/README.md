@@ -1,10 +1,10 @@
 README
 
-## Purpose
+## Purpose ##
 	Supplies a single interface to a set of interfaces within a system.
 	Acts as an entry point into the application.
 
-## Intent
+## Intent ##
 	Provides a simple interface and controls access to a series of complicated interfaces(subsystems).
 
 ##
@@ -33,7 +33,7 @@ Use Facade When
 +	Systems and subsystems should be layered.
 
 
-## CONSEQUENCES
+## CONSEQUENCES ##
 
 **Benefits**
 +	It hides the implementation of the subsystem from clients, making the subsystem easier to use

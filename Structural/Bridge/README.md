@@ -1,6 +1,6 @@
 README
 
-## Intent/Purpose
+## Intent ##/Purpose
 > Separates an abstraction( ro interface) from its implementation, allowing implementations and abstractions to vary independently of one another.
 
 ##
@@ -8,14 +8,14 @@ README
 ![alt text](./Images/Bridge-2.md.png "Bridge")
 ##
 
-Use When
+## Use When ##
 +	Abstractions and implementations should not be bound at compile time.
 +	Abstractions and implementations should be independently extensible.
 +	You want run-time binding of the implementation.
 +	Changes in the implementation of an abstraction should have no impact on clients.
 +	Implementation details should be hidden from the client.
 
-## Participant
+## Participant ##
 
 +	Abstraction
 
@@ -38,7 +38,7 @@ Use When
 
 		A method in the Bridge that is called from the Operation in the Abstraction
 
-## Motivation
+## Motivation ##
 
 +	Need to avoid a permanent binding between an abstraction and implementation.
 +	When abstractions and implementations should be extensible through subclassing.
