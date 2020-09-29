@@ -42,22 +42,25 @@
 
 ## Use Observer When ##
 
-	An abstraction has two aspects, one dependent on the other.
-	State changes in one or more objects should trigger behavior in other objects
-	A change to one object requires changing others.
-	An object should be able to notify other objects without making assumptions about the objects.
++ An abstraction has two aspects, one dependent on the other.
++ State changes in one or more objects should trigger behavior in other objects
++ A change to one object requires changing others.
++ An object should be able to notify other objects without making assumptions about the objects.
 
 ## Benefits ##
-	• Synchronizes state-dependent objects
-	• Uses a one-to-many relationships
-	• Lets subjects and observers also be observers and subjects
-	• Support for event broadcasting
-	• Observers can be added without modifying the subject
-	• Subject and observer can belong to different abstraction layers
-	• Subject does not need to know the concrete class of an observer, just that each observer implements the update interface
+
++ Synchronizes state-dependent objects
++ Uses a one-to-many relationships
++ Lets subjects and observers also be observers and subjects
++ Support for event broadcasting
++ Observers can be added without modifying the subject
++ Subject and observer can belong to different abstraction layers
++ Subject does not need to know the concrete class of an observer, just that each observer implements the update interface
+
 ## And it has these drawbacks:
-	• Object lookup speeds can affect performance.
-	• It may cause redundant notifications.
+
++ Object lookup speeds can affect performance.
++ It may cause redundant notifications.
 
 ## Consequences ##
 

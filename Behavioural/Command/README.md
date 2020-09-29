@@ -31,17 +31,17 @@ Command is a behavioral design pattern that turns a request into a stand-alone o
 ## Key Features of the Command Pattern
 
 	The primary usefulness of the command pattern is the flexibility and extensibility it affords when defining behavior in applications.
-	• The command pattern encapsulates behavior in a portable command object.
-	• The command pattern decouples the classes and which methods in those classes execute required behavior from the location where the behavior is called.
-	• The command pattern allows a client to dynamically create new behavior by creating new command objects and assigning them to invokers at runtime.
-	• The command pattern allows for straightforward implementation of command chaining, undo, redo and logging features into an application.
++ The command pattern encapsulates behavior in a portable command object.
++ The command pattern decouples the classes and which methods in those classes execute required behavior from the location where the behavior is called.
++ The command pattern allows a client to dynamically create new behavior by creating new command objects and assigning them to invokers at runtime.
++ The command pattern allows for straightforward implementation of command chaining, undo, redo and logging features into an application.
 
 ## Use Command When ##
 
 	You have:
-		• Commands that different receivers can handle in different ways
-		• A high-level set of commands that are implemented by primitive operations
++ Commands that different receivers can handle in different ways
++ A high-level set of commands that are implemented by primitive operations
 	You want to:
-		• Specify, queue, and execute commands at different times
-		• Support an Undo function for commands
-		• Support auditing and logging of all changes via commands
++ Specify, queue, and execute commands at different times
++ Support an Undo function for commands
++ Support auditing and logging of all changes via commands

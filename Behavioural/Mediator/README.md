@@ -43,13 +43,13 @@
 
 ## Use Mediator When ##
 
-	• Objects communicate in well-structured but potentially complex ways.
-	• The objects’ identities should be protected even though they communicate.
-	• Some object behaviors can be grouped and customized.
++ Objects communicate in well-structured but potentially complex ways.
++ The objects’ identities should be protected even though they communicate.
++ Some object behaviors can be grouped and customized.
 
 ## Notes ##
 
 	Implementation
 		Key points of the Mediator pattern are:
-		• Each Colleague is passed a Mediator at instantiation and keeps it as a private reference.
-		• Each Mediator keeps a list of signed-on Colleagues as a private reference.
++ Each Colleague is passed a Mediator at instantiation and keeps it as a private reference.
++ Each Mediator keeps a list of signed-on Colleagues as a private reference.

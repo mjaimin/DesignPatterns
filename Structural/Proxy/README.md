@@ -12,8 +12,8 @@
 
 + The **Client** depends on the abstract Subject. Both the RealSubject and the Proxy implement the same interface, so the client is unaware of which she is using.
 + The **Proxy** class is the proxy for the RealSubject class.
-		+	It has the realSubject variable that points to the real object behind the scene.
-		+	It has the Operation method that encapsulate the real object's Operation method. This is the place where you can add additional logic to the real object's methods.
++	It has the realSubject variable that points to the real object behind the scene.
++	It has the Operation method that encapsulate the real object's Operation method. This is the place where you can add additional logic to the real object's methods.
 + The **Subject** interface is the interface that both the Proxy class and the RealSubject class implements. It has the Operation method.
 + The **RealSubject** class is the real object behind the scene. It has the Operation method that performs the actual work.
 

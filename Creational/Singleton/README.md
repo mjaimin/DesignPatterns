@@ -31,6 +31,7 @@ The purpose of the Singleton pattern is to ensure that there is only one instanc
 + You can easily change a Singleton to allow a small number of instances where this is allowable and meaningful.
 
 ## Benefits ##
+
 + Controlled access to sole instance.
 
 **Potential Drawbacks**
