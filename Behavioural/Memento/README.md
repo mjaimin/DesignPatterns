@@ -1,13 +1,14 @@
 # Memento #
 
-## Purpose
+## Purpose ##
 
-	Allows for capturing and externalizing an object’s internal state so that it can be restored later, all without violating encapsulation.
+Allows for capturing and externalizing an object’s internal state so that it can be restored later, all without violating encapsulation.
+
 ## Intent ##
 
-	Without violating encapsulation, capture and externalize an object’s internal state so that the object can be returned to this state later.
-	OR
-	Allows you to restore an object to its previous state.
+1. Without violating encapsulation, capture and externalize an object’s internal state so that the object can be returned to this state later.
+**OR**
+2. Allows you to restore an object to its previous state.
 
 ## Image ##
 
@@ -54,6 +55,7 @@ It is sometimes necessary to capture the internal state of an object at some poi
 ## Notes ##
 
 The Memento pattern is interesting because it has two interfaces:
+
 + A wide interface to the Originator that enables it to access everything that needs to be saved or restored
 + A narrow interface to the Caretaker that can keepand pass on memento references, but no more
 + The Memento class keeps the state of the Originator but does not allow other classes to access that state. It therefore preserves encapsulation boundaries, relieving the Originator of this responsibility
