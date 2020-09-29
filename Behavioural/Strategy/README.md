@@ -1,4 +1,4 @@
-README
+# Strategy #
 
 ## Purpose ##
 
