@@ -1,11 +1,13 @@
 README
 
 ## Intent ##
+
 	Provide a surrogate or placeholder for another object to control access to it.
 
 ##
+
 ![alt text](./Images/Proxy.md.png "Proxy")
-##
+
 
 ## Participants ##
 

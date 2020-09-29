@@ -1,15 +1,17 @@
 README
 
 ## Purpose
+
 	Allows for capturing and externalizing an object’s internal state so that it can be restored later, all without violating encapsulation.
 ## Intent ##
+
 	Without violating encapsulation, capture and externalize an object’s internal state so that the object can be returned to this state later.
 	OR
 	Allows you to restore an object to its previous state.
 
 ##
 ![alt text](./Images/Memento-1.md.png "Memento")
-##
+
 
 ## Participants ##
 	Originator:

@@ -12,11 +12,12 @@ This design pattern is based on one of the OOPs concepts - encapsulation. In gen
 +	Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Methode lets a class defer instantiation to subclasses.
 
 ## Purpose ##
+
 Enables a class to delegate the responsibility of creating a valid object.
 
 ##
 ![alt text](./Images/Factory-1.md.png "Factory")
-##
+
 
 ## Participants ##
 

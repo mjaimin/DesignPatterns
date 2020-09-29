@@ -1,9 +1,11 @@
 README
 
 ## Definition ##
+
 	Use sharing to support large numbers of fine-grained objects efficiently.
 
 ## Purpose ##
+
 	Facilitates the reuse of many fine grained objects, making the utilization of large numbers of objects more efficient.
 
 ## Intent ##
@@ -11,7 +13,7 @@ README
 
 ##
 ![alt text](./Images/FlyWeight.md.png "FlyWeight")
-##
+
 
 ## Participants ##
 +	Flyweight

@@ -1,6 +1,7 @@
 README
 
 ## Definition ##
+
 Builder is an object creational design pattern that codifies the construction process outside of the actual steps that carries out the construction - thus allowing the construction process itself to be reused.
 
 ## Purpose ##
@@ -16,7 +17,7 @@ way the objects are assembled is achieved using a Factory.
 
 ##
 ![alt text](./Images/Builder-1.md.png "Builder")
-##
+
 
 ## Participants ##
 

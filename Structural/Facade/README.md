@@ -1,16 +1,18 @@
 README
 
 ## Purpose ##
+
 	Supplies a single interface to a set of interfaces within a system.
 	Acts as an entry point into the application.
 
 ## Intent ##
+
 	Provides a simple interface and controls access to a series of complicated interfaces(subsystems).
 
 ##
 ![alt text](./Images/Facade-1.md "Facade")
 ![alt text](./Images/Facade-2.md "Facade")
-##
+
 
 ## Participants ##
 

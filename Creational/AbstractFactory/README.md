@@ -1,10 +1,14 @@
 README
 
 ## Intent ##
+
 Provide an interface for creating families of related or dependent objects without specifying their concrete classes
 
 ## Purpose ##
+
 Enables a class to delegate the responsibility of creating a valid object.
+
+##
 
 ![alt text](./Images/AbstractFactory-1.md.png "AbstractFactory")
 

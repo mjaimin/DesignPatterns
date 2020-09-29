@@ -1,15 +1,17 @@
 README
 
 # Purpose
+
 	Allows for access to the elements of an aggregate object without allowing access to its underlying representation.
 ## Intent ##
+
 	Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
 	OR
 	Provides a way to navigate a collection in a formalized manner.
 
 ##
 ![alt text](./Images/Iterator-1.md.png "Iterator")
-##
+
 
 ## Participants ##
 	Iterator

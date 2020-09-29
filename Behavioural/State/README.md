@@ -1,6 +1,7 @@
 README
 
 ## Purpose
+
 Ties object circumstances to its behavior, allowing the object to behave in different ways based upon its internal state.
 
 ## Intent ##
@@ -9,7 +10,7 @@ Allow an object to alter its behavior when its internal state changes. The objec
 
 ##
 ![alt text](./Images/State-1.md.png "State")
-##
+
 
 ## Participants ##
 Context

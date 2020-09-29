@@ -1,6 +1,7 @@
 README
 
 ## Definition ##
+
 Allows classes to be copied or cloned from a prototype instance rather than creating new instances.
 
 ## Purpose ##
@@ -15,7 +16,7 @@ a new instance, when creating new instances is more expensive.
 
 ##
 ![alt text](./Images/Prototype-1.md.png "Prototype")
-##
+
 
 ## Participants ##
 

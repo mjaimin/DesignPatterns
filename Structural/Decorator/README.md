@@ -1,6 +1,7 @@
 README
 
 ## Definition ##
+
 Attach additional responsibilities and behaviors to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
 
 ## Purpose ##
@@ -14,7 +15,7 @@ Allows for the dynamic wrapping of objects in order to modify their existing res
 
 ##
 ![alt text](./Images/Decorator.md.png "Decorator")
-##
+
 
 ## Participants ##
 

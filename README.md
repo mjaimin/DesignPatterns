@@ -12,6 +12,7 @@ README
 +   Responsible for the efficient and safe distribution of behaviors among the program's objects.
 
 ## Creational patterns
+
 Creational patterns are ones that create objects for you, rather than having you
 instantiate objects directly. This gives your program more flexibility in deciding
 which objects need to be created for a given case.
@@ -23,12 +24,14 @@ representation.
 +   **Singleton**: Restricts object creation for a class to only one instance.
 
 ## Behavioral patterns
+
 Most of these design patterns are specifically concerned with communication between objects.
 +   **Chain of responsibility**: Delegates commands to a chain of processing objects.
 +   **Iterator**: Accesses the elements of an object sequentially without exposing its underlying representation.
 +   **Observer**: Is a publish/subscribe pattern which allows a number of observer objects to see an event.
 
 ## Structural patterns.
+
 These concern class and object composition. They use inheritance to compose interfaces and define ways to compose objects to obtain new functionality.
 +   **Adapter**: Allows classes with incompatible interfaces to work together by wrapping its own interface around that of an already existing class.
 +   **Bridge**: Decouples an abstraction from its implementation so that the two can vary independently.

@@ -1,9 +1,11 @@
 README
 
 ## Purpose
+
 Allows for one or more operations to be applied to a set of objects at runtime, decoupling the operations from the object structure.
 
 ## Intent ##
+
 Deﬁne an operation to be performed over a complex object structure without changing the elements on which it operates.	Enables new functionality to be performed on a class without affecting its structure.
 OR
 Represent an operation to be performed on the elements of an object structure.
@@ -21,7 +23,7 @@ visitable classes providing Accept() methods that accept a visitor
 ##
 ![alt text](./Images/Visitor-1.md.png "Visitor")
 ![alt text](./Images/Visitor-2.md.png "Visitor")
-##
+
 
 ## Participants ##
 

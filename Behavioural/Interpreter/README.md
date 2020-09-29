@@ -1,16 +1,19 @@
 README
 
 ## Purpose
+
 	Defines a representation for a grammar as well as a mechanism to understand and act upon the grammar.
 
 ## Intent ##
+
 	Given a language, define a represention for its grammar along with an interpreter that uses the representation to interpret sentences in the language.
 	OR
 	Interpreter Specifies how to evaluate sentences in a language.
 
 ##
+
 ![alt text](./Images/Interpreter-1.md.png "Interpreter")
-##
+
 
 ## Participants ##
 
@@ -31,6 +34,7 @@ README
 	invokes the Interpret operation.
 
 ## Use Interpreter When ##
+
 +	There is grammar to interpret that can be represented as large syntax trees.
 +	The grammar is simple.
 +	Efficiency is not important.

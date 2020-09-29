@@ -1,6 +1,7 @@
 README
 
 ## Intent ##
+
 Ensure a class only has one instance, and provide a global point of access to it.
 
 ## Purpose ##
@@ -9,7 +10,7 @@ The purpose of the Singleton pattern is to ensure that there is only one instanc
 
 ##
 ![alt text](./Images/Singleton-1.md.png "Singleton")
-##
+
 
 ## Participants ##
 
