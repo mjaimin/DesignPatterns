@@ -68,7 +68,6 @@ Defer the exact steps of an algorithm to a subclass
 
 Defines a new operation to a class
 
-
 ## Structural Design Patterns ##
 
 ### Adapter ###
