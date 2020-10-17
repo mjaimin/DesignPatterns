@@ -186,10 +186,10 @@ is a behavioral design pattern that lets you define the skeleton of an algorithm
 + **Purpose**
   + Identifies the framework of an algorithm, allowing implementing classes to define the actual behavior.
 + **Use When**
-    +   A single abstract implementation of an algorithm is needed.
-    +   Common behavior among subclasses should be localized to a common class.
-    +   Parent classes should be able to uniformly invoke behavior in their subclasses.
-    +   Most or all subclasses need to implement the behavior.
+  + A single abstract implementation of an algorithm is needed.
+  + Common behavior among subclasses should be localized to a common class.
+  + Parent classes should be able to uniformly invoke behavior in their subclasses.
+  + Most or all subclasses need to implement the behavior.
 
 ## Chain of Responsibility <sub>object (change object relationships at runtime)</sub> ##
 
