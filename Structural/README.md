@@ -6,6 +6,7 @@
 + The focus is on simplifying the structure and identifying the relationship between classes and objects
 + They focus on class inheritance and composition
 
+
   + **Adapter:** Match interfaces of different classes
 
   + **Bridge:** Separates an objects abstraction from its implementation
