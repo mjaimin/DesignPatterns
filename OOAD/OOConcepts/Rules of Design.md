@@ -1,60 +1,58 @@
-Rules of Design
-
 # Rules of Design #
-**Make sure that the problem is well-defined**
 
-- All design criteria, requirements, and constraints, should be enumerated before a design is started.
-- This may require a “spiral model” approach.
+## Make sure that the problem is well-defined ##
 
-**What comes before how**
++ All design criteria, requirements, and constraints, should be enumerated before a design is started.
++ This may require a “spiral model” approach.
 
-- i.e., define the service to be performed at every level of abstraction before deciding which structures should be used to realize the services.
+## What comes before how ##
 
-**Separate orthogonal concerns**
++ i.e., define the service to be performed at every level of abstraction before deciding which structures should be used to realize the services.
 
-- Do not connect what is independent.
-- Important at many levels and phases...
+## Separate orthogonal concerns ##
 
-**Design external functionality before internal functionality.**
++ Do not connect what is independent.
++ Important at many levels and phases...
 
-- First consider the solution as a black-box and decide how it should interact with its environment.
-- Then decide how the black-box can be internally organized. Likely it consists of smaller black-boxes that can be refined in a similar fashion.
+## Design external functionality before internal functionality ##
 
-**Keep it simple**
++ First consider the solution as a black-box and decide how it should interact with its environment.
++ Then decide how the black-box can be internally organized. Likely it consists of smaller black-boxes that can be refined in a similar fashion.
 
-- Fancy designs are buggier than simple ones; they are harder to implement, harder to verify, and often less efficient.
-- Problems that appear complex are often just simple problems huddled together.
-- Our job as designers is to identify the simpler problems, separate them, and then solve them individually.
+## Keep it simple ##
 
-**Work at multiple levels of abstraction**
++ Fancy designs are buggier than simple ones; they are harder to implement, harder to verify, and often less efficient.
++ Problems that appear complex are often just simple problems huddled together.
++ Our job as designers is to identify the simpler problems, separate them, and then solve them individually.
 
-- Good designers must be able to move between various levels of abstraction quickly and easily
+## Work at multiple levels of abstraction ##
 
-**Design for extensibility**
++ Good designers must be able to move between various levels of abstraction quickly and easily
 
-- A good design is “open-ended,” i.e., easily extendible.
-- A good design solves a class of problems rather than a single instance.
-- Do not introduce what is immaterial.
-- Do not restrict what is irrelevant.
+## Design for extensibility ##
 
-**Use rapid prototyping when applicable**
++ A good design is “open-ended,” i.e., easily extendible.
++ A good design solves a class of problems rather than a single instance.
++ Do not introduce what is immaterial.
++ Do not restrict what is irrelevant.
 
-- Before implementing a design, build a high-level prototype and verify that the design criteria are met.
+## Use rapid prototyping when applicable ##
 
-**Details should depend upon abstractions**
++ Before implementing a design, build a high-level prototype and verify that the design criteria are met.
 
-- Abstractions should not depend upon details
-- Principle of Dependency Inversion
+## Details should depend upon abstractions ##
 
-**When crossing between two different paradigms, build an interface layer that separates the two**
++ Abstractions should not depend upon details
++ Principle of Dependency Inversion
 
-- Don’t pollute one side with the paradigm of the other
+## When crossing between two different paradigms, build an interface layer that separates the two ##
 
-**Software entities (classes, modules, etc) should be open for extension, but closed for modification**
++ Don’t pollute one side with the paradigm of the other
 
-- The Open/Closed principle – Bertrand Meyer
+## Software entities (classes, modules, etc) should be open for extension, but closed for modification ##
 
-**Derived classes must usable through the base class interface without the need for the user to know the difference**
++ The Open/Closed principle – Bertrand Meyer
 
-- The Liskov Substitution Principle
+## Derived classes must usable through the base class interface without the need for the user to know the difference ##
 
++ The Liskov Substitution Principle
