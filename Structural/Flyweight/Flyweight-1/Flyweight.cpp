@@ -5,58 +5,58 @@ using namespace std;
 
 class IAlien
 {
-public:
-    string shape; //intrinsic state
+    public:
+        string shape; //intrinsic state
 
-    virtual string GetColor(int madLevel) = 0; //extrinsic state
-    std::string getShape(){ return shape; }
+        virtual string GetColor(int madLevel) = 0; //extrinsic state
+        std::string getShape(){ return shape; }
 };
 
 class LargeAlien : public IAlien
 {
-public:
-    LargeAlien()
-    {
-        shape = "Large Shape";
-    }
-    string GetColor(int madLevel) //extrinsic state
-    {
-        string colorValue;
-        if (madLevel == 0)
-            colorValue = "Green";
-        else if (madLevel == 1)
-            colorValue = "Red";
-        else
-            colorValue = "Blue";
-        return colorValue;
-    }
+    public:
+        LargeAlien()
+        {
+            shape = "Large Shape";
+        }
+        string GetColor(int madLevel) //extrinsic state
+        {
+            string colorValue;
+            if (madLevel == 0)
+                colorValue = "Green";
+            else if (madLevel == 1)
+                colorValue = "Red";
+            else
+                colorValue = "Blue";
+            return colorValue;
+        }
 };
 
 
 class LittleAlien : public IAlien
 {
-public:
-    LittleAlien()
-    {
-        shape = "Little Shape";
-    }
-    string GetColor(int madLevel) //extrinsic state
-    {
-        string colorValue;
-        if (madLevel == 0)
-            colorValue = "Red";
-        else if (madLevel == 1)
-            colorValue = "Blue";
-        else
-            colorValue = "Green";
-        return colorValue;
-    }
+    public:
+        LittleAlien()
+        {
+            shape = "Little Shape";
+        }
+        string GetColor(int madLevel) //extrinsic state
+        {
+            string colorValue;
+            if (madLevel == 0)
+                colorValue = "Red";
+            else if (madLevel == 1)
+                colorValue = "Blue";
+            else
+                colorValue = "Green";
+            return colorValue;
+        }
 };
 
 class AlienFactory
 {
     std::map<int, IAlien* > list;
-public: 
+    public:
     void SaveAlien(int index, IAlien* alien)	{	list[index] = alien;	}
 
     IAlien* GetAlien(int index)	{	return list[index];	}

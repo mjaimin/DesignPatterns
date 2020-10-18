@@ -1,12 +1,12 @@
 #include <cctype>
 #include <iostream>
 #include <list>
-#include <memory> 
-#include <algorithm> 
+#include <memory>
+#include <algorithm>
 using namespace std;
 const char* email [] = {
     "You guys really razz my berries, your gumball machines are totally hip",
-    "Cruisin for a bruisin? My kids lost their money trying to win gumballs!", 
+    "Cruisin for a bruisin? My kids lost their money trying to win gumballs!",
     "You guys make me frosted, you've got four year olds gambling now!",
     "Mighty Gumball machines are radioactive, keep up the good work!",
     "Mighty Gumball machines are a blast, I can't wait to see whats cooking next",
@@ -15,7 +15,7 @@ const char* email [] = {
     "Don't have a cow, but your gumball machines really rattle my cage",
     "What's your tale nightingale? slot machine arms on soda machines?!",
     "Wanna make some real bread?! build gumball machines in your home",
-    "Grody? got cooties? call Freeman & Freeman, and you'll be in fat city", 
+    "Grody? got cooties? call Freeman & Freeman, and you'll be in fat city",
     "What's buzzin cuzzin? Make some reals scratch delivering pizzas",
     "You guys are boss! I flip when I see those gumballs drop",
     "Mighty Gumball Inc. is in orbit, we love you guys!",
@@ -61,10 +61,10 @@ class Handler {
 
 class ComplaintHandler : public Handler {
 
-    public: 
+    public:
         explicit ComplaintHandler( const Handler* successor = 0 ) : Handler( successor ) { }
-    public: 
-        void handleRequest( std::string request ) const 
+    public:
+        void handleRequest( std::string request ) const
         {
             std::transform( request.begin(), request.end(), request.begin(), ::tolower );
 
@@ -74,8 +74,8 @@ class ComplaintHandler : public Handler {
                 Handler::handleRequest( request );
             }
         }
-    public: 
-        bool canHandleRequest( const std::string& request ) const 
+    public:
+        bool canHandleRequest( const std::string& request ) const
         {
             bool value = false;
 
@@ -92,7 +92,7 @@ class ComplaintHandler : public Handler {
             }
             return value;
         }
-    public: 
+    public:
         void print() const {
             std::cout << std::endl << "Hate mail, send to Legal:";
             Handler::print();
@@ -141,7 +141,7 @@ class FanHandler : public Handler {
 
 class NewLocationHandler : public Handler {
 
-    public: explicit NewLocationHandler( const Handler* successor = 0 ) : 
+    public: explicit NewLocationHandler( const Handler* successor = 0 ) :
             Handler( successor ) {
             }
     public: void handleRequest( std::string request ) const {
@@ -201,7 +201,7 @@ class SpamHandler : public Handler {
 
 class LastHandler : public Handler {
 
-    public: explicit LastHandler( const Handler* successor = 0 ) : 
+    public: explicit LastHandler( const Handler* successor = 0 ) :
             Handler( successor ) {
             }
     public: void handleRequest( std::string request ) const {
@@ -225,7 +225,7 @@ class Client {
     private: void operator=( const Client& ); // Disable assignment operator
 
     public: Client() :
-            _lastHandler( new LastHandler() ), 
+            _lastHandler( new LastHandler() ),
             _newHandler(  new NewLocationHandler( _lastHandler.get() ) ),
             _hateHandler( new ComplaintHandler( _newHandler.get() ) ),
             _fanHandler(  new FanHandler( _hateHandler.get() ) ),

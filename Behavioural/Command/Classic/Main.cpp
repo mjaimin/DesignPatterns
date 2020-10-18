@@ -2,54 +2,54 @@
 using namespace std;
 
 class Command {
-public:
-	virtual void execute() = 0;
+    public:
+        virtual void execute() = 0;
 };
 
 class Receiver {
-public:
-	void action() {
-		cout << "Receiver Action" << endl;
-	}
+    public:
+        void action() {
+            cout << "Receiver Action" << endl;
+        }
 };
 
 class Invoker {
-public:
-	Invoker(Command* command)
-		:m_command(command) {
-	}
-	void invoke() {
-		m_command->execute();
-	}
-private:
-	Command* m_command;
+    public:
+        Invoker(Command* command)
+            :m_command(command) {
+            }
+        void invoke() {
+            m_command->execute();
+        }
+    private:
+        Command* m_command;
 };
 
 class ConcreteCommand : public Command {
-public:
-	ConcreteCommand(Receiver* receiver)
-		:_receiver(receiver) {
+    public:
+        ConcreteCommand(Receiver* receiver)
+            :_receiver(receiver) {
 
-	}
+            }
 
-	virtual void execute() {
-		_receiver->action();
+        virtual void execute() {
+            _receiver->action();
 
-		cout << "Execute by ConcreteCommand" << endl;
-	}
-private:
-	Receiver* _receiver;
+            cout << "Execute by ConcreteCommand" << endl;
+        }
+    private:
+        Receiver* _receiver;
 };
 
 
 int main (int argc, char const* argv[]) {
-	
-	Receiver* receiver = new Receiver();
-	Command* command = new ConcreteCommand( receiver );
-	Invoker* invoker = new Invoker( command );
 
-	invoker->invoke();
+    Receiver* receiver = new Receiver();
+    Command* command = new ConcreteCommand( receiver );
+    Invoker* invoker = new Invoker( command );
+
+    invoker->invoke();
 
 
-	return 0;
+    return 0;
 }

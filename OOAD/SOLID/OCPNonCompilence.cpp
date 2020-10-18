@@ -2,60 +2,60 @@
 class Order
 {
     public:
-	bool IsValid() { return true; }
+        bool IsValid() { return true; }
 };
 
 class OrderRepository
 {
     public:
-	bool Save(Order* newOrder)
-	{
-	    return true;
-	}
+        bool Save(Order* newOrder)
+        {
+            return true;
+        }
 };
 
 class EmailRepository
 {
     public:
-	void SendMail()
-	{
-	    // send mail code goes here
-	}
+        void SendMail()
+        {
+            // send mail code goes here
+        }
 };
 
 class OrderService
 {
     private:
-	OrderRepository* _orderRepository;
-	EmailRepository* _emailRepository;
+        OrderRepository* _orderRepository;
+        EmailRepository* _emailRepository;
 
     public:
-	OrderService()
-	{
-	    _orderRepository = new OrderRepository();
-	    _emailRepository = new EmailRepository();
-	}
+        OrderService()
+        {
+            _orderRepository = new OrderRepository();
+            _emailRepository = new EmailRepository();
+        }
 
-	OrderService(OrderRepository* orderRepository,
-		EmailRepository* emailRepository)
-	{
-	    _orderRepository = orderRepository;
-	    _emailRepository = emailRepository;
-	}
+        OrderService(OrderRepository* orderRepository,
+                EmailRepository* emailRepository)
+        {
+            _orderRepository = orderRepository;
+            _emailRepository = emailRepository;
+        }
 
-	bool SaveOrder(Order* order)
-	{
-	    bool saveResult = false;
-	    if (order->IsValid())
-	    {
-		saveResult = _orderRepository->Save(order);
-	    }
-	    if (saveResult)
-	    {
-		_emailRepository->SendMail();
-	    }
-	    return true;
-	}
+        bool SaveOrder(Order* order)
+        {
+            bool saveResult = false;
+            if (order->IsValid())
+            {
+                saveResult = _orderRepository->Save(order);
+            }
+            if (saveResult)
+            {
+                _emailRepository->SendMail();
+            }
+            return true;
+        }
 };
 int main()
 {

@@ -4,96 +4,96 @@ std::string loanStateArray[] = { "New", "WaitingApproval", "ApprovedLoan", "Reje
 enum State { New, WaitingApproval, ApprovedLoan, RejectedLoan };
 
 class LoanRequest
-{    
-public:
-    int m_amount;// should be privete, but made public for ease
-    State m_state;// should be privete, but made public for ease    
-    void setLoanAmount( int amount ){ m_amount = amount; }
-    State getLoanState() { return m_state;} 
-    void setLoanState( State state ) { m_state = state;} 
+{
+    public:
+        int m_amount;// should be privete, but made public for ease
+        State m_state;// should be privete, but made public for ease
+        void setLoanAmount( int amount ){ m_amount = amount; }
+        State getLoanState() { return m_state;}
+        void setLoanState( State state ) { m_state = state;}
 };
 
 class BaseRequestHandler
 {
-protected:
-    virtual void Execute(LoanRequest& request) = 0;
+    protected:
+        virtual void Execute(LoanRequest& request) = 0;
 
-public:
-    BaseRequestHandler* Successor;// should be privete, but made public for ease
-    BaseRequestHandler():Successor(NULL) // Manager Handler successor is NULL
+    public:
+        BaseRequestHandler* Successor;// should be privete, but made public for ease
+        BaseRequestHandler():Successor(NULL) // Manager Handler successor is NULL
     {}
-    void ExecuteRequest(LoanRequest& request)
-    {
-        Execute(request); // first handle your Execute and pass it to succesor, let everybody review the request
-        if (Successor != NULL) // Manager Handler successor is NULL, so every request goes till manager, irrespective of it is passed or rejected
-            Successor->ExecuteRequest(request);
-    } 
+        void ExecuteRequest(LoanRequest& request)
+        {
+            Execute(request); // first handle your Execute and pass it to succesor, let everybody review the request
+            if (Successor != NULL) // Manager Handler successor is NULL, so every request goes till manager, irrespective of it is passed or rejected
+                Successor->ExecuteRequest(request);
+        }
 };
 
 class FirstApproverRequestHandler: public BaseRequestHandler
 {
-protected:
-    void Execute(LoanRequest& request)
-    {
-        if( request.getLoanState() != ApprovedLoan )//else can be return also but let it print Execute : Request handler message
+    protected:
+        void Execute(LoanRequest& request)
         {
-            if( request.m_amount <= 100000 )
+            if( request.getLoanState() != ApprovedLoan )//else can be return also but let it print Execute : Request handler message
             {
-                std::cout << request.m_amount << "INR loan approved by First Approver" << std::endl;
-                // based on approval criteria approve loan
-                request.setLoanState( ApprovedLoan );	
+                if( request.m_amount <= 100000 )
+                {
+                    std::cout << request.m_amount << "INR loan approved by First Approver" << std::endl;
+                    // based on approval criteria approve loan
+                    request.setLoanState( ApprovedLoan );
+                }
+                else
+                {
+                    request.setLoanState( WaitingApproval );
+                }
             }
-            else
-            {
-                request.setLoanState( WaitingApproval );
-            }    
+            std::cout << "Execute : FirstApproverRequestHandler" << std::endl;
         }
-        std::cout << "Execute : FirstApproverRequestHandler" << std::endl;
-    }
 };
 
 class SecondApproverRequestHandler: public BaseRequestHandler
 {
-protected:
-    void Execute(LoanRequest& request)
-    {
-        if( request.getLoanState() != ApprovedLoan )//else can be return also but let it print Execute : Request handler message
+    protected:
+        void Execute(LoanRequest& request)
         {
-            if( request.m_amount <= 1000000 )
+            if( request.getLoanState() != ApprovedLoan )//else can be return also but let it print Execute : Request handler message
             {
-                std::cout << request.m_amount << "INR loan approved by Second Approver" << std::endl;
-                // based on approval criteria approve loan
-                request.setLoanState( ApprovedLoan );
+                if( request.m_amount <= 1000000 )
+                {
+                    std::cout << request.m_amount << "INR loan approved by Second Approver" << std::endl;
+                    // based on approval criteria approve loan
+                    request.setLoanState( ApprovedLoan );
+                }
+                else
+                {
+                    request.setLoanState( WaitingApproval );
+                }
             }
-            else
-            {
-                request.setLoanState( WaitingApproval );
-            }    
+            std::cout << "Execute : SecondApproverRequestHandler" << std::endl;
         }
-        std::cout << "Execute : SecondApproverRequestHandler" << std::endl;
-    }
 };
 
 class ManagerApproverRequestHandler: public BaseRequestHandler
 {
-protected:
-    void Execute(LoanRequest& request)
-    {
-        if( request.getLoanState() != ApprovedLoan )//else can be return also but let it print Execute : Request handler message
+    protected:
+        void Execute(LoanRequest& request)
         {
-            if( request.m_amount <= 10000000 && request.m_amount < 100000000 )// between carore and 10 carore
+            if( request.getLoanState() != ApprovedLoan )//else can be return also but let it print Execute : Request handler message
             {
-                std::cout << request.m_amount << "INR loan approved by Manager" << std::endl;
-                // based on approval criteria approve the loan
-                request.setLoanState( ApprovedLoan );
+                if( request.m_amount <= 10000000 && request.m_amount < 100000000 )// between carore and 10 carore
+                {
+                    std::cout << request.m_amount << "INR loan approved by Manager" << std::endl;
+                    // based on approval criteria approve the loan
+                    request.setLoanState( ApprovedLoan );
+                }
+                else
+                {
+                    request.setLoanState( RejectedLoan );
+                }
             }
-            else
-            {
-                request.setLoanState( RejectedLoan );
-            }    
+            std::cout << "Execute : ManagerApproverRequestHandler"<< std::endl;
         }
-        std::cout << "Execute : ManagerApproverRequestHandler"<< std::endl;
-    }
 };
 
 int main()
@@ -112,6 +112,6 @@ int main()
     request.setLoanState( New );
 
     // handler -> request executer
-    handler->ExecuteRequest(request);        
+    handler->ExecuteRequest(request);
     std::cout << "loan Status is: " << loanStateArray[request.getLoanState()] << std::endl;
 }

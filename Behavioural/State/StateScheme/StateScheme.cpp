@@ -2,32 +2,32 @@
 class State;
 class Context
 {
-    private: 
-	State* current;
+    private:
+        State* current;
 
-    public: 
-	void setState(State* state);
-	void Request();
+    public:
+        void setState(State* state);
+        void Request();
 };
 
 class State {
     public:
-	virtual void goNext(Context* ) = 0;
+        virtual void goNext(Context* ) = 0;
 };
 
 class StateOne: public State {
     public:
-	void goNext(Context*);
+        void goNext(Context*);
 };
 
 class StateTwo: public State {
     public:
-	void goNext(Context*);
+        void goNext(Context*);
 };
 
 class StateThree : public State {
     public:
-	void goNext(Context*);
+        void goNext(Context*);
 };
 
 

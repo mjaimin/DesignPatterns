@@ -7,77 +7,77 @@ class Shipped;
 class OutForDelivery;
 class Delivered;
 
-class PackageState 
+class PackageState
 {
     public:
-	virtual void updateState(DeliveryContext* ctx) = 0;
+        virtual void updateState(DeliveryContext* ctx) = 0;
 };
 
-class Acknowledged: public PackageState 
+class Acknowledged: public PackageState
 {
     //Acknowledged
-    private: 
-	static	Acknowledged* instance;
-	Acknowledged() {}
-    public: 
-	static Acknowledged *getInstance();
+    private:
+        static	Acknowledged* instance;
+        Acknowledged() {}
+    public:
+        static Acknowledged *getInstance();
 
-	//Business logic and state transition
-	void updateState(DeliveryContext* ctx); 
+        //Business logic and state transition
+        void updateState(DeliveryContext* ctx);
 
 };
-class Shipped: public PackageState 
+class Shipped: public PackageState
 {
     //Singleton
     private:
-	static	Shipped* instance;
-	Shipped() {}
-    public: 
-	static Shipped* getInstance();
+        static	Shipped* instance;
+        Shipped() {}
+    public:
+        static Shipped* getInstance();
 
-	//Business logic and state transition
-	void updateState(DeliveryContext* ctx); 
-
-};
-
-class InTransition: public PackageState 
-{
-    //Singleton
-    private: 
-	static	InTransition* instance;
-	InTransition() {}
-    public: 
-	static InTransition *getInstance(); 
-
-	//Business logic and state transition
-	void updateState(DeliveryContext* ctx); 
-};
-
-class OutForDelivery: public PackageState 
-{
-    //Singleton
-    private: 
-	static	OutForDelivery* instance;
-	OutForDelivery() {}
-    public: 
-	static OutForDelivery *getInstance();
-
-	//Business logic and state transition
-	void updateState(DeliveryContext* ctx); 
+        //Business logic and state transition
+        void updateState(DeliveryContext* ctx);
 
 };
 
-class Delivered: public PackageState 
+class InTransition: public PackageState
 {
     //Singleton
-    private: 
-	static	Delivered* instance;
-	Delivered() {}
-    public: 
-	static Delivered *getInstance(); 
+    private:
+        static	InTransition* instance;
+        InTransition() {}
+    public:
+        static InTransition *getInstance();
 
-	//Business logic
-	void updateState(DeliveryContext* ctx); 
+        //Business logic and state transition
+        void updateState(DeliveryContext* ctx);
+};
+
+class OutForDelivery: public PackageState
+{
+    //Singleton
+    private:
+        static	OutForDelivery* instance;
+        OutForDelivery() {}
+    public:
+        static OutForDelivery *getInstance();
+
+        //Business logic and state transition
+        void updateState(DeliveryContext* ctx);
+
+};
+
+class Delivered: public PackageState
+{
+    //Singleton
+    private:
+        static	Delivered* instance;
+        Delivered() {}
+    public:
+        static Delivered *getInstance();
+
+        //Business logic
+        void updateState(DeliveryContext* ctx);
 
 };
 
@@ -89,105 +89,105 @@ Delivered* Delivered::instance = NULL;
 
 Acknowledged *Acknowledged::getInstance() {
     if (!instance)
-	instance = new Acknowledged;
+        instance = new Acknowledged;
     return instance;
 }
 
 
 Shipped* Shipped::getInstance() {
     if (!instance)
-	instance = new Shipped;
+        instance = new Shipped;
     return instance;
 }
 InTransition *InTransition:: getInstance() {
     if (!instance)
-	instance = new InTransition;
+        instance = new InTransition;
     return instance;
 }
 
 
 OutForDelivery *OutForDelivery::getInstance() {
     if (!instance)
-	instance = new OutForDelivery;
+        instance = new OutForDelivery;
     return instance;
 }
 
 Delivered *Delivered::getInstance() {
     if (!instance)
-	instance = new Delivered;
+        instance = new Delivered;
     return instance;
 }
 
 //The Context
 class DeliveryContext {
 
-    private: 
-	PackageState* currentState;
-	std::string packageId;
+    private:
+        PackageState* currentState;
+        std::string packageId;
 
-    public: 
-	DeliveryContext(std::string packageId) 
-	{
-	    this->packageId = packageId;
-	    this->currentState = Acknowledged::getInstance();
-	}
+    public:
+        DeliveryContext(std::string packageId)
+        {
+            this->packageId = packageId;
+            this->currentState = Acknowledged::getInstance();
+        }
 
-	PackageState* getCurrentState() {
-	    return currentState;
-	}
+        PackageState* getCurrentState() {
+            return currentState;
+        }
 
-	void setCurrentState(PackageState* currentState) {
-	    this->currentState = currentState;
-	}
+        void setCurrentState(PackageState* currentState) {
+            this->currentState = currentState;
+        }
 
-	std::string getPackageId() {
-	    return packageId;
-	}
+        std::string getPackageId() {
+            return packageId;
+        }
 
-	void setPackageId(std::string packageId) {
-	    this->packageId = packageId;
-	}
+        void setPackageId(std::string packageId) {
+            this->packageId = packageId;
+        }
 
-	void update() {
-	    currentState->updateState(this);
-	}
+        void update() {
+            currentState->updateState(this);
+        }
 };
 
 //Business logic and state transition
-void Acknowledged::updateState(DeliveryContext* ctx) 
+void Acknowledged::updateState(DeliveryContext* ctx)
 {
     std::cout << "Package is acknowledged !!" << std::endl;
     ctx->setCurrentState(Shipped::getInstance());
 }
 
 //Business logic and state transition
-void Shipped::updateState(DeliveryContext* ctx) 
+void Shipped::updateState(DeliveryContext* ctx)
 {
     std::cout << "Package is shipped !!" << std::endl;
     ctx->setCurrentState(InTransition::getInstance());
 }
 
 //Business logic and state transition
-void InTransition:: updateState(DeliveryContext* ctx) 
+void InTransition:: updateState(DeliveryContext* ctx)
 {
     std::cout << "Package is in transition !!" << std::endl;
     ctx->setCurrentState(OutForDelivery::getInstance());
 }
 
 //Business logic and state transition
-void OutForDelivery::updateState(DeliveryContext* ctx) 
+void OutForDelivery::updateState(DeliveryContext* ctx)
 {
     std::cout << "Package is out of delivery !!" << std::endl;
     ctx->setCurrentState(Delivered::getInstance());
 }
 
 //Business logic
-void Delivered::updateState(DeliveryContext* ctx) 
+void Delivered::updateState(DeliveryContext* ctx)
 {
     std::cout << "Package is delivered!!" << std::endl;
 }
 
-int main() 
+int main()
 {
     DeliveryContext ctx("Order Received");
 

@@ -1,23 +1,23 @@
-#include <iostream> 
-#include <stdio.h> 
+#include <iostream>
+#include <stdio.h>
 
-class ISocialMediaStrategy 
+class ISocialMediaStrategy
 {
-    public: 
-	virtual void connectTo(std::string friendName) = 0;
+    public:
+        virtual void connectTo(std::string friendName) = 0;
 };
 
 
-class SocialMediaContext 
+class SocialMediaContext
 {
     ISocialMediaStrategy* smStrategy;
     public:
     void setSocialmediaStrategy(ISocialMediaStrategy* smStrategy) {
-	this->smStrategy = smStrategy;
+        this->smStrategy = smStrategy;
     }
 
     void connect(std::string name) {
-	smStrategy->connectTo(name);
+        smStrategy->connectTo(name);
     }
 };
 
@@ -25,36 +25,36 @@ class SocialMediaContext
 
 class FacebookStrategy: public ISocialMediaStrategy {
     public:
-	void connectTo(std::string friendName) {
-	    std::cout << "Connecting with " + friendName + " through Facebook" << std::endl;
-	}
+        void connectTo(std::string friendName) {
+            std::cout << "Connecting with " + friendName + " through Facebook" << std::endl;
+        }
 };
 
 
 
 class GooglePlusStrategy: public ISocialMediaStrategy {
     public:
-	void connectTo(std::string friendName) {
-	    std::cout << "Connecting with " + friendName + " through GooglePlus" << std::endl;
-	}
+        void connectTo(std::string friendName) {
+            std::cout << "Connecting with " + friendName + " through GooglePlus" << std::endl;
+        }
 };
 
 
 
 class TwitterStrategy: public ISocialMediaStrategy {
-    public: 
-	void connectTo(std::string friendName) {
-	    std::cout << "Connecting with " + friendName + " through Twitter" << std::endl;
-	}
+    public:
+        void connectTo(std::string friendName) {
+            std::cout << "Connecting with " + friendName + " through Twitter" << std::endl;
+        }
 };
 
 
 
 class OrkutStrategy: public ISocialMediaStrategy {
     public:
-	void connectTo(std::string friendName) {
-	    std::cout << "Connecting with " + friendName + " through Orkut [not possible though :)]" << std::endl;
-	}
+        void connectTo(std::string friendName) {
+            std::cout << "Connecting with " + friendName + " through Orkut [not possible though :)]" << std::endl;
+        }
 };
 
 main()

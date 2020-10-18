@@ -5,38 +5,38 @@ using namespace std;
 class Product
 {
     public:
-	virtual void Action(void)=0;
+        virtual void Action(void)=0;
 };
 
 class ConcreteProduct1 : public Product
 {
     public:
-	void Action(void) { cout << "ConcreteProduct1....." << endl; }
+        void Action(void) { cout << "ConcreteProduct1....." << endl; }
 };
 
 class ConcreteProduct2 : public Product
 {
     public:
-	void Action(void) { cout << "ConcreteProduct2....." << endl; }
+        void Action(void) { cout << "ConcreteProduct2....." << endl; }
 };
 
 class Factory
 {
     public:
-	virtual Product *CreateProduct(PRODUCTCODE code) =0;
+        virtual Product *CreateProduct(PRODUCTCODE code) =0;
 };
 
 class ConcreteFactory : public Factory
 {
     public:
-// Factory creates and returns product object
-	Product *CreateProduct( PRODUCTCODE code ) 
-	{
-	    if ( code = CONCRETEPRODUCT1 )
-		return new ConcreteProduct1; 
-	    else if ( code = CONCRETEPRODUCT2 )
-		return new ConcreteProduct2; 
-	}
+        // Factory creates and returns product object
+        Product *CreateProduct( PRODUCTCODE code )
+        {
+            if ( code = CONCRETEPRODUCT1 )
+                return new ConcreteProduct1;
+            else if ( code = CONCRETEPRODUCT2 )
+                return new ConcreteProduct2;
+        }
 };
 
 int main(int argc, char *argv[])

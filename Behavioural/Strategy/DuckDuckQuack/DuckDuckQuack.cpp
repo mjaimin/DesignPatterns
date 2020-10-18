@@ -2,151 +2,151 @@
 
 class FlyBehaviour
 {
-public:
-   virtual void fly() = 0;
+    public:
+        virtual void fly() = 0;
 };
 
 class FlyWithWings : public FlyBehaviour
 {
-public:
-   void fly() {
-       std::cout << "I'm flying" << std::endl;
-   }
+    public:
+        void fly() {
+            std::cout << "I'm flying" << std::endl;
+        }
 };
 
 class FlyNoWay : public FlyBehaviour
 {
-public:
-   void fly() { 
-       std::cout << "I can't fly..." << std::endl; 
-   }
+    public:
+        void fly() {
+            std::cout << "I can't fly..." << std::endl;
+        }
 };
 
 class FlyRocketPowered : public FlyBehaviour
 {
-   void fly() { 
-       std::cout << "Fly Rocket Powered ==> Zoooom" << std::endl; 
-   }
+    void fly() {
+        std::cout << "Fly Rocket Powered ==> Zoooom" << std::endl;
+    }
 };
 
 class QuackBehaviour
 {
-public:
-   virtual void quack() = 0;
+    public:
+        virtual void quack() = 0;
 };
 
 class Quack : public QuackBehaviour
 {
-public:
-   void quack() { 
-       std::cout << "Quack" << std::endl; 
-   }
+    public:
+        void quack() {
+            std::cout << "Quack" << std::endl;
+        }
 };
 
 class MuteQuack : public QuackBehaviour
 {
-public:
-   void quack() { 
-       std::cout << "Silence" << std::endl; 
-   }
+    public:
+        void quack() {
+            std::cout << "Silence" << std::endl;
+        }
 };
 
 class Squeak : public QuackBehaviour
 {
-public:
-   void quack() { 
-       std::cout << "Squeak" << std::endl; 
-   }
+    public:
+        void quack() {
+            std::cout << "Squeak" << std::endl;
+        }
 };
 
 
 class Duck
 {
-protected:
-   FlyBehaviour   *flyBehav;
-   QuackBehaviour *quackBehav;
+    protected:
+        FlyBehaviour   *flyBehav;
+        QuackBehaviour *quackBehav;
 
-public:
-   Duck() {}
+    public:
+        Duck() {}
 
-   virtual void display() = 0;
-   void swim() { 
-       std::cout << "All ducks float/swim" << std::endl; 
-   }
-   void performFly() { 
-       flyBehav->fly(); 
-   }
-   void performQuack() { 
-       quackBehav->quack(); 
-   }
-   void setFlyingBehav(FlyBehaviour *pflyBehav) { 
-       flyBehav = pflyBehav; 
-   }
-   void setQuackingBehav(QuackBehaviour *pquackBehav) { 
-       quackBehav = pquackBehav; 
-   }
+        virtual void display() = 0;
+        void swim() {
+            std::cout << "All ducks float/swim" << std::endl;
+        }
+        void performFly() {
+            flyBehav->fly();
+        }
+        void performQuack() {
+            quackBehav->quack();
+        }
+        void setFlyingBehav(FlyBehaviour *pflyBehav) {
+            flyBehav = pflyBehav;
+        }
+        void setQuackingBehav(QuackBehaviour *pquackBehav) {
+            quackBehav = pquackBehav;
+        }
 };
 
 class MallardDuck : public Duck
 {
-public:
-   MallardDuck() {
-      quackBehav = new Quack();
-      flyBehav   = new FlyWithWings();
-   }
-   void display() { 
-       std::cout << "I am real Mallard Duck" << std::endl;
-   }
+    public:
+        MallardDuck() {
+            quackBehav = new Quack();
+            flyBehav   = new FlyWithWings();
+        }
+        void display() {
+            std::cout << "I am real Mallard Duck" << std::endl;
+        }
 };
 
 class ModelDuck : public Duck
 {
-public:
-   ModelDuck() {
-      quackBehav = new Quack();
-      flyBehav   = new FlyNoWay();
-   }
-   void display() { 
-       std::cout << "I am Model Duck" << std::endl;
-   }
+    public:
+        ModelDuck() {
+            quackBehav = new Quack();
+            flyBehav   = new FlyNoWay();
+        }
+        void display() {
+            std::cout << "I am Model Duck" << std::endl;
+        }
 };
 
 class DuckHunter
 {
-private:
-   Duck *duckType;
-public:
-   void SetDuckType(Duck *pDuck) { 
-       duckType = pDuck;
-   }
+    private:
+        Duck *duckType;
+    public:
+        void SetDuckType(Duck *pDuck) {
+            duckType = pDuck;
+        }
 
-   void StartHunting() {
-      for (int i = 0; i < 3; i++)
-      {
-         duckType->performQuack();
-         duckType->performFly();
-      }
-   }
+        void StartHunting() {
+            for (int i = 0; i < 3; i++)
+            {
+                duckType->performQuack();
+                duckType->performFly();
+            }
+        }
 };
 
 int main()
 {
-   Duck *mallard = new MallardDuck();
+    Duck *mallard = new MallardDuck();
 
-   mallard->display();
-   mallard->performQuack();
-   mallard->performFly();
+    mallard->display();
+    mallard->performQuack();
+    mallard->performFly();
 
-   Duck *model = new ModelDuck();
-   model->performFly();
-   model->setFlyingBehav(new FlyRocketPowered());
-   model->performFly();
+    Duck *model = new ModelDuck();
+    model->performFly();
+    model->setFlyingBehav(new FlyRocketPowered());
+    model->performFly();
 
-   DuckHunter *huntingToy = new DuckHunter();
-   huntingToy->SetDuckType( new MallardDuck() );
-   huntingToy->StartHunting();
-   huntingToy->SetDuckType( new ModelDuck() );
-   huntingToy->StartHunting();
+    DuckHunter *huntingToy = new DuckHunter();
+    huntingToy->SetDuckType( new MallardDuck() );
+    huntingToy->StartHunting();
+    huntingToy->SetDuckType( new ModelDuck() );
+    huntingToy->StartHunting();
 
-   return 0;
+    return 0;
 }

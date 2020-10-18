@@ -6,36 +6,36 @@ class Account
     public:
     Account(int AccountId)
     {
-	id = AccountId;
+        id = AccountId;
     }
 
     int getId() { return id; }
 
     virtual void Withdraw(int accountId, int amount)
     {
-	printf("In base withdraw\n");
+        printf("In base withdraw\n");
     }
 };
 
 class SavingAccount : public Account
 {
     public:
-	SavingAccount(int savingAccountId):Account(savingAccountId) {}
+        SavingAccount(int savingAccountId):Account(savingAccountId) {}
 
-	void Withdraw(int accountId, int amount)
-	{
-	    printf("In SavingAccount withdraw\n");
-	    Account::Withdraw(accountId, amount);
-	}
+        void Withdraw(int accountId, int amount)
+        {
+            printf("In SavingAccount withdraw\n");
+            Account::Withdraw(accountId, amount);
+        }
 };
 
 class Bank
 {
     public:
-	virtual void Withdraw(Account* acc, int amount)
-	{
-	    acc->Withdraw(acc->getId(), amount);
-	}
+        virtual void Withdraw(Account* acc, int amount)
+        {
+            acc->Withdraw(acc->getId(), amount);
+        }
 };
 
 
@@ -43,15 +43,15 @@ class Bank
 class CheckingAccount : public Account
 {
     public:
-	CheckingAccount(int checkingAccountId):Account(checkingAccountId)
+        CheckingAccount(int checkingAccountId):Account(checkingAccountId)
     {
     }
 
-	void Withdraw(int accountId, int amount)
-	{
-	    printf("In CheckingAccount withdraw\n");
-	    Account::Withdraw(accountId, amount);
-	}
+        void Withdraw(int accountId, int amount)
+        {
+            printf("In CheckingAccount withdraw\n");
+            Account::Withdraw(accountId, amount);
+        }
 };
 
 int main()

@@ -10,39 +10,39 @@
 class IState
 {
     public:
-	virtual void write(class Type_Writter& type_writter, std::string what) = 0;
-	virtual ~IState() = default;
+        virtual void write(class Type_Writter& type_writter, std::string what) = 0;
+        virtual ~IState() = default;
 };
 
 // context, we model a type writter with 2 states: Caps ON and Caps OFF
 // that keep switching automatically
 class Type_Writter
 {
-protected:
-    std::unique_ptr<IState> state_;
-public:
-    Type_Writter(std::unique_ptr<IState> state): state_{std::move(state)} {}
-    void set_state(std::unique_ptr<IState> state)
-    {
-        state_ = std::move(state);
-    }
-    void write(const std::string& what)
-    {
-        state_->write(*this, what);
-    }
+    protected:
+        std::unique_ptr<IState> state_;
+    public:
+        Type_Writter(std::unique_ptr<IState> state): state_{std::move(state)} {}
+        void set_state(std::unique_ptr<IState> state)
+        {
+            state_ = std::move(state);
+        }
+        void write(const std::string& what)
+        {
+            state_->write(*this, what);
+        }
 };
 
 // concrete states
 class Caps_ON: public IState
 {
-public:
-    void write(Type_Writter& type_writter, std::string what) override;
+    public:
+        void write(Type_Writter& type_writter, std::string what) override;
 };
 
 class Caps_OFF: public IState
 {
-public:
-    void write(Type_Writter& type_writter, std::string what) override;
+    public:
+        void write(Type_Writter& type_writter, std::string what) override;
 };
 
 // implementation of concrete states

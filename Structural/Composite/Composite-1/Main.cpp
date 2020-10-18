@@ -4,55 +4,55 @@
 
 class IEmployee
 {
-public:
-    virtual void ShowHappiness() = 0;
+    public:
+        virtual void ShowHappiness() = 0;
 };
 
 class Worker: public IEmployee
 {
-private:
-    std::string name;
-    int happiness;
+    private:
+        std::string name;
+        int happiness;
 
-public:
-    Worker(std::string name, int happiness)
-    {
-        this->name = name;
-        this->happiness = happiness;
-    }
+    public:
+        Worker(std::string name, int happiness)
+        {
+            this->name = name;
+            this->happiness = happiness;
+        }
 
-    void ShowHappiness()
-    {
-        std::cout << name <<  " showed happiness level of " << happiness << std::endl;
-    }
+        void ShowHappiness()
+        {
+            std::cout << name <<  " showed happiness level of " << happiness << std::endl;
+        }
 };
 
 class Supervisor: public IEmployee
 {
-private:
-    std::string name;
-    int happiness; 
-    std::list<IEmployee*> subordinate;
+    private:
+        std::string name;
+        int happiness;
+        std::list<IEmployee*> subordinate;
 
-public:
-    Supervisor(std::string name, int happiness)
-    {
-        this->name = name;
-        this->happiness = happiness;
-    }
+    public:
+        Supervisor(std::string name, int happiness)
+        {
+            this->name = name;
+            this->happiness = happiness;
+        }
 
-    void ShowHappiness()
-    {
-        std::cout << name << " showed happiness level of " << happiness << std::endl;
-        //show all the subordinate's happiness level
-        for (std::list<IEmployee*>::iterator it = subordinate.begin(); it != subordinate.end(); it++)
-            (*it)->ShowHappiness();
-    }
+        void ShowHappiness()
+        {
+            std::cout << name << " showed happiness level of " << happiness << std::endl;
+            //show all the subordinate's happiness level
+            for (std::list<IEmployee*>::iterator it = subordinate.begin(); it != subordinate.end(); it++)
+                (*it)->ShowHappiness();
+        }
 
-    void AddSubordinate(IEmployee* employee)
-    {
-        subordinate.push_back(employee);
-    }
+        void AddSubordinate(IEmployee* employee)
+        {
+            subordinate.push_back(employee);
+        }
 };
 
 

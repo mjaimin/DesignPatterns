@@ -1,6 +1,6 @@
 // Factory creates and returns product object
 #include <iostream>
-class Button { 
+class Button {
     public: virtual void paint() = 0; };
 
 class OSXButton: public Button {
@@ -11,18 +11,18 @@ class WindowsButton: public Button  {
 
 // Factory creates and returns product object
 class GUIFactory {
-    public: virtual Button *createButton(char *) = 0; }; 
+    public: virtual Button *createButton(char *) = 0; };
 
 class Factory: public GUIFactory {
     public:
-	Button *createButton(char *type) {
-	    if(strcmp(type,"Windows") == 0) {
-		return new WindowsButton;
-	    }
-	    else if(strcmp(type,"OSX") == 0) {
-		return new OSXButton;
-	    }
-	}
+        Button *createButton(char *type) {
+            if(strcmp(type,"Windows") == 0) {
+                return new WindowsButton;
+            }
+            else if(strcmp(type,"OSX") == 0) {
+                return new OSXButton;
+            }
+        }
 };
 
 int main()

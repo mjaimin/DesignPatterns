@@ -1,70 +1,70 @@
 #include <cstdio>
 using namespace std;
 class HomeStatus {
-public:
-    bool alarmOn = false;
-    bool locked = true;
-    bool lightsOff = true;
+    public:
+        bool alarmOn = false;
+        bool locked = true;
+        bool lightsOff = true;
 };
 
 class HomeChecker {
 
-protected:
-    HomeChecker *successor;
+    protected:
+        HomeChecker *successor;
 
-public:
-    virtual void check(HomeStatus *home) = 0;
+    public:
+        virtual void check(HomeStatus *home) = 0;
 
-    void succeedWith(HomeChecker *successor)
-    {
-        this->successor = successor;
-    }
-
-    void next(HomeStatus *home)
-    {
-        if (this->successor)
+        void succeedWith(HomeChecker *successor)
         {
-            this->successor->check(home);
+            this->successor = successor;
         }
-    }
+
+        void next(HomeStatus *home)
+        {
+            if (this->successor)
+            {
+                this->successor->check(home);
+            }
+        }
 
 };
 
 class Locks : public HomeChecker {
-public:
-    void check(HomeStatus *home)
-    {
-        if (!home->locked)
+    public:
+        void check(HomeStatus *home)
         {
-           printf("The doors are not locked!! Abort abort.\n");
+            if (!home->locked)
+            {
+                printf("The doors are not locked!! Abort abort.\n");
+            }
+            this->next(home);
         }
-        this->next(home);
-    }
 };
 
 class Lights : public HomeChecker {
-public:
-    void check(HomeStatus *home)
-    {
-        if (!home->lightsOff)
+    public:
+        void check(HomeStatus *home)
         {
-           printf("The lights are still on!! Abort abort.\n");
+            if (!home->lightsOff)
+            {
+                printf("The lights are still on!! Abort abort.\n");
+            }
+            this->next(home);
         }
-        this->next(home);
-    }
 
 };
 
 class Alarm : public HomeChecker {
-public:
-    void check(HomeStatus *home)
-    {
-        if (!home->alarmOn)
+    public:
+        void check(HomeStatus *home)
         {
-           printf("The alarm has not been set!! Abort abort.\n");
+            if (!home->alarmOn)
+            {
+                printf("The alarm has not been set!! Abort abort.\n");
+            }
+            this->next(home);
         }
-        this->next(home);
-    }
 };
 
 int main()

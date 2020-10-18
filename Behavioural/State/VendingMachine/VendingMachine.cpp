@@ -1,38 +1,38 @@
 ﻿#include <iostream>
 class VendingMachine;
 class VendingMachineState {
-    public: 
-	virtual void ChangeVendingState(VendingMachine* context) = 0;
-	virtual void GetProduct(int amount, VendingMachine* context) = 0;
+    public:
+        virtual void ChangeVendingState(VendingMachine* context) = 0;
+        virtual void GetProduct(int amount, VendingMachine* context) = 0;
 };
 
 class VendingMachine {
     private:
-	VendingMachineState* current;
-	int CostOfProduct;
-    public: 
-	void setState(VendingMachineState* state) {
-	    current = state;
-	}
-	void BuyProduct(int amount) {
-	    CostOfProduct = amount;
-	    current->GetProduct(amount, this);
-	}
-	void TakeProduct() {
-	    current->GetProduct(CostOfProduct, this);
-	}
+        VendingMachineState* current;
+        int CostOfProduct;
+    public:
+        void setState(VendingMachineState* state) {
+            current = state;
+        }
+        void BuyProduct(int amount) {
+            CostOfProduct = amount;
+            current->GetProduct(amount, this);
+        }
+        void TakeProduct() {
+            current->GetProduct(CostOfProduct, this);
+        }
 };
 
 class VendingDepositeState: public VendingMachineState {
     public:
-	void ChangeVendingState(VendingMachine* context);
-	void GetProduct(int amount, VendingMachine* context);
+        void ChangeVendingState(VendingMachine* context);
+        void GetProduct(int amount, VendingMachine* context);
 };
 
 class VendingStockState: public VendingMachineState {
     public:
-	void ChangeVendingState(VendingMachine* context);
-	void GetProduct(int amount, VendingMachine* context);
+        void ChangeVendingState(VendingMachine* context);
+        void GetProduct(int amount, VendingMachine* context);
 };
 
 void VendingDepositeState::ChangeVendingState(VendingMachine* context) {
@@ -43,16 +43,16 @@ void VendingDepositeState::GetProduct(int amount, VendingMachine* context) {
     std::cout << "Thrown into the machine: " <<  amount << std::endl;
 
     if (amount==5) {
-	std::cout<<"Payment accepted"<< std::endl;
-	ChangeVendingState(context);
+        std::cout<<"Payment accepted"<< std::endl;
+        ChangeVendingState(context);
     }
     else if(amount>=5) {
-	int returnMoney = amount - 5;
-	std::cout << "Payment accepted, return the rest of money: " << returnMoney<< std::endl<< std::endl;
-	ChangeVendingState(context);
+        int returnMoney = amount - 5;
+        std::cout << "Payment accepted, return the rest of money: " << returnMoney<< std::endl<< std::endl;
+        ChangeVendingState(context);
     }
     else {
-	printf("Not enough money\n\n");
+        printf("Not enough money\n\n");
     }
 }
 

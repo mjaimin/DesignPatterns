@@ -11,41 +11,41 @@
 class ITimerFunction
 {
     public:
-	virtual void TimerFunction() = 0; 
+        virtual void TimerFunction() = 0;
 };
 
 
 class SimpleDoor : public IDoor
 {
     public:
-	void Lock()
-	{
-	    // method implementation goes here
-	}
+        void Lock()
+        {
+            // method implementation goes here
+        }
 
-	void Unlock()
-	{
-	    // method implementation goes here
-	}
+        void Unlock()
+        {
+            // method implementation goes here
+        }
 };
 
 class AdvancedDoor : public IDoor, public ITimerFunction
 {
     public:
 
-	void Lock()
-	{
-	    // Method implementation goes here...
-	}
+        void Lock()
+        {
+            // Method implementation goes here...
+        }
 
-	void Unlock()
-	{
-	    // Method implementation goes here...
-	}
+        void Unlock()
+        {
+            // Method implementation goes here...
+        }
 
-	void TimerFunction()
-	{
-	}
+        void TimerFunction()
+        {
+        }
 };
 
 int main(){}

@@ -14,9 +14,9 @@ class Visitor {
     // Method Overloading
 
     public:
-	double visit(Liquor* liquorItem);
-	double visit(Tobacco* tobaccoItem);
-	double visit(Necessity* necessityItem);
+        double visit(Liquor* liquorItem);
+        double visit(Tobacco* tobaccoItem);
+        double visit(Necessity* necessityItem);
 
 };
 
@@ -32,7 +32,7 @@ class Visitable {
     // is called because of method overloading
 
     public:
-	double accept(Visitor* visitor);
+        double accept(Visitor* visitor);
 
 };
 
@@ -40,36 +40,36 @@ class Visitable {
 
 class Liquor: public Visitable {
     private:
-	double price;
+        double price;
 
     public:
-	Liquor(double item) : price(item) { }
-	double accept(Visitor* visitor) {
-	    return visitor->visit(this);
-	}
-	double getPrice() { return price; }
+        Liquor(double item) : price(item) { }
+        double accept(Visitor* visitor) {
+            return visitor->visit(this);
+        }
+        double getPrice() { return price; }
 };
 
 class Necessity: public Visitable {
     private:
-	double price;
+        double price;
     public:
-	Necessity(double item) : price(item) { }
-	double accept(Visitor* visitor) {
-	    return visitor->visit(this);
-	}
-	double getPrice() { return price; }
+        Necessity(double item) : price(item) { }
+        double accept(Visitor* visitor) {
+            return visitor->visit(this);
+        }
+        double getPrice() { return price; }
 };
 
 class Tobacco: public Visitable {
     private:
-	double price;
+        double price;
     public:
-	Tobacco(double item) : price(item) { }
-	double accept(Visitor* visitor) {
-	    return visitor->visit(this);
-	}
-	double getPrice() { return price; }
+        Tobacco(double item) : price(item) { }
+        double accept(Visitor* visitor) {
+            return visitor->visit(this);
+        }
+        double getPrice() { return price; }
 };
 
 // Concrete Visitor Class
@@ -81,19 +81,19 @@ class TaxVisitor: public Visitor {
     // Visitor interface and defined below
 
     public:
-	TaxVisitor() { }
-	double visit(Liquor* liquorItem) {
-	    std::cout << "Liquor Item: Price with Tax"<< std::endl;
-	    return ((liquorItem->getPrice() * .18) + liquorItem->getPrice());
-	}
-	double visit(Tobacco* tobaccoItem) {
-	    std::cout << "Tobacco Item: Price with Tax"<< std::endl;
-	    return (tobaccoItem->getPrice() * .32) + tobaccoItem->getPrice();
-	}
-	double visit(Necessity* necessityItem) {
-	    std::cout << "Necessity Item: Price with Tax"<< std::endl;
-	    return (necessityItem->getPrice());
-	}
+        TaxVisitor() { }
+        double visit(Liquor* liquorItem) {
+            std::cout << "Liquor Item: Price with Tax"<< std::endl;
+            return ((liquorItem->getPrice() * .18) + liquorItem->getPrice());
+        }
+        double visit(Tobacco* tobaccoItem) {
+            std::cout << "Tobacco Item: Price with Tax"<< std::endl;
+            return (tobaccoItem->getPrice() * .32) + tobaccoItem->getPrice();
+        }
+        double visit(Necessity* necessityItem) {
+            std::cout << "Necessity Item: Price with Tax"<< std::endl;
+            return (necessityItem->getPrice());
+        }
 
 };
 
@@ -107,20 +107,20 @@ class TaxHolidayVisitor: public Visitor {
     // Visitor interface and defined below
 
     public:
-	TaxHolidayVisitor() {
-	}
-	double visit(Liquor* liquorItem) {
-	    std::cout << "Liquor Item: Price with Tax" << std::endl;
-	    return ((liquorItem->getPrice() * .10) + liquorItem->getPrice());
-	}
-	double visit(Tobacco* tobaccoItem) {
-	    std::cout << "Tobacco Item: Price with Tax" << std::endl;
-	    return ((tobaccoItem->getPrice() * .30) + tobaccoItem->getPrice());
-	}
-	double visit(Necessity* necessityItem) {
-	    std::cout << "Necessity Item: Price with Tax" << std::endl;
-	    return necessityItem->getPrice();
-	}
+        TaxHolidayVisitor() {
+        }
+        double visit(Liquor* liquorItem) {
+            std::cout << "Liquor Item: Price with Tax" << std::endl;
+            return ((liquorItem->getPrice() * .10) + liquorItem->getPrice());
+        }
+        double visit(Tobacco* tobaccoItem) {
+            std::cout << "Tobacco Item: Price with Tax" << std::endl;
+            return ((tobaccoItem->getPrice() * .30) + tobaccoItem->getPrice());
+        }
+        double visit(Necessity* necessityItem) {
+            std::cout << "Necessity Item: Price with Tax" << std::endl;
+            return necessityItem->getPrice();
+        }
 
 };
 

@@ -12,29 +12,29 @@
 
 class Sort {
     public:
-	void doIt( int v[], int n ) {
-	    for (int g = n/2; g > 0; g /= 2)
-		for (int i = g; i < n; i++)
-		    for (int j = i-g; j >= 0;
-			    j -= g)
-			if (needSwap(v[j],
-				    v[j+g]))
-			    doSwap(v[j],
-				    v[j+g]);
-	}
+        void doIt( int v[], int n ) {
+            for (int g = n/2; g > 0; g /= 2)
+                for (int i = g; i < n; i++)
+                    for (int j = i-g; j >= 0;
+                            j -= g)
+                        if (needSwap(v[j],
+                                    v[j+g]))
+                            doSwap(v[j],
+                                    v[j+g]);
+        }
     private:
-	virtual int needSwap(int,int) = 0;
-	void doSwap(int& a,int& b) {
-	    int t = a; a = b; b = t; }
+        virtual int needSwap(int,int) = 0;
+        void doSwap(int& a,int& b) {
+            int t = a; a = b; b = t; }
 };
 
 class SortUp : public Sort {
     int needSwap(int a, int b) {
-	return (a > b); }
+        return (a > b); }
 };
 class SortDown : public Sort {
     int needSwap(int a, int b) {
-	return (a < b); }
+        return (a < b); }
 };
 
 void main( void )

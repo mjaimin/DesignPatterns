@@ -3,76 +3,76 @@
 
 class Beverage
 {
-public:
+    public:
 
-    std::string description;     
+        std::string description;
 
-    virtual double cost( void ) = 0;
+        virtual double cost( void ) = 0;
 
-    Beverage()
-    {
-        description = "Unkwown beverage";
-    }
-    virtual std::string getDescription( void )
-    {
-        return description;
-    }
+        Beverage()
+        {
+            description = "Unkwown beverage";
+        }
+        virtual std::string getDescription( void )
+        {
+            return description;
+        }
 };
 //----------------- Beverage Types -------------
 class DarkRoast : public Beverage
 {
-public:
+    public:
 
-    DarkRoast()
-    {
-        description = "Unkwown beverage";
-    }
-    double cost( void )
-    {
-        return 0.99f;
-    }
+        DarkRoast()
+        {
+            description = "Unkwown beverage";
+        }
+        double cost( void )
+        {
+            return 0.99f;
+        }
 };
 
 class Decaf : public Beverage
 {
-public:
+    public:
 
-    Decaf()
-    {
-        description = "decaf coffee";
-    }
-    double cost()
-    {
-        return 2.5f;
-    }
+        Decaf()
+        {
+            description = "decaf coffee";
+        }
+        double cost()
+        {
+            return 2.5f;
+        }
 };
 
 class Espresso :public Beverage
 {
-public:
+    public:
 
-    Espresso()
-    {
-        description = "Espresso";
-    }
-    double cost(void)
-    {
-        return 1.99f;
-    }
+        Espresso()
+        {
+            description = "Espresso";
+        }
+        double cost(void)
+        {
+            return 1.99f;
+        }
 };
 
 class HouseBlend : public Beverage
 {
-public:
+    public:
 
-    HouseBlend()
-    {
-        description = "House blend coffee";
-    }
-    double cost()
-    {
-        return 0.89f;
-    }
+        HouseBlend()
+        {
+            description = "House blend coffee";
+        }
+        double cost()
+        {
+            return 0.89f;
+        }
 };
 
 //----------------- Beverage Condiment Type -------------
@@ -85,7 +85,7 @@ class CondimentDecorator : public Beverage
 class Milk :public CondimentDecorator
 {
     Beverage* beverage;
-public:
+    public:
 
     Milk(Beverage* beverage)
     {
@@ -104,7 +104,7 @@ public:
 class Mocha : public CondimentDecorator
 {
     Beverage* beverage;
-public:
+    public:
 
     Mocha(Beverage* beverage)
     {
@@ -123,7 +123,7 @@ public:
 class Soy : public CondimentDecorator
 {
     Beverage* beverage;
-public:
+    public:
 
     Soy(Beverage* beverage)
     {
@@ -142,7 +142,7 @@ public:
 class Whip :public CondimentDecorator
 {
     Beverage* beverage;
-public:
+    public:
 
     Whip(Beverage* beverage)
     {
@@ -155,24 +155,24 @@ public:
     double cost()
     {
         return 0.2f + beverage->cost();
-	}
+    }
 };
 
 int main()
 {
     Beverage* beverage = new Espresso();
     std::cout << beverage->getDescription() << ": $ "<< beverage->cost() << std::endl;
-	
+
     Beverage* beverage2 = new DarkRoast();
     beverage2 = new Mocha(beverage2);
     beverage2 = new Mocha(beverage2);
     beverage2 = new Whip(beverage2);
     std::cout << beverage2->getDescription() << ": $ "<< beverage2->cost() << std::endl;
-	
+
     Beverage* beverage3 = new HouseBlend();
     beverage3 = new Milk(beverage3);
     beverage3 = new Mocha(beverage3);
     beverage3 = new Soy(beverage3);
     std::cout << beverage3->getDescription() << ": $ "<< beverage3->cost() << std::endl;
-	
+
 }

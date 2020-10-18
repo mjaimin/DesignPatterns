@@ -5,73 +5,73 @@
 
 class PaymentStrategy {
     public:
-	virtual void pay(int amount) = 0;
+        virtual void pay(int amount) = 0;
 };
 
 class CreditCardStrategy: public PaymentStrategy {
-    private: 
-	std::string name;
-	std::string cardNumber;
-	std::string cvv;
-	std::string dateOfExpiry;
+    private:
+        std::string name;
+        std::string cardNumber;
+        std::string cvv;
+        std::string dateOfExpiry;
     public:
-	CreditCardStrategy(std::string nm, std::string ccNum, std::string cvv, std::string expiryDate): name(nm), cardNumber(ccNum), cvv(cvv), dateOfExpiry(expiryDate) {}
+        CreditCardStrategy(std::string nm, std::string ccNum, std::string cvv, std::string expiryDate): name(nm), cardNumber(ccNum), cvv(cvv), dateOfExpiry(expiryDate) {}
 
-	void pay(int amount) {
-	    std::cout << amount << " paid with credit/debit card" << std::endl;
-    }
+        void pay(int amount) {
+            std::cout << amount << " paid with credit/debit card" << std::endl;
+        }
 };
 
 class PaypalStrategy: public PaymentStrategy {
-    private: 
-	std::string emailId;
-	std::string password;
+    private:
+        std::string emailId;
+        std::string password;
 
-    public: 
-	PaypalStrategy(std::string email, std::string pwd):emailId(email), password(pwd) {}
+    public:
+        PaypalStrategy(std::string email, std::string pwd):emailId(email), password(pwd) {}
 
-	void pay(int amount) {
-	    std::cout << amount << " paid using Paypal." << std::endl;
-	}
+        void pay(int amount) {
+            std::cout << amount << " paid using Paypal." << std::endl;
+        }
 
 };
 
 class Item {
     private:
-	std::string upcCode;
-	int price;
-    public: 
-	Item(std::string upc, int cost): upcCode(upc), price(cost) {}
+        std::string upcCode;
+        int price;
+    public:
+        Item(std::string upc, int cost): upcCode(upc), price(cost) {}
 
-	std::string getUpcCode() {
-	    return upcCode;
-	}
-	int getPrice() {
-	    return price;
-	}
+        std::string getUpcCode() {
+            return upcCode;
+        }
+        int getPrice() {
+            return price;
+        }
 };
 
 class ShoppingCart {
     std::list<Item> items;
-    public: 
+    public:
     void addItem(Item item){
-	this->items.push_back(item);
+        this->items.push_back(item);
     }
 
     int calculateTotal(){
-	int sum = 0;
-	for ( std::list<Item>::iterator it = items.begin(); it !=items.end(); ++it)
-	    sum += (*it).getPrice();
-	return sum;
+        int sum = 0;
+        for ( std::list<Item>::iterator it = items.begin(); it !=items.end(); ++it)
+            sum += (*it).getPrice();
+        return sum;
     }
 
     void pay(PaymentStrategy* paymentMethod){
-	int amount = calculateTotal();
-	paymentMethod->pay(amount);
+        int amount = calculateTotal();
+        paymentMethod->pay(amount);
     }
 };
 
-int main() 
+int main()
 {
     ShoppingCart* cart = new ShoppingCart();
 

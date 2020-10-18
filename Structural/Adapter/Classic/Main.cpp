@@ -3,23 +3,23 @@ using namespace std;
 //Adaptee is like electric socket on wall
 class Adaptee {
     public:
-	void SpecificRequest() { cout << "I do work specific way..." << endl; }
+        void SpecificRequest() { cout << "I do work specific way..." << endl; }
 };
 //Target is like different kind of plug not supported by wall socket
 class Target {
     public:
-	virtual void newRequest() { cout << "Target's new request..." << endl; }
+        virtual void newRequest() { cout << "Target's new request..." << endl; }
 };
 //Plug adapter
 class Adapter : public Target, private Adaptee {
     private:
-	Adaptee *adaptee;
+        Adaptee *adaptee;
     public:
-	Adapter(Adaptee *obj) : adaptee(obj) {}
-	void newRequest() 
-	{
-	    adaptee->SpecificRequest(); 
-	}
+        Adapter(Adaptee *obj) : adaptee(obj) {}
+        void newRequest()
+        {
+            adaptee->SpecificRequest();
+        }
 };
 
 int main()

@@ -5,51 +5,51 @@
 
 class FlyWeight
 {
-private:
-    std::string m_intrinsicState;
-public:
-    FlyWeight( std::string intrinsicState ) : m_intrinsicState(intrinsicState){}
-    virtual ~FlyWeight(void){}
-    std::string GetIntrinsicState(  ){	return m_intrinsicState; }
-    virtual void Operator(const std::string& extrinsicState){}
+    private:
+        std::string m_intrinsicState;
+    public:
+        FlyWeight( std::string intrinsicState ) : m_intrinsicState(intrinsicState){}
+        virtual ~FlyWeight(void){}
+        std::string GetIntrinsicState(  ){	return m_intrinsicState; }
+        virtual void Operator(const std::string& extrinsicState){}
 };
 
 class ConcreteFlyWeight : public FlyWeight// multiple ConcreteFlyWeight can have different operations
 {
-public:
-    ConcreteFlyWeight( std::string intrinsicState ):FlyWeight(intrinsicState){}
-    virtual void Operator( const std::string& extrinsicState )
-    {
-        std::cout << "ConcreteFlyWeight:[" << this->GetIntrinsicState() << "]"
-            << "[" << extrinsicState << "]" << std::endl;
-    }
-    ~ConcreteFlyWeight(){};
+    public:
+        ConcreteFlyWeight( std::string intrinsicState ):FlyWeight(intrinsicState){}
+        virtual void Operator( const std::string& extrinsicState )
+        {
+            std::cout << "ConcreteFlyWeight:[" << this->GetIntrinsicState() << "]"
+                << "[" << extrinsicState << "]" << std::endl;
+        }
+        ~ConcreteFlyWeight(){};
 };
 
 class FlyWeightFactory
 {
-private:
-    std::vector<FlyWeight *> fly;
-public:
-    FlyWeightFactory(void){}
-    ~FlyWeightFactory(void){}
+    private:
+        std::vector<FlyWeight *> fly;
+    public:
+        FlyWeightFactory(void){}
+        ~FlyWeightFactory(void){}
 
-    FlyWeight* GetFlyWeight( const std::string& key )
-    {
-        std::vector<FlyWeight *>::iterator iter;
-        for(iter = fly.begin(); iter != fly.end(); iter++)
+        FlyWeight* GetFlyWeight( const std::string& key )
         {
-            if((*iter)->GetIntrinsicState() == key)
+            std::vector<FlyWeight *>::iterator iter;
+            for(iter = fly.begin(); iter != fly.end(); iter++)
             {
-                std::cout << "Already have :" << key << std::endl;
-                return *iter;
+                if((*iter)->GetIntrinsicState() == key)
+                {
+                    std::cout << "Already have :" << key << std::endl;
+                    return *iter;
+                }
             }
-        }
 
-        FlyWeight* fw = new ConcreteFlyWeight(key);
-        fly.push_back(fw);
-        return fw;
-    }
+            FlyWeight* fw = new ConcreteFlyWeight(key);
+            fly.push_back(fw);
+            return fw;
+        }
 };
 
 void main()

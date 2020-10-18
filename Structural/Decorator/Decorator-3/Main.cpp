@@ -3,85 +3,85 @@
 
 class IEmployee
 {
-public:    
-    virtual std::string Join( void ) = 0;
-    virtual std::string Terminate( void ) = 0;
-    virtual std::string PerformJob( void ) = 0;
+    public:
+        virtual std::string Join( void ) = 0;
+        virtual std::string Terminate( void ) = 0;
+        virtual std::string PerformJob( void ) = 0;
 };
 
 class Employee : public IEmployee
 {
-public:
-    std::string Name;  
+    public:
+        std::string Name;
 
-    Employee(std::string Name)
-    {
-        this->Name = Name;
-    }
-    std::string Join( void )
-    {
-        return Name + " joined the company..";
-    }
+        Employee(std::string Name)
+        {
+            this->Name = Name;
+        }
+        std::string Join( void )
+        {
+            return Name + " joined the company..";
+        }
 
-    std::string Terminate( void )
-    {
-        return Name + " left the company..";
-    }
-    std::string PerformJob( void )// Any Employee Basic Job
-    {
-        return Name + " doing basic stuff..";
-    }
+        std::string Terminate( void )
+        {
+            return Name + " left the company..";
+        }
+        std::string PerformJob( void )// Any Employee Basic Job
+        {
+            return Name + " doing basic stuff..";
+        }
 
 };
 
 class Role: public IEmployee
 {
-public:    
-    IEmployee* m_employee;
-    Role(IEmployee* Employee):m_employee(Employee){}
+    public:
+        IEmployee* m_employee;
+        Role(IEmployee* Employee):m_employee(Employee){}
 
-    //virtual std::string PerformJob( void ) = 0;// If PerformJob not implemented then also it is abstract
-	
-    std::string Join( void )// Every employee can join and Terminate this Role
-    {
-        return m_employee->Join();
-    }
+        //virtual std::string PerformJob( void ) = 0;// If PerformJob not implemented then also it is abstract
 
-    std::string Terminate( void )
-    {
-        return m_employee->Terminate();
-    }
+        std::string Join( void )// Every employee can join and Terminate this Role
+        {
+            return m_employee->Join();
+        }
+
+        std::string Terminate( void )
+        {
+            return m_employee->Terminate();
+        }
 };
 
 class Engineer : public Role
 {
-public:
-    Engineer(IEmployee* Employee):Role(Employee){}
+    public:
+        Engineer(IEmployee* Employee):Role(Employee){}
 
-    std::string PerformJob( void )//Engineer specific job
-    {
-        return m_employee->PerformJob() + " and Coding";
-    }
+        std::string PerformJob( void )//Engineer specific job
+        {
+            return m_employee->PerformJob() + " and Coding";
+        }
 };
 
 class TeamLead : public Role
 {
-public:
-    TeamLead(IEmployee* Employee):Role(Employee){}
-    std::string PerformJob( void )//Team Lead specific job
-    {
-        return m_employee->PerformJob() + " and Task Management";
-    }
+    public:
+        TeamLead(IEmployee* Employee):Role(Employee){}
+        std::string PerformJob( void )//Team Lead specific job
+        {
+            return m_employee->PerformJob() + " and Task Management";
+        }
 };
 
 class Manager : public Role
 {
-public:
-    Manager(IEmployee* Employee):Role(Employee){}
-    std::string PerformJob( void )//Manager specific job
-    {
-        return m_employee->PerformJob() + " and People management";
-    }
+    public:
+        Manager(IEmployee* Employee):Role(Employee){}
+        std::string PerformJob( void )//Manager specific job
+        {
+            return m_employee->PerformJob() + " and People management";
+        }
 };
 
 int main()
